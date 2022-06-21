@@ -40,3 +40,11 @@ li {
   font-size: 1rem;
   weight: 400px;
 }
+
+@media (min-width: 1024px) {
+  .view {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+}

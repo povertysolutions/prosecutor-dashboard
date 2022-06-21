@@ -5,7 +5,9 @@
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/dashboard">Data</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/resources">Resources</RouterLink>
       </nav>
     </div>
   </header>
@@ -21,8 +23,7 @@ import Module from "@/components/Module.vue";
 </script>
 
 <style lang="scss">
-@import "@/assets/base.css";
-@import "@/assets/style.scss";
+@import "@/styles/main.scss";
 
 .test{
 
