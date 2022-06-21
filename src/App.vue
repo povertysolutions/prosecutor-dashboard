@@ -1,14 +1,16 @@
 <template>
   <header>
     <div class="wrapper">
-      <Module class="test" msg="You did it!"/>
+      <!-- <Module class="test" msg="You did it!"/> -->
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/dashboard">Data</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/resources">Resources</RouterLink>
-      </nav>
+      <header>
+        <nav>
+          <RouterLink class="link header" to="/">Home</RouterLink>
+          <RouterLink class="link header" to="/dashboard">Data</RouterLink>
+          <RouterLink class="link header" to="/about">About</RouterLink>
+          <RouterLink class="link header" to="/resources">Resources</RouterLink>
+        </nav>
+      </header>
     </div>
   </header>
 
@@ -25,19 +27,19 @@ import Module from "@/components/Module.vue";
 <style lang="scss">
 @import "@/styles/main.scss";
 
-.test{
-
-}
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  margin: 0;
 }
 
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  width: 100vw;
+  height: 4rem;
+  background-color: $color-green;
 }
 
 .logo {
@@ -45,78 +47,27 @@ header {
   margin: 0 auto 2rem;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
 nav {
   width: 100%;
-  font-size: 12px;
   text-align: center;
-  margin-top: 2rem;
-}
+  padding-top: .7rem;
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
+  a{
+    color: $color-white;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1em;
+    margin: 0 1rem;
+    padding: 10px 15px;
+    border-radius: 50px;
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-    padding: 1rem 0;
-    margin-top: 1rem;
+    &.router-link-exact-active {
+      color: $color-green;
+      background-color: $color-white;
+    }
   }
 }
+
+
+
 </style>
