@@ -1,0 +1,42 @@
+@import "./colors.scss";
+
+body {
+  min-height: 100vh;
+  color: $color-black;
+  background: var(--color-background);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3rem;
+  weight: 600px;
+}
+
+h2 {
+  font-size: 2.25rem;
+  weight: 600px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  weight: 600px;
+}
+
+h4 {
+  font-size: 1.15rem;
+  weight: 600px;
+}
+
+p {
+  font-size: 1rem;
+  weight: 400px;
+}
+
+li {
+  font-size: 1rem;
+  weight: 400px;
+}

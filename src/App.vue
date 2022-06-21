@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="wrapper">
-      <Module msg="You did it!"/>
+      <Module class="test" msg="You did it!"/>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -20,14 +20,17 @@ import Module from "@/components/Module.vue";
 
 </script>
 
-<style>
+<style lang="scss">
 @import "@/assets/base.css";
+@import "@/assets/style.scss";
 
+.test{
+
+}
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
   font-weight: normal;
 }
 
@@ -111,7 +114,6 @@ nav a:first-of-type {
     text-align: left;
     margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }
