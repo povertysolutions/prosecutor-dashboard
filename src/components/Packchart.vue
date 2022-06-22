@@ -1,109 +1,151 @@
+<style scoped>
+</style>
+
 <template>
-  <div id="graph"></div>
+
+<div id="graph">
+</div>
+
 </template>
 
 <script>
-
 import * as d3 from "d3";
-import * as cola from "cola";
-
 export default{
   methods: {
-
   },
   mounted(){
     setTimeout(() => {
         go();
-    }, 100);
+    }, 1000);
   }
 }
-
 function go() {
-        var width = 960,
-            height = 500;
-
-        var color = d3.scaleOrdinal(d3.schemeCategory20);
-
-        var cola = cola.d3adaptor(d3)
-            .linkDistance(120)
-            .avoidOverlaps(true)
-            .size([width, height]);
-
-        var svg = d3.select("#body").append("svg")
-            .attr("width", width)
-            .attr("height", height);
-
-        d3.json("graphdata/fivenodesdisconnected.json", function (error, graph) {
-            cola
-                .nodes(graph.nodes)
-                .links(graph.links)
-                .start();
-
-            var link = svg.selectAll(".link")
-                .data(graph.links)
-              .enter().append("line")
-                .attr("class", "link");
-
-            var node = svg.selectAll(".node")
-                .data(graph.nodes)
-              .enter().append("rect")
-                .attr("class", "node")
-                .attr("width", function (d) { return d.width; })
-                .attr("height", function (d) { return d.height; })
-                .attr("rx", 5).attr("ry", 5)
-                .style("fill", function (d) { return color(1); })
-                .call(cola.drag);
-
-            var label = svg.selectAll(".label")
-                .data(graph.nodes)
-               .enter().append("text")
-                .attr("class", "label")
-                .text(function (d) { return d.name; })
-                .call(cola.drag);
-
-            node.append("title")
-                .text(function (d) { return d.name; });
-
-            cola.on("tick", function () {
-                link.attr("x1", function (d) { return d.source.x; })
-                    .attr("y1", function (d) { return d.source.y; })
-                    .attr("x2", function (d) { return d.target.x; })
-                    .attr("y2", function (d) { return d.target.y; });
-
-                node.attr("x", function (d) { return d.x - d.width / 2; })
-                    .attr("y", function (d) { return d.y - d.height / 2; });
-
-                label.attr("x", function (d) { return d.x; })
-                     .attr("y", function (d) {
-                         var h = this.getBBox().height;
-                         return d.y + h/4;
-                     });
-            });
-
+    const width = 600,
+        height = 1000;
+    const color = d3.scaleOrdinal(d3.schemeCategory10);
+    const types = ["CITED_BY"]
+    const strokeWidth = 1.5
+        // d3.json("/api/article/graph").then(function(data) {
+        // let graph = data.data;
+    let graph = {
+        "links": [{
+            "source": "18470926",
+            "target": "10097404",
+            "type": "CITED_BY"
+        }],
+        "nodes": [{
+            "label": "Article",
+            "id": "18470926"
+        }, {
+            "label": "Article",
+            "id": "10097404"
+        }]
+    };
+    const simulation = d3.forceSimulation(graph.nodes)
+        .force("charge", d3.forceManyBody().strength(-3000))
+        .force("x", d3.forceX(width / 2).strength(1))
+        .force("y", d3.forceY(height / 2).strength(1))
+        .force("link", d3.forceLink(graph.links).id(function(d) {
+            return d.id;
+        }).distance(50).strength(1))
+        .on("tick", ticked);
+    const svg = d3.select("#graph").append("svg")
+        .attr("width", width).attr("height", height)
+        .attr("pointer-events", "all");
+    // Per-type markers, as they don't inherit styles.
+    svg.append("defs").selectAll("marker")
+        .data(types)
+        .join("marker")
+        .attr("id", d => `arrow-${d}`)
+        .attr("viewBox", "0 0 10 10")
+        .attr("refX", 10)
+        .attr("refY", 5)
+        .attr("markerUnits", strokeWidth)
+        .attr("markerWidth", 10)
+        .attr("markerHeight", 10)
+        .attr("orient", "auto")
+        .append("path")
+        .attr("fill", color)
+        .attr("d", 'M 0 0 L 10 5 L 0 10 z');
+    const link = svg.append("g")
+        .selectAll("g")
+        .data(graph.links)
+        .enter()
+        .append("line")
+        .attr("stroke", d => color(d.type))
+        .attr("stroke-width", strokeWidth)
+        .attr("marker-end", d => `url(${new URL(`#
+            arrow - $ {
+                d.type
+            }
+            `, location)})`);
+    const node = svg.append("g")
+        .selectAll("g")
+        .data(graph.nodes)
+        .enter().append("g");
+    node.append("circle")
+        .attr("r", 5)
+        .attr("fill", function(d) {
+            return color(d.label);
         })
-        
+    node.call(
+        d3.drag()
+        .on("start", dragstarted)
+        .on("drag", dragged)
+        .on("end", dragended)
+    );
+    node.append("text")
+        .text(function(d) {
+            return d.id;
+        })
+        .attr('x', 6)
+        .attr('y', 3).style('fill', 'white');
+    node.append("title")
+        .text(function(d) {
+            return d.label;
+        });
+    function ticked() {
+        node.call(updateNode);
+        link.call(updateLink);
+    }
+    function fixna(x) {
+        if (isFinite(x)) return x;
+        return 0;
+    }
+    function updateLink(link) {
+        link.attr("x1", function(d) {
+                return fixna(d.source.x);
+            })
+            .attr("y1", function(d) {
+                return fixna(d.source.y);
+            })
+            .attr("x2", function(d) {
+                return fixna(d.target.x);
+            })
+            .attr("y2", function(d) {
+                return fixna(d.target.y);
+            });
+    }
+    function updateNode(node) {
+        node.attr("transform", function(d) {
+            return "translate(" + fixna(d.x) + "," + fixna(d.y) + ")";
+        });
+    }
+    function dragstarted(event, d) {
+        event.sourceEvent.stopPropagation();
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    }
+    function dragged(event, d) {
+        d.fx = event.x;
+        d.fy = event.y;
+    }
+    function dragended(event, d) {
+        if (!event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+    }
+    // });
 }
-
 </script>
-
-<style>
-.node {
-  stroke: #fff;
-  stroke-width: 1.5px;
-    cursor: move;
-}
-
-.link {
-  stroke: #999;
-  stroke-width: 3px;
-  stroke-opacity: 1;
-}
-
-.label {
-    fill: white;
-    font-family: Verdana;
-    font-size: 25px;
-    text-anchor: middle;
-    cursor: move;
-}
-</style>
