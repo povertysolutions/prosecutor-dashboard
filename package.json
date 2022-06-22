@@ -8,10 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "cola": "^0.1.7",
     "core-js": "^3.8.3",
     "d3": "^7.4.4",
     "vue": "^3.2.13",
+    "vue-cytoscape": "^1.0.8",
     "vue-router": "^4.0.16"
   },
   "devDependencies": {
