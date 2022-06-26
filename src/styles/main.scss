@@ -1,4 +1,4 @@
-@import "./colors.scss";
+@import "./vars.scss";
 
 body {
   min-height: 100vh;
@@ -39,4 +39,13 @@ p {
 li, .link {
   font-size: 1rem;
   weight: 400px;
+}
+
+button {
+  font-size: 1rem;
+  weight: 400px;
+  background: none;
+  border: none;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
