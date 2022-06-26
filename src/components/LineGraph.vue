@@ -1,5 +1,6 @@
 <template>
-  <Bar
+  <Line
+    class="lineChart"
     :chart-options="chartOptions"
     :chart-data="chartData"
     :chart-id="chartId"
@@ -7,24 +8,22 @@
     :plugins="plugins"
     :css-classes="cssClasses"
     :styles="styles"
-    :width="width"
-    :height="height"
   />
 </template>
 
 <script>
-import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import { Line } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, PointElement, LineElement, CategoryScale, LinearScale } from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+ChartJS.register(Title, Tooltip, Legend, BarElement, PointElement, LineElement, CategoryScale, LinearScale)
 
 export default {
-  name: 'BarChart',
-  components: { Bar },
+  name: 'LineGraph',
+  components: { Line },
   props: {
     chartId: {
       type: String,
-      default: 'bar-chart'
+      default: 'line-chart'
     },
     datasetIdKey: {
       type: String,
@@ -58,9 +57,24 @@ export default {
         datasets: [ { data: [40, 20, 12] } ]
       },
       chartOptions: {
-        responsive: true
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
       }
     }
   }
 }
 </script>
+
+<style lang="scss">
+.lineChart{
+  min-width: 300px;
+  width: 75%;
+  min-height: 200px;
+  height: 40vh;
+}
+</style>
