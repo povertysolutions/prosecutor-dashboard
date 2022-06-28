@@ -1,20 +1,24 @@
 <template>
   <div class="view">
     <div class="module">
-      <h1>This is the dashboard.</h1>
-      <LineGraph></LineGraph>
-      <Details class="details"></Details>
+      <Sidebar></Sidebar>
+        <section class="main">
+          <h1>This is the dashboard.</h1>
+          <LineGraph></LineGraph>
+          <Details class="details"></Details>
+        </section>
     </div>
   </div>
 </template>
 
 <script>
+import Sidebar from "@/components/Sidebar"
 import LineGraph from "@/components/LineGraph"
 import Details from "@/components/Details"
 
 export default {
   name: "Dashboard",
-  components: { LineGraph, Details }
+  components: { Sidebar, LineGraph, Details }
 }
 
 </script>
@@ -23,9 +27,14 @@ export default {
 @import "@/styles/main.scss";
 
 .module{
-
-  margin: 0 2rem;
+  //margin: 0 2rem;
+  //padding: 1rem;
   //border: blue 2px solid;
+}
+
+.main{
+  margin-left: 14rem;
+  position: absolute;
 }
 .details{
   min-width: 300px;
