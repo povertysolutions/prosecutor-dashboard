@@ -57,13 +57,9 @@ export default {
   background-color: $color-black;
 }
 
-.details{
-
-}
-
 h3{
   color: $color-white;
-  margin-left: 30px;
+  margin: 1rem;
 }
 .topic{
   color: $color-medium-grey;

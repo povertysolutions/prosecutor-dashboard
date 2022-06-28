@@ -70,11 +70,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.lineChart{
-  min-width: 300px;
-  width: 75%;
-  min-height: 200px;
-  height: 40vh;
-}
+<style lang="scss" scoped>
+
 </style>

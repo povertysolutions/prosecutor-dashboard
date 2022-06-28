@@ -3,8 +3,9 @@
     <div class="module">
       <Sidebar></Sidebar>
         <section class="main">
-          <h1>This is the dashboard.</h1>
-          <LineGraph></LineGraph>
+          <h2>This is the dashboard.</h2>
+          <LineGraph class="graph"></LineGraph>
+          <Legend class="legend"></Legend>
           <Details class="details"></Details>
         </section>
     </div>
@@ -15,10 +16,11 @@
 import Sidebar from "@/components/Sidebar"
 import LineGraph from "@/components/LineGraph"
 import Details from "@/components/Details"
+import Legend from "@/components/Legend"
 
 export default {
   name: "Dashboard",
-  components: { Sidebar, LineGraph, Details }
+  components: { Sidebar, LineGraph, Details, Legend }
 }
 
 </script>
@@ -32,13 +34,33 @@ export default {
   //border: blue 2px solid;
 }
 
+
 .main{
   margin-left: 14rem;
   position: absolute;
 }
+
+h2{
+  margin: 1rem 0;
+}
+
+.graph{
+  display: inline-block;
+  min-width: 300px;
+  width: 75%;
+  min-height: 200px;
+  height: 40vh;
+}
+
+.legend{
+  display: inline-block;
+  width: 200px;
+  vertical-align: top;
+}
+
 .details{
   min-width: 300px;
-  width: 100%;
+  width: 75%;
   min-height: 150px;
   height: 25vh;
   margin-top: 1em;
