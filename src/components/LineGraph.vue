@@ -3,68 +3,79 @@
     class="lineChart"
     :chart-options="chartOptions"
     :chart-data="chartData"
-    :chart-id="chartId"
+    chart-id="line-chart"
     :dataset-id-key="datasetIdKey"
     :plugins="plugins"
     :css-classes="cssClasses"
     :styles="styles"
+    :v-if="dataset !== []"
   />
 </template>
 
 <script>
 import { Line } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, PointElement, LineElement, CategoryScale, LinearScale } from 'chart.js'
+import Chart from 'chart.js/auto';
+import 'chartjs-adapter-moment';
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, PointElement, LineElement, CategoryScale, LinearScale)
+var timeFormat = 'DD/MM/YYYY';
 
 export default {
   name: 'LineGraph',
   components: { Line },
   props: {
-    chartId: {
-      type: String,
-      default: 'line-chart'
-    },
     datasetIdKey: {
       type: String,
       default: 'label'
-    },
-    width: {
-      type: Number,
-      default: 400
-    },
-    height: {
-      type: Number,
-      default: 400
     },
     cssClasses: {
       default: '',
       type: String
     },
-    styles: {
-      type: Object,
-      default: () => {}
-    },
-    plugins: {
-      type: Object,
-      default: () => {}
-    }
+    dataset: Array
   },
-  data() {
-    return {
-      chartData: {
-        labels: [ 'January', 'February', 'March' ],
-        datasets: [ { data: [40, 20, 12] } ]
-      },
-      chartOptions: {
+  computed:{
+    chartData() {
+      return {
+        //labels : [ 'January', 'February', 'March' ],
+        datasets : this.dataset
+      }
+    },
+    chartOptions(){
+      return{
         responsive: true,
         maintainAspectRatio: false,
         plugins: {
           legend: {
             display: false
           }
-        }
+        },
+        scales: {
+              xAxes: {
+                  type: "time",
+                  time: {
+                      format: 'DD/MM/YYYY',
+                      tooltipFormat: 'll',
+                      unit: 'year',
+                  },
+                  scaleLabel: {
+                      display: true,
+                      labelString: 'Date'
+                  }
+              },
+              yAxes: {
+                  scaleLabel: {
+                      display: true,
+                      labelString: 'value'
+                  }
+              }
+          }
       }
+    }
+  },
+  data() {
+    return {
+      styles: {},
+      plugins: {}
     }
   }
 }

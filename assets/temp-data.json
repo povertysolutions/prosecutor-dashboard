@@ -1,0 +1,702 @@
+[
+    {
+        "id": "XTSAVSQVUB",
+        "fileDate": "04/20/2018",
+        "race": "Hispanic",
+        "region": "Saline",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "XZBVBWBKFE",
+        "fileDate": "07/11/2010",
+        "race": "Other",
+        "region": "Webster",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "QRZADZELZG",
+        "fileDate": "01/24/2014",
+        "race": "Asian",
+        "region": "Manchester",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "TFQZWILSZH",
+        "fileDate": "01/29/2002",
+        "race": "Other",
+        "region": "Freedom",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "CUZRWETEOD",
+        "fileDate": "10/28/2018",
+        "race": "Hispanic",
+        "region": "Salem",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "CXRZLXZDZS",
+        "fileDate": "03/24/2001",
+        "race": "Asian",
+        "region": "Salem",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "SZLDTHFBBW",
+        "fileDate": "02/24/2005",
+        "race": "Other",
+        "region": "Superior",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "LZHINFQBAT",
+        "fileDate": "03/29/2017",
+        "race": "Hispanic",
+        "region": "Northfield,",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "HTAWLXJMVY",
+        "fileDate": "12/04/2012",
+        "race": "Black",
+        "region": "Freedom",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "NWPEMRXTBO",
+        "fileDate": "09/23/2002",
+        "race": "Hispanic",
+        "region": "Superior",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "TQWWNLWBSR",
+        "fileDate": "08/08/2000",
+        "race": "Black",
+        "region": "Lima",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "QLNGRUDYLV",
+        "fileDate": "09/16/2017",
+        "race": "Asian",
+        "region": "Scio",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "NMGPVSZIFV",
+        "fileDate": "09/17/2014",
+        "race": "Asian",
+        "region": "Lodi",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "HJUJVWJJUL",
+        "fileDate": "07/26/2004",
+        "race": "Black",
+        "region": "York",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "ZIPLFSFWXG",
+        "fileDate": "02/22/2006",
+        "race": "Asian",
+        "region": "Bridgewater",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "SFUZSNOZXV",
+        "fileDate": "11/25/2000",
+        "race": "White",
+        "region": "Ann Arbor",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "BSXKWZHGML",
+        "fileDate": "10/01/2005",
+        "race": "White",
+        "region": "Sylvan",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "CWFOZSSJDP",
+        "fileDate": "02/11/2006",
+        "race": "White",
+        "region": "Lydon",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "HXZCTOSJYG",
+        "fileDate": "05/20/2008",
+        "race": "Black",
+        "region": "Saline",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "SQUVLCTRUW",
+        "fileDate": "05/02/2006",
+        "race": "Other",
+        "region": "Ypsilanti",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "YPTCSROKHF",
+        "fileDate": "02/09/2011",
+        "race": "White",
+        "region": "Superior",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "VBXMRCMQPA",
+        "fileDate": "05/07/2006",
+        "race": "Black",
+        "region": "Freedom",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "XOQYUENFMY",
+        "fileDate": "09/09/2019",
+        "race": "Black",
+        "region": "Webster",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "IRRZCOZKRN",
+        "fileDate": "06/11/2007",
+        "race": "Other",
+        "region": "Sylvan",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "AKDAMPOWGO",
+        "fileDate": "05/12/2011",
+        "race": "Other",
+        "region": "Lima",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "MMNRJWQPAJ",
+        "fileDate": "10/03/2013",
+        "race": "Asian",
+        "region": "Saline",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "GVSAOORWXZ",
+        "fileDate": "11/13/2010",
+        "race": "Hispanic",
+        "region": "Augusta",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "ENEMWZYKMU",
+        "fileDate": "10/05/2000",
+        "race": "Black",
+        "region": "Pittsfield",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "XMIJDXATXW",
+        "fileDate": "08/29/2017",
+        "race": "Hispanic",
+        "region": "Scio",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "BXUMMTDYWU",
+        "fileDate": "01/25/2006",
+        "race": "Asian",
+        "region": "York",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "NILNWWRZIR",
+        "fileDate": "10/05/2007",
+        "race": "Black",
+        "region": "Freedom",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "PUHOWPCVSS",
+        "fileDate": "01/19/2002",
+        "race": "Other",
+        "region": "Lodi",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "VLIOJMNJHZ",
+        "fileDate": "05/05/2013",
+        "race": "Asian",
+        "region": "Webster",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "TIPYHVFCBM",
+        "fileDate": "12/26/2001",
+        "race": "Black",
+        "region": "Ypsilanti",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "MRVDJLANBF",
+        "fileDate": "04/29/2019",
+        "race": "Other",
+        "region": "York",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "CIFQHZXVHT",
+        "fileDate": "07/01/2007",
+        "race": "Asian",
+        "region": "Bridgewater",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "IBTMQWAVOP",
+        "fileDate": "05/27/2009",
+        "race": "Hispanic",
+        "region": "Ann Arbor",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "GSBBSVNYOF",
+        "fileDate": "06/01/2001",
+        "race": "Black",
+        "region": "Northfield,",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "RHTNSKKXVB",
+        "fileDate": "05/16/2006",
+        "race": "White",
+        "region": "Ann Arbor",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "UUPLVTDMHS",
+        "fileDate": "05/10/2003",
+        "race": "Black",
+        "region": "Ann Arbor",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "SSKABUSZCT",
+        "fileDate": "06/08/2002",
+        "race": "Other",
+        "region": "Scio",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "FUPRSQAADE",
+        "fileDate": "04/11/2019",
+        "race": "Black",
+        "region": "Salem",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "OSWRJMRWLZ",
+        "fileDate": "07/30/2014",
+        "race": "Hispanic",
+        "region": "Webster",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "HZRDBQJGDB",
+        "fileDate": "06/12/2002",
+        "race": "Black",
+        "region": "Bridgewater",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "ASDAFLGNRI",
+        "fileDate": "06/11/2013",
+        "race": "Other",
+        "region": "Northfield,",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "OFKPRWSYSH",
+        "fileDate": "11/28/2002",
+        "race": "Other",
+        "region": "Sylvan",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "XMICJFZOPO",
+        "fileDate": "08/26/2018",
+        "race": "Black",
+        "region": "Bridgewater",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "GGAWNBLVVD",
+        "fileDate": "01/04/2009",
+        "race": "White",
+        "region": "Salem",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "UZJTLUYNHR",
+        "fileDate": "01/29/2013",
+        "race": "Hispanic",
+        "region": "Manchester",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "CZCESVNXBC",
+        "fileDate": "01/19/2006",
+        "race": "Hispanic",
+        "region": "Lima",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "NRPDTPFXEY",
+        "fileDate": "03/28/2019",
+        "race": "Other",
+        "region": "Scio",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "EWIIFLMXMA",
+        "fileDate": "07/17/2000",
+        "race": "Black",
+        "region": "Saline",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "YNDPJHDRHM",
+        "fileDate": "06/22/2011",
+        "race": "Black",
+        "region": "Superior",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "CRUEABUDRJ",
+        "fileDate": "05/04/2014",
+        "race": "Other",
+        "region": "Pittsfield",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "RALILYNMKA",
+        "fileDate": "03/21/2004",
+        "race": "Black",
+        "region": "Sharon",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "QYQDVVMMLG",
+        "fileDate": "02/26/2013",
+        "race": "Black",
+        "region": "Superior",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "REOWLXCCCT",
+        "fileDate": "01/31/2009",
+        "race": "Asian",
+        "region": "Lydon",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "CXICIVJWQG",
+        "fileDate": "06/19/2010",
+        "race": "Asian",
+        "region": "Sharon",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "XODZCNDHSP",
+        "fileDate": "12/25/2011",
+        "race": "White",
+        "region": "Augusta",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "PGXDKJBXLB",
+        "fileDate": "10/11/2009",
+        "race": "Other",
+        "region": "Webster",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "JBKXFRICOU",
+        "fileDate": "05/07/2017",
+        "race": "Hispanic",
+        "region": "Bridgewater",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "IRKSAZKYZP",
+        "fileDate": "01/08/2004",
+        "race": "Asian",
+        "region": "Scio",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "MMWYYVQMMA",
+        "fileDate": "09/21/2008",
+        "race": "White",
+        "region": "Augusta",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "LIFOXQHDHT",
+        "fileDate": "09/04/2018",
+        "race": "Asian",
+        "region": "Lodi",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "AXLZEGTSBI",
+        "fileDate": "08/07/2016",
+        "race": "Hispanic",
+        "region": "Pittsfield",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "NYVFJXPJUL",
+        "fileDate": "06/13/2018",
+        "race": "Black",
+        "region": "Saline",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "OKBDUGXTGM",
+        "fileDate": "05/18/2018",
+        "race": "White",
+        "region": "Dextor",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "IZELXABIIS",
+        "fileDate": "11/26/2001",
+        "race": "Hispanic",
+        "region": "Salem",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "ZFFPHIMFVY",
+        "fileDate": "02/09/2000",
+        "race": "White",
+        "region": "Lima",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "ZITJMYHUBU",
+        "fileDate": "03/31/2019",
+        "race": "White",
+        "region": "Lodi",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "BSYRPFNDSK",
+        "fileDate": "08/01/2004",
+        "race": "Hispanic",
+        "region": "Webster",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "UWOPQKUYKY",
+        "fileDate": "09/22/2007",
+        "race": "White",
+        "region": "York",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "YZSANRUMXV",
+        "fileDate": "02/02/2002",
+        "race": "White",
+        "region": "Superior",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "JBWUPSEYBY",
+        "fileDate": "02/25/2001",
+        "race": "Other",
+        "region": "Superior",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "HIOLZJTTVF",
+        "fileDate": "05/26/2017",
+        "race": "Black",
+        "region": "Sharon",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "DNYURNVXNM",
+        "fileDate": "02/20/2014",
+        "race": "Black",
+        "region": "Superior",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "BZPSBTERMZ",
+        "fileDate": "08/11/2013",
+        "race": "White",
+        "region": "Pittsfield",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "GJPPEORVSW",
+        "fileDate": "05/05/2014",
+        "race": "Hispanic",
+        "region": "Webster",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "JMCFLOOQOS",
+        "fileDate": "01/11/2016",
+        "race": "Asian",
+        "region": "York",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "YZQJIAJCMX",
+        "fileDate": "03/17/2006",
+        "race": "White",
+        "region": "Sylvan",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "EJVGSWJFWQ",
+        "fileDate": "12/24/2003",
+        "race": "Asian",
+        "region": "Webster",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "OPDGCYWFGV",
+        "fileDate": "05/19/2016",
+        "race": "Asian",
+        "region": "Northfield,",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "CPVUFCMNTC",
+        "fileDate": "08/22/2000",
+        "race": "Asian",
+        "region": "Dextor",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "ASLMCJNBMF",
+        "fileDate": "07/18/2017",
+        "race": "White",
+        "region": "Augusta",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "ZNBZQHMHWD",
+        "fileDate": "03/18/2010",
+        "race": "Black",
+        "region": "Manchester",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "ALBWQPXMEV",
+        "fileDate": "12/11/2003",
+        "race": "Other",
+        "region": "Saline",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "SQPIMQFHQQ",
+        "fileDate": "02/18/2008",
+        "race": "Other",
+        "region": "Lodi",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "TUDPIOTKKO",
+        "fileDate": "02/09/2003",
+        "race": "Other",
+        "region": "Ypsilanti",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "UQMZWNEYST",
+        "fileDate": "09/02/2007",
+        "race": "Hispanic",
+        "region": "Sharon",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "NNQIZAHWFT",
+        "fileDate": "10/18/2019",
+        "race": "Other",
+        "region": "Superior",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "WNUYBFPRBF",
+        "fileDate": "01/15/2015",
+        "race": "Black",
+        "region": "Lodi",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "SOVMVVBKKT",
+        "fileDate": "03/04/2001",
+        "race": "Hispanic",
+        "region": "Saline",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "MRPUAAXLAW",
+        "fileDate": "11/10/2011",
+        "race": "Other",
+        "region": "Webster",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "QJRXHUCHRU",
+        "fileDate": "10/16/2007",
+        "race": "Black",
+        "region": "Bridgewater",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "HYOSVBRCYY",
+        "fileDate": "03/10/2012",
+        "race": "White",
+        "region": "Sylvan",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    },
+    {
+        "id": "OMSIZXKHYF",
+        "fileDate": "08/30/2013",
+        "race": "Other",
+        "region": "Freedom",
+        "outcome": "Declined Prosecution"
+    },
+    {
+        "id": "WYRJIZMQYK",
+        "fileDate": "05/06/2007",
+        "race": "Other",
+        "region": "Ann Arbor",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "VJQFMFIKJZ",
+        "fileDate": "07/22/2014",
+        "race": "Other",
+        "region": "Augusta",
+        "outcome": "Convicted"
+    },
+    {
+        "id": "UYNYCWFBVO",
+        "fileDate": "05/18/2015",
+        "race": "White",
+        "region": "Pittsfield",
+        "outcome": "Dismissed / Aquitted"
+    },
+    {
+        "id": "DXZKSJYFWK",
+        "fileDate": "02/19/2005",
+        "race": "Asian",
+        "region": "Scio",
+        "outcome": "Adjourned in Contemplation of Dismissal"
+    }
+]

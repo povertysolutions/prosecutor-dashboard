@@ -4,7 +4,7 @@
       <Sidebar></Sidebar>
         <section class="main">
           <h2>This is the dashboard.</h2>
-          <LineGraph class="graph"></LineGraph>
+          <LineGraph class="graph" :dataset="tempData"></LineGraph>
           <Legend class="legend"></Legend>
           <Details class="details"></Details>
         </section>
@@ -18,9 +18,21 @@ import LineGraph from "@/components/LineGraph"
 import Details from "@/components/Details"
 import Legend from "@/components/Legend"
 
+import WarrentData from "../models.js"
+
 export default {
   name: "Dashboard",
-  components: { Sidebar, LineGraph, Details, Legend }
+  components: { Sidebar, LineGraph, Details, Legend },
+  data(){
+    return {
+      tempData: []
+    }
+  },
+  mounted(){
+    //this.tempData =  [ { data: [40, 20, 12] } ];
+
+    this.tempData = WarrentData.getDataBy("race");
+  }
 }
 
 </script>
