@@ -1,5 +1,13 @@
 import data from "../assets/temp-data.json"
 
+var colors = {
+ "Black" : "#124E98",
+ "White" : "#6979D3",
+ "Asian" : "#FFA600",
+ "Hispanic" : "#955196",
+ "Other" : "#DD5182"
+}
+
 var models = {
   getDataBy(field){
     //console.log(data)
@@ -30,7 +38,7 @@ var models = {
 
     //console.log(sorted);
     for (var type in sorted){
-      sorted[type] = sorted[type].sort((a, b) => (a[year] > b.year) ? 1 : -1);
+      sorted[type] = sorted[type].sort((a, b) => (a.year > b.year) ? 1 : -1);
     }
 
     var output = [];
@@ -47,7 +55,9 @@ var models = {
 
       formatted.sort((a, b) => (a.x > b.x) ? 1 : -1);
 
-      output.push( { "data" : formatted})
+      var color = colors[type];
+      console.log(color);
+      output.push( { "data" : formatted, "borderColor": color})
       //console.log(sorted[type])
     }
 
