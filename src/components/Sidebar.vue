@@ -65,30 +65,12 @@ h3{
   color: $color-medium-grey;
   width: 100%;
   text-align: left;
-  margin-left: 35px;
-  margin-bottom: 5px;
+  padding: 10px 15px;
   //font-size: 1.1rem;
-  &.selected{
-    //font-weight: bold;
+  &.selected {
+    background-color: #ffffff33;
     color: $color-white;
-  }
-
-  .circle{
-
-    border: $color-green 2px solid;
-    width: 1rem;
-    height: 1rem;
-    transform: translate(calc(-1rem - 10px), calc(-1rem - 3px));
-    border-radius: 30px;
-
-
-    &.selected{
-      background-color: $color-green;
-    }
-
-  }
-  &.selected{
-
+    font-weight: 600;
   }
 
 }

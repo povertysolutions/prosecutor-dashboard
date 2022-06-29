@@ -6,7 +6,8 @@
           <h2>This is the dashboard.</h2>
           <LineGraph class="graph" :dataset="tempData"></LineGraph>
           <Legend class="legend"></Legend>
-          <Details class="details"></Details>
+          <!-- <Details class="details"></Details> -->
+          <Filter class="filter"></Filter>
         </section>
     </div>
   </div>
@@ -17,12 +18,13 @@ import Sidebar from "@/components/Sidebar"
 import LineGraph from "@/components/LineGraph"
 import Details from "@/components/Details"
 import Legend from "@/components/Legend"
+import Filter from "@/components/Filter"
 
 import WarrentData from "../models.js"
 
 export default {
   name: "Dashboard",
-  components: { Sidebar, LineGraph, Details, Legend },
+  components: { Sidebar, LineGraph, Details, Legend, Filter },
   data(){
     return {
       tempData: []
@@ -76,6 +78,10 @@ h2{
   min-height: 150px;
   height: 25vh;
   margin-top: 1em;
+}
+
+.filter{
+  display: inline-block;
 }
 
 </style>

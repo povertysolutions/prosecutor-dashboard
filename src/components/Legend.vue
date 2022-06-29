@@ -66,7 +66,6 @@ h3{
   margin-bottom: 5px;
   list-style: none;
   vertical-align: middle;
-  //font-size: 1.1rem;
 
   .circle{
     display: inline-block;
@@ -74,7 +73,6 @@ h3{
     background-color: $color-green;
     width: 1rem;
     height: 1rem;
-    border-radius: 30px;
   }
 }
 
