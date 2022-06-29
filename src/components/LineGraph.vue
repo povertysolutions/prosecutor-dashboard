@@ -50,25 +50,49 @@ export default {
           }
         },
         scales: {
-              xAxes: {
-                  type: "time",
-                  time: {
-                      format: 'DD/MM/YYYY',
-                      tooltipFormat: 'll',
-                      unit: 'year',
-                  },
-                  scaleLabel: {
-                      display: true,
-                      labelString: 'Date'
-                  }
-              },
-              yAxes: {
-                  scaleLabel: {
-                      display: true,
-                      labelString: 'value'
-                  }
-              }
-          }
+            xAxes: {
+                type: 'time',
+                time: {
+                  unit: 'year',
+                  format: 'DD/MM/YYYY'
+                }
+                // unit: 'year'
+                // ticks: {
+                //     suggestedMin: '2010/01/01',
+                // },
+                // time: {
+                //     min: '2010/01/01',
+                //     max: '2020/01/01'
+                // }
+            },
+            yAxes: {
+                // suggestedMin: 0,
+                // suggestedMax: 10,
+                scaleLabel: {
+                    display: true
+                }
+            }
+        }
+        // scales: {
+        //       xAxes: {
+        //           type: "time",
+        //           time: {
+        //               format: 'DD/MM/YYYY',
+        //               tooltipFormat: 'll',
+        //               unit: 'year',
+        //           },
+        //           scaleLabel: {
+        //               display: true,
+        //               labelString: 'Date'
+        //           }
+        //       },
+        //       yAxes: {
+        //           scaleLabel: {
+        //               display: true,
+        //               labelString: 'value'
+        //           }
+        //       }
+        //   }
       }
     }
   },

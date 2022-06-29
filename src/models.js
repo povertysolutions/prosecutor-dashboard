@@ -18,16 +18,40 @@ var models = {
       }
 
       var date = new Date(Date.parse(item["fileDate"]));
-      sorted[value].push(date.toISOString())
+      var year = "+" + date.getFullYear().toString();
+      if (sorted[value][year] == null){
+        sorted[value][year] = 0;
+      }
+      sorted[value][year] += 1;
+
+      //sorted[value].push(date.toISOString())
+      //sorted[value].push({"x" : item["fileDate"], "y" : 1})
+    }
+
+    //console.log(sorted);
+    for (var type in sorted){
+      sorted[type] = sorted[type].sort((a, b) => (a[year] > b.year) ? 1 : -1);
     }
 
     var output = [];
 
     for (var type in sorted){
-      //output.push( { "data" : sorted[type]})
-      output.push( { "data" : item["fileDate"]})
+      var formatted = [];
+      var years = sorted[type];
+
+      for (var year in years){
+        var correctedYear = year.slice(1);
+        //console.log(correctedYear);
+        formatted.push({"x" : correctedYear, "y" : years[year]})
+      }
+
+      formatted.sort((a, b) => (a.x > b.x) ? 1 : -1);
+
+      output.push( { "data" : formatted})
       //console.log(sorted[type])
     }
+
+    //console.log(output);
 
     return output;
 
