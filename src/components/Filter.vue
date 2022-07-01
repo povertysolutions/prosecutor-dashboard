@@ -2,7 +2,7 @@
     <div class="filter">
       <div class="fieldGroup">
         <h4>Sort by</h4>
-        <button v-for="(field, i) in fields"
+        <button v-for="(field, i) in dataset"
                 :class="['field', currentIndex == i ? 'selected' : '']"
                 @click="press(i)">
           <div :class="['circle', currentIndex == i ? 'selected' : '']"></div>
@@ -29,26 +29,11 @@ import { endOfMonth, endOfYear, startOfMonth, startOfYear, subMonths } from 'dat
 
 export default {
   props: {
-    msg: String
+    dataset: Array
   },
   data(){
     return{
       currentIndex: 0,
-      fields:
-      [
-        {
-          "label" : "Race"
-        },
-        {
-          "label" : "Location"
-        },
-        {
-          "label" : "Case Outcome"
-        },
-        {
-          "label" : "Charge Filed"
-        }
-      ],
       dateModel: null,
       dateRange: []
 
@@ -57,6 +42,7 @@ export default {
   methods:{
     press(index){
       this.currentIndex = index;
+      this.$emit('fieldChanged', this.dataset[index].field);
     }
   },
   mounted(){

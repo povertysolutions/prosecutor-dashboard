@@ -7,7 +7,7 @@
           <LineGraph class="graph" :dataset="chartData"></LineGraph>
           <Legend class="legend" :dataset="legendData"></Legend>
           <!-- <Details class="details"></Details> -->
-          <Filter class="filter"></Filter>
+          <Filter class="filter" :dataset="filters" @fieldChanged="sort"></Filter>
         </section>
     </div>
   </div>
@@ -28,29 +28,50 @@ export default {
   data(){
     return {
       colors: ["#124E98", "#6979D3", "#FFA600", "#955196", "#DD5182" ],
-
+      filters:
+      [
+        {
+          "label" : "Race",
+          "field" : "race"
+        },
+        {
+          "label" : "Location",
+          "field" : "region"
+        },
+        {
+          "label" : "Case Outcome",
+          "field" : "outcome"
+        },
+        {
+          "label" : "Charge Filed",
+          "field" : "outcome"
+        }
+      ],
       chartData: [],
       legendData: []
     }
   },
-  mounted(){
-    //this.tempData =  [ { data: [40, 20, 12] } ];
+  methods:{
+    sort(field){
+      console.log("field: " + field);
+      var currentData = WarrentData.getDataBy(field);
 
-    var currentData = WarrentData.getDataBy("race");
+      var chart = [];
+      var legend = [];
+      var index = 0;
+      for (var type in currentData){
+        chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
+        legend.push({"label" : type, "color" : this.colors[index]})
+        index++;
+      }
 
-    var chart = [];
-    var legend = [];
-    var index = 0;
-    for (var type in currentData){
-      console.log("type:" + type)
-      console.log("type:" + currentData[type])
-      chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
-      legend.push({"label" : type, "color" : this.colors[index]})
-      index++;
+      this.chartData = chart;
+      this.legendData = legend;
     }
-
-    this.chartData = chart;
-    this.legendData = legend;
+  },
+  mounted(){
+    var defaultField = this.filters[0].field;
+    this.sort(defaultField);
   }
 }
 
