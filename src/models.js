@@ -10,17 +10,11 @@ var colors = {
 
 var models = {
   getDataBy(field){
-    //console.log(data)
-    // if (data[0][field] == undefined){
-    //   console.log("field does not exist!")
-    //   return;
-    // }
-
     var sorted = {}
+
     for (var i in data){
       var item = data[i];
       var value = item[field];
-      //console.log(data[i]);
       if (sorted[value] == null){
         sorted[value] = [];
       }
@@ -31,17 +25,13 @@ var models = {
         sorted[value][year] = 0;
       }
       sorted[value][year] += 1;
-
-      //sorted[value].push(date.toISOString())
-      //sorted[value].push({"x" : item["fileDate"], "y" : 1})
     }
 
-    //console.log(sorted);
     for (var type in sorted){
       sorted[type] = sorted[type].sort((a, b) => (a.year > b.year) ? 1 : -1);
     }
 
-    var output = [];
+    var output = {};
 
     for (var type in sorted){
       var formatted = [];
@@ -57,7 +47,9 @@ var models = {
 
       var color = colors[type];
       console.log(color);
-      output.push( { "data" : formatted, "borderColor": color})
+      //output.push( { "data" : formatted, "borderColor": color})
+
+      output[type] = formatted;
       //console.log(sorted[type])
     }
 
@@ -65,10 +57,7 @@ var models = {
 
     return output;
 
-    //[ { data: [40, 20, 12] } ];
-
     //console.log(sorted)
-
   }
 }
 

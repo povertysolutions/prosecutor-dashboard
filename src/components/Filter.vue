@@ -1,7 +1,7 @@
 <template>
     <div class="filter">
-      <h3>Filters</h3>
       <div class="fieldGroup">
+        <h4>Sort by</h4>
         <button v-for="(field, i) in fields"
                 :class="['field', currentIndex == i ? 'selected' : '']"
                 @click="press(i)">
@@ -10,10 +10,23 @@
 
         </button>
       </div>
+
+      <div class="dateGroup">
+        <h4>Date Range</h4>
+        <Datepicker range monthPicker
+                    class="datepicker"
+                    v-model="dateModel"
+                    :presetRanges="dateRange"
+                    placeholder="01/2000 - 01/2020"/>
+      </div>
+
     </div>
 </template>
 
 <script>
+import { ref } from 'vue';
+import { endOfMonth, endOfYear, startOfMonth, startOfYear, subMonths } from 'date-fns';
+
 export default {
   props: {
     msg: String
@@ -35,7 +48,9 @@ export default {
         {
           "label" : "Charge Filed"
         }
-      ]
+      ],
+      dateModel: null,
+      dateRange: []
 
     }
   },
@@ -43,6 +58,22 @@ export default {
     press(index){
       this.currentIndex = index;
     }
+  },
+  mounted(){
+    this.dateModel = ref();
+    // var startDate = new Date(Date.parse("01/2000"));
+    // var endDate = new Date(Date.parse("01/2020"));
+    // this.dateRange = [startDate, endDate];
+
+    // this.dateRange = ref([
+    //       { label: 'Today', range: [new Date(), new Date()] },
+    //       { label: 'This month', range: [startOfMonth(new Date()), endOfMonth(new Date())] },
+    //       {
+    //         label: 'Last month',
+    //         range: [startOfMonth(subMonths(new Date(), 1)), endOfMonth(subMonths(new Date(), 1))],
+    //       },
+    //       { label: 'This year', range: [startOfYear(new Date()), endOfYear(new Date())] },
+    //     ]);
   }
 
 }
@@ -55,10 +86,20 @@ export default {
 
 }
 
-h3{
-  margin: 1rem;
+h4{
+  padding: 1rem 0;
 }
 
+.fieldGroup{
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+
+.dateGroup{
+  display: inline-block;
+  vertical-align: top;
+}
 
 .field{
   display: inline-block;
@@ -87,5 +128,7 @@ h3{
     }
   }
 }
+
+
 
 </style>

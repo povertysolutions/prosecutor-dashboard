@@ -4,8 +4,8 @@
       <Sidebar></Sidebar>
         <section class="main">
           <h2>This is the dashboard.</h2>
-          <LineGraph class="graph" :dataset="tempData"></LineGraph>
-          <Legend class="legend"></Legend>
+          <LineGraph class="graph" :dataset="chartData"></LineGraph>
+          <Legend class="legend" :dataset="legendData"></Legend>
           <!-- <Details class="details"></Details> -->
           <Filter class="filter"></Filter>
         </section>
@@ -27,13 +27,30 @@ export default {
   components: { Sidebar, LineGraph, Details, Legend, Filter },
   data(){
     return {
-      tempData: []
+      colors: ["#124E98", "#6979D3", "#FFA600", "#955196", "#DD5182" ],
+
+      chartData: [],
+      legendData: []
     }
   },
   mounted(){
     //this.tempData =  [ { data: [40, 20, 12] } ];
 
-    this.tempData = WarrentData.getDataBy("race");
+    var currentData = WarrentData.getDataBy("race");
+
+    var chart = [];
+    var legend = [];
+    var index = 0;
+    for (var type in currentData){
+      console.log("type:" + type)
+      console.log("type:" + currentData[type])
+      chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
+      legend.push({"label" : type, "color" : this.colors[index]})
+      index++;
+    }
+
+    this.chartData = chart;
+    this.legendData = legend;
   }
 }
 

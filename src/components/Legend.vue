@@ -2,8 +2,8 @@
     <div class="legend">
       <h3>Legend</h3>
       <ul class="itemGroups">
-        <li v-for="(item, i) in topics" class="item">
-          <div class="circle"></div>
+        <li v-for="(item, i) in dataset" class="item">
+          <div class="circle" :style="{'background-color' : item.color}"></div>
           {{ item.label }}
         </li>
       </ul>
@@ -14,7 +14,8 @@
 export default {
   name: "Legend",
   props: {
-    msg: String
+    msg: String,
+    dataset: Array
   },
   data(){
     return{
@@ -22,7 +23,7 @@ export default {
       topics:
       [
         {
-          "label" : "Black"
+          "field" : "Black"
         },
         {
           "label" : "White"
