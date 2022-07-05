@@ -60,15 +60,11 @@ export default {
                 time: {
                   unit: 'year',
                   format: 'DD/MM/YYYY'
-                }
+                },
                 // unit: 'year'
                 // ticks: {
                 //     suggestedMin: '2010/01/01',
                 // },
-                // time: {
-                //     min: '2010/01/01',
-                //     max: '2020/01/01'
-                // }
             },
             yAxes: {
                 // suggestedMin: 0,

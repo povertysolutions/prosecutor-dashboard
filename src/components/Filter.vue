@@ -13,7 +13,7 @@
 
       <div class="dateGroup">
         <h4>Date Range</h4>
-        <Datepicker range monthPicker
+        <Datepicker range monthPicker autoApply
                     class="datepicker"
                     v-model="dateModel"
                     :presetRanges="dateRange"
@@ -42,7 +42,16 @@ export default {
   methods:{
     press(index){
       this.currentIndex = index;
-      this.$emit('fieldChanged', this.dataset[index].field);
+      this.$emit('filterChanged', this.dataset[index]);
+    }
+  },
+  watch:{
+    dateModel(){
+      //console.log(this.dateModel);
+      this.$emit('dateChanged', this.dateModel)
+      for (var i in this.dateModel){
+        //console.log(this.dateModel[i]);
+      }
     }
   },
   mounted(){

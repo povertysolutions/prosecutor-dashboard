@@ -5,9 +5,13 @@
         <section class="main">
           <h2>This is the dashboard.</h2>
           <LineGraph class="graph" :dataset="chartData"></LineGraph>
-          <Legend class="legend" :dataset="legendData"></Legend>
+          <Legend class="legend" :title="currentLegendTitle" :dataset="legendData"></Legend>
           <!-- <Details class="details"></Details> -->
-          <Filter class="filter" :dataset="filters" @fieldChanged="sort"></Filter>
+          <Filter class="filter"
+                  :dataset="filters"
+                  @filterChanged="updateFilter"
+                  @dateChanged="updateDate">
+          </Filter>
         </section>
     </div>
   </div>
@@ -27,7 +31,7 @@ export default {
   components: { Sidebar, LineGraph, Details, Legend, Filter },
   data(){
     return {
-      colors: ["#124E98", "#6979D3", "#FFA600", "#955196", "#DD5182" ],
+      colors: ["#6979D3", "#FFA600", "#7b247d", "#33557d", "#f5e16e", "#DD5182", "#44279c", "#b670b8" ],
       filters:
       [
         {
@@ -44,16 +48,51 @@ export default {
         },
         {
           "label" : "Charge Filed",
-          "field" : "outcome"
+          "field" : "type"
         }
       ],
       chartData: [],
-      legendData: []
+      legendData: [],
+      currentFilter: null
+    }
+  },
+  computed:{
+    currentLegendTitle(){
+      if (this.currentFilter && this.currentFilter.label){
+        return this.currentFilter.label;
+      }
+      return "";
     }
   },
   methods:{
-    sort(field){
-      console.log("field: " + field);
+    updateFilter(filter){
+      this.currentFilter = filter;
+      this.sort();
+    },
+    updateDate(dateModel){
+      if (dateModel && dateModel.length === 2){
+
+        //console.log("updateDate: " + dateModel.length);
+        if (dateModel[0] && dateModel[1]){
+          var currentData = WarrentData.getByDate(dateModel);
+          this.chartData = [];
+
+          setTimeout(() => {
+            var chart = [];
+            var index = 0;
+            for (var type in currentData){
+              chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
+              index++;
+            }
+            this.chartData = chart;
+          }, 500);
+
+        }
+
+      }
+    },
+    sort(){
+      var field = this.currentFilter.field;
       var currentData = WarrentData.getDataBy(field);
 
       var chart = [];
@@ -70,8 +109,8 @@ export default {
     }
   },
   mounted(){
-    var defaultField = this.filters[0].field;
-    this.sort(defaultField);
+    this.currentFilter = this.filters[0];
+    this.sort();
   }
 }
 
@@ -85,7 +124,6 @@ export default {
   //padding: 1rem;
   //border: blue 2px solid;
 }
-
 
 .main{
   margin-left: 14rem;

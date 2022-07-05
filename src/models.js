@@ -1,12 +1,6 @@
 import data from "../assets/temp-data.json"
 
-var colors = {
- "Black" : "#124E98",
- "White" : "#6979D3",
- "Asian" : "#FFA600",
- "Hispanic" : "#955196",
- "Other" : "#DD5182"
-}
+var currentModel = []
 
 var models = {
   getDataBy(field){
@@ -44,21 +38,52 @@ var models = {
       }
 
       formatted.sort((a, b) => (a.x > b.x) ? 1 : -1);
-
-      var color = colors[type];
-      console.log(color);
-      //output.push( { "data" : formatted, "borderColor": color})
-
       output[type] = formatted;
       //console.log(sorted[type])
     }
 
     //console.log(output);
-
+    currentModel = output;
     return output;
 
     //console.log(sorted)
+  },
+
+  getByDate(dateModel){
+    console.log("getByDate...")
+    //console.log(dateModel[1]);
+    var start = dateModel[0];
+    var startDate = new Date(start.year, start.month);
+    console.log(startDate)
+
+    var end = dateModel[1];
+    var endDate = new Date(end.year, end.month);
+    console.log(endDate)
+
+    var output = {};
+    console.log(currentModel)
+    for (var type in currentModel){
+      var filteredArray = [];
+      var array = currentModel[type];
+
+      for (var i in array){
+        //console.log("date: " + array[i].x);
+        var currentDate = new Date(array[i].x, 1);
+        //console.log(currentDate)
+
+        if (currentDate >= startDate && currentDate <= endDate){
+          filteredArray.push(array[i]);
+        }
+      }
+
+      output[type] = filteredArray;
+    }
+
+    console.log(output);
+    return output;
   }
 }
+
+
 
 export default models;
