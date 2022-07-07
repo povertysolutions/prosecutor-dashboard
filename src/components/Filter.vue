@@ -82,18 +82,22 @@ export default {
 }
 
 h4{
-  padding: 1rem 0;
+  //padding: .5rem 0;
 }
 
 .fieldGroup{
   display: inline-block;
   vertical-align: top;
   width: 50%;
+  //padding: 0 1rem;
+  //margin: 0 1rem;
 }
 
 .dateGroup{
   display: inline-block;
   vertical-align: top;
+  width: 50%;
+  //margin: 0 1rem;
 }
 
 .field{

@@ -6,12 +6,7 @@
           <h2>This is the dashboard.</h2>
           <LineGraph class="graph" :dataset="chartData"></LineGraph>
           <Legend class="legend" :title="currentLegendTitle" :dataset="legendData"></Legend>
-          <!-- <Details class="details"></Details> -->
-          <Filter class="filter"
-                  :dataset="filters"
-                  @filterChanged="updateFilter"
-                  @dateChanged="updateDate">
-          </Filter>
+          <Details class="details" :filters="filters" @filterChanged="updateFilter" @dateChanged="updateDate"></Details>
         </section>
     </div>
   </div>
@@ -154,10 +149,6 @@ h2{
   min-height: 150px;
   height: 25vh;
   margin-top: 1em;
-}
-
-.filter{
-  display: inline-block;
 }
 
 </style>

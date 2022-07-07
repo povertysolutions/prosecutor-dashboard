@@ -8,19 +8,29 @@
         </button>
       </div>
       <div class="bg">
-        <p>{{sections[currentIndex].body}}</p>
+        <Filter class="filter"
+                v-if="showFilter"
+                :dataset="filters"
+                @filterChanged="filterChanged"
+                @dateChanged="dateChanged">
+        </Filter>
+        <p :class="[showFilter ? 'hidden' : '']">{{sections[currentIndex].body}}</p>
+        <!-- <div class="test"></div> -->
       </div>
     </div>
 </template>
 
 <script>
+import Filter from "@/components/Filter"
 export default {
+  name: "Details",
+  components: { Filter },
   props: {
-    msg: String
+    filters: Array
   },
   data(){
     return{
-      currentIndex: 0,
+      currentIndex: 3,
       sections:
       [
         {
@@ -34,6 +44,10 @@ export default {
         {
           "title" : "Goals",
           "body" : "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+        },
+        {
+          "title" : "Filters",
+          "body" : "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
         }
       ]
 
@@ -42,6 +56,19 @@ export default {
   methods:{
     press(index){
       this.currentIndex = index;
+    },
+
+    filterChanged(data){
+      this.$emit('filterChanged', data)
+    },
+    dateChanged(data){
+      this.$emit('dateChanged', data)
+    }
+  },
+  computed:{
+    showFilter(){
+      return this.currentIndex == this.sections.length - 1;
+
     }
   }
 
@@ -61,7 +88,8 @@ export default {
   color: $color-white;
   margin: 0 2px;
   border-radius: $background-radius $background-radius 0 0;
-  padding: 5px 80px;
+  width: 24%;
+  padding: 5px 0;
 
   &.selected{
     background-color: $color-light-grey;
@@ -84,7 +112,20 @@ export default {
   p{
     margin: 0;
     padding: 1rem;
+    //border: 2px solid magenta;
+
+    &.hidden{
+      border: 2px solid magenta;
+      opacity: 0;
+    }
+  }
+
+  .filter{
+    padding: 1rem;
   }
 }
+
+
+
 
 </style>
