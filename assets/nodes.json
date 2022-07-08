@@ -1,0 +1,84 @@
+[
+  {
+    "class": "light",
+    "draggable": "false",
+    "id": "1",
+    "label": "Node 1",
+    "position": {
+      "x": "250",
+      "y": "5"
+    },
+    "type": "input"
+  },
+  {
+    "class": "light",
+    "id": "2",
+    "label": "Node 2",
+    "position": {
+      "x": "100",
+      "y": "100"
+    },
+    "type": "output"
+  },
+  {
+    "class": "light",
+    "id": "3",
+    "label": "Node 3",
+    "position": {
+      "x": "400",
+      "y": "100"
+    }
+  },
+  {
+    "class": "light",
+    "id": "4",
+    "label": "Node 4",
+    "position": {
+      "x": "150",
+      "y": "200"
+    }
+  },
+  {
+    "class": "light",
+    "id": "5",
+    "label": "Node 5",
+    "position": {
+      "x": "300",
+      "y": "300"
+    },
+    "type": "output"
+  },
+  {
+    "animated": "true",
+    "id": "e1-2",
+    "source": "1",
+    "target": "2"
+  },
+  {
+    "id": "e1-3",
+    "label": "edge with arrowhead",
+    "markerEnd": "MarkerType.Arrow",
+    "source": "1",
+    "target": "3"
+  },
+  {
+    "id": "e4-5",
+    "label": "step-edge",
+    "labelBgstyle": {
+      "fill": "orange"
+    },
+    "source": "4",
+    "style": {
+      "stroke": "orange"
+    },
+    "target": "5",
+    "type": "step"
+  },
+  {
+    "id": "e3-4",
+    "label": "smoothstep-edge",
+    "source": "3",
+    "target": "4",
+    "type": "smoothstep"
+  }
+]
