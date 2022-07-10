@@ -1,10 +1,10 @@
 <template>
-  <div style="height: 300px">
+  <div >
     <VueFlow v-model="elements"
              class="basicflow"
              :default-zoom="1"
              :min-zoom="1" :max-zoom="1"
-             :nodes-draggable="isDraggable"
+             :nodes-draggable="false"
              @pane-ready="onLoad">
     </VueFlow>
   </div>
@@ -13,6 +13,7 @@
 <script>
 import { VueFlow, ConnectionMode, Controls, addEdge, updateEdge, MarkerType } from '@braks/vue-flow'
 import nodes from "../../assets/nodes.json"
+import CustomEdge from './CustomEdge.vue'
 
 const onLoad = (flowInstance) => flowInstance.fitView()
 const onEdgeUpdateStart = (edge) => console.log('start update', edge)
@@ -24,7 +25,7 @@ const onConnect = (params) => (elements.value = addEdge(params, elements.value))
 
 export default {
   name: "Flowchart",
-  components: { VueFlow },
+  components: { VueFlow, CustomEdge },
   data() {
     return {
       elements: [
@@ -33,18 +34,9 @@ export default {
         { id: '3', label: 'Node 3', position: { x: 400, y: 100 }, class: 'light' },
         { id: '4', label: 'Node 4', position: { x: 150, y: 200 }, class: 'light' },
         { id: '5', type: 'output', label: 'Node 5', position: { x: 300, y: 300 }, class: 'light' },
-        { id: 'e1-2', source: '1', target: '2', animated: true },
-        { id: 'e1-3', label: 'edge with arrowhead', source: '1', target: '3', markerEnd: MarkerType.Arrow },
-        {
-          id: 'e4-5',
-          type: 'step',
-          label: 'step-edge',
-          source: '4',
-          target: '5',
-          style: { stroke: 'orange' },
-          labelBgStyle: { fill: 'orange' },
-        },
-        { id: 'e3-4', type: 'smoothstep', label: 'smoothstep-edge', source: '3', target: '4' }
+        { id: 'e1-2', source: '1', target: '2',  template: CustomEdge},
+        { id: 'e1-3',  source: '1', target: '3', markerEnd: MarkerType.Arrow },
+        { id: 'e3-4', source: '3', target: '4', markerEnd: MarkerType.ArrowClosed,  marker: { width: 150, height: 100} }
       ]
     }
   },
@@ -63,14 +55,31 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 @import "@braks/vue-flow/dist/style.css";
-@import "@braks/vue-flow/dist/theme-default.css";
+@import "@/styles/main.scss";
+// @import "@braks/vue-flow/dist/theme-default.css";
 
 .basicflow{
   position: fixed;
+  width: 100%;
   height: 100%;
+}
+
+.vue-flow__node{
+  background-color: $color-purple;
+  border-radius: 10px;
+
+  div{
+    font-size: 20px;
+    padding: 10px 20px;
+    color: $color-white;
+  }
+}
+
+.vue-flow__edges{
+
 }
 
 </style>
