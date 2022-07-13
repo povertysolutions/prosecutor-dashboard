@@ -1,17 +1,14 @@
 <template>
-  <div class="resources">
-    <h1>This is the resource page.</h1>
-    <Flowchart></Flowchart>
+  <div class="view">
+    <h2>This is the resource page.</h2>
 
   </div>
 </template>
 
 <script>
-import Flowchart from "@/components/Flowchart"
 
 export default {
-  name: "Resources",
-  components: { Flowchart }
+  name: "Resources"
 }
 
 
@@ -19,11 +16,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.resources{
+.view{
   position: fixed;
-  width: 100%;
-  height: 100%;
-  border: 2px solid magenta;
+  margin: 5rem 2rem;
 }
 
 </style>

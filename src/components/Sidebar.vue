@@ -60,6 +60,7 @@ export default {
 h3{
   color: $color-white;
   margin: 1rem;
+  margin-top: 5rem;
 }
 .topic{
   color: $color-medium-grey;

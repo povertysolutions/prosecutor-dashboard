@@ -4,9 +4,11 @@
       <!-- <Module class="test" msg="You did it!"/> -->
 
       <header>
+        <h3> Prosecutor Dashboard </h3>
         <nav>
           <RouterLink class="link header" to="/">Home</RouterLink>
           <RouterLink class="link header" to="/dashboard">Data</RouterLink>
+          <RouterLink class="link header" to="/background">Flowchart</RouterLink>
           <RouterLink class="link header" to="/about">About</RouterLink>
           <RouterLink class="link header" to="/resources">Resources</RouterLink>
         </nav>
@@ -14,7 +16,8 @@
     </div>
   </header>
 
-  <RouterView />
+
+  <RouterView class="router"/>
 </template>
 
 <script setup>
@@ -37,9 +40,17 @@ body{
 }
 
 header {
+  position: fixed;
   width: 100vw;
   height: 4rem;
   background-color: $color-green;
+
+  h3{
+    position: absolute;
+    color: $color-white;
+    margin: 1rem 1rem;
+    letter-spacing: 1px;
+  }
 }
 
 .logo {
@@ -65,6 +76,10 @@ nav {
       color: $color-green;
       background-color: $color-white;
     }
+  }
+
+  .router{
+    margin-top: 4rem;
   }
 }
 

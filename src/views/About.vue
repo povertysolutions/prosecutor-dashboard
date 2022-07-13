@@ -1,5 +1,20 @@
 <template>
   <div class="view">
-    <h1>This is the about page.</h1>
+    <h2>This is the about page.</h2>
   </div>
 </template>
+
+<script>
+export default {
+  name: "About"
+}
+
+</script>
+
+<style lang="scss" scoped>
+.view{
+  position: fixed;
+  margin: 5rem 2rem;
+}
+
+</style>

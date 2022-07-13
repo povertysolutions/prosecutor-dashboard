@@ -118,15 +118,18 @@ export default {
   //margin: 0 2rem;
   //padding: 1rem;
   //border: blue 2px solid;
+
 }
 
 .main{
   margin-left: 14rem;
   position: absolute;
+  margin-top: 4rem;
+
 }
 
 h2{
-  margin: 1rem 0;
+  margin: 2rem 0;
 }
 
 .graph{
