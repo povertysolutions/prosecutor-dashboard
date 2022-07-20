@@ -15,13 +15,42 @@
     </div>
   </header>
 
-
   <RouterView class="router"/>
+  <footer>
+    <img class="logo">
+
+    <div>
+      <ul>
+        <img>
+        <p>1234 Fake Street, MI 1235</p>
+      </ul>
+      <ul>
+        <img>
+        <p>(123) 456-7890</p>
+      </ul>
+      <ul>
+        <img>
+        <p>email@client.com</p>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <img>
+        <p>@twitter_handle</p>
+      </ul>
+      <ul>
+        <img>
+        <p>Facebook Page</p>
+      </ul>
+    </div>
+  </footer>
 </template>
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import Module from "@/components/Module.vue";
+import footer from "../assets/footer.json"
+
 
 
 </script>
@@ -44,6 +73,7 @@ header {
   height: 4rem;
   background-color: $color-green;
   z-index: 1;
+  top: 0;
 
   .landing{
     position: absolute;
@@ -87,6 +117,48 @@ nav {
   }
 }
 
+footer {
+  width: 100vw;
+  height: 12rem;
+  background-color: $color-green;
+  //position:fixed;
+    //bottom:0;
+  display: block;
+
+  .logo{
+    display: inline-block;
+    margin: 2rem 2rem;
+    width: 5rem;
+    height: 5rem;
+    background-color: $color-light-grey;
+    margin-right: 10rem;
+
+  }
+
+  div{
+    margin-top: 1rem;
+    vertical-align: top;
+    display: inline-block;
+  }
+
+  ul{
+    img{
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-color: $color-white;
+      border-radius: 50%;
+      margin-right: .5rem;
+      vertical-align: middle;
+    }
+    p{
+      display: inline-block;
+      color: $color-white;
+      vertical-align: middle;
+      margin: 0;
+    }
+  }
+}
 
 
 </style>

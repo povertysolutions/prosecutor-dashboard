@@ -29,7 +29,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/styles/main.scss";
 .about{
-  position: absolute;
+  //position: absolute;
   margin: 5rem 10rem;
   padding: 2rem;
   min-width: 500px;

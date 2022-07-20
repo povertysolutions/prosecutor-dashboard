@@ -95,7 +95,6 @@ export default {
 <style lang="scss" scoped>
 @import "@/styles/main.scss";
 .landing{
-  position: absolute;
   margin: 5rem 2rem;
   padding: 2rem;
   //border: 1px blue solid;

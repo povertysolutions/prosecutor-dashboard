@@ -17,9 +17,8 @@ export default {
 
 <style lang="scss" scoped>
 .background{
-  position: fixed;
   margin: 5rem 2rem;
   width: 100%;
-  height: 100%;
+  height: 800px;
 }
 </style>

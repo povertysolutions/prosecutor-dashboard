@@ -1,0 +1,22 @@
+{
+  "address": {
+    "en": "1234 Fake Street, MI 1235",
+    "es": ""
+  },
+  "email": {
+    "en": "email@client.com",
+    "es": ""
+  },
+  "phone": {
+    "en": "(123) 456-7890",
+    "es": ""
+  },
+  "twitter": {
+    "en": "@twitter_handle",
+    "es": ""
+  },
+  "facebook": {
+    "en": "Facebook Page",
+    "es": ""
+  }
+}

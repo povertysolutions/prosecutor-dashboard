@@ -123,9 +123,7 @@ export default {
 
 .main{
   margin-left: 14rem;
-  position: absolute;
   margin-top: 4rem;
-
 }
 
 h2{
@@ -152,6 +150,7 @@ h2{
   min-height: 150px;
   height: 25vh;
   margin-top: 1em;
+  padding-bottom: 9.5rem;
 }
 
 </style>
