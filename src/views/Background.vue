@@ -2,7 +2,6 @@
   <div class="background">
     <h2>This is the flowchart page.</h2>
     <Flowchart></Flowchart>
-
   </div>
 </template>
 
@@ -14,8 +13,6 @@ export default {
   components: { Flowchart }
 }
 
-
-
 </script>
 
 <style lang="scss" scoped>
@@ -25,6 +22,4 @@ export default {
   width: 100%;
   height: 100%;
 }
-
-
 </style>

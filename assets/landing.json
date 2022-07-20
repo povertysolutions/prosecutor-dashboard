@@ -1,0 +1,57 @@
+[
+  "intro-header" :
+    {
+      "en" : "Welcome to the Washtenaw County Prosecutor Dashboard",
+      "es" : ""
+    },
+  "intro-body" :
+    {
+      "en" : "A data dashboard and resource center to foster an accountable, transparent, and fair prosecutorial system in Washtenaw County.",
+      "es" : ""
+    },
+  "data-button" :
+    {
+      "en" : "Explore data",
+      "es" : ""
+    },
+  "credit-header" :
+    {
+      "en" : "Brought to you by",
+      "es" : ""
+    },
+  "county-header" :
+    {
+      "en" : "Washtenaw County Prosecutor Office",
+      "es" : ""
+    },
+  "credit-body" :
+    {
+      "en" : "WCPO pushed forth the transparency project and initiative.",
+      "es" : ""
+    },
+  "poverty-solutions-header" :
+    {
+      "en" : "Poverty Solutions",
+      "es" : ""
+    },
+  "poverty-solutions-body" :
+    {
+      "en" : "University of Michigan Poverty Solutions center manages the project's design and development.",
+      "es" : ""
+    },
+  "aclu-header" :
+    {
+      "en" : "ACLU",
+      "es" : ""
+    },
+  "aclu-body" :
+    {
+      "en" : "A key stakeholder in the transparency initiative and primary funding source for the project.",
+      "es" : ""
+    },
+  "id" :
+    {
+      "en" : "",
+      "es" : ""
+    }
+]
