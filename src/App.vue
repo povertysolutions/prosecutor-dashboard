@@ -4,9 +4,8 @@
       <!-- <Module class="test" msg="You did it!"/> -->
 
       <header>
-        <h3> Prosecutor Dashboard </h3>
+        <RouterLink class="link header landing" to="/">Prosecutor Dashboard</RouterLink>
         <nav>
-          <RouterLink class="link header" to="/">Home</RouterLink>
           <RouterLink class="link header" to="/dashboard">Data</RouterLink>
           <RouterLink class="link header" to="/background">Flowchart</RouterLink>
           <RouterLink class="link header" to="/about">About</RouterLink>
@@ -44,12 +43,16 @@ header {
   width: 100vw;
   height: 4rem;
   background-color: $color-green;
+  z-index: 1;
 
-  h3{
+  .landing{
     position: absolute;
     color: $color-white;
+    font-size: 1.5rem;
+    font-weight: bold;
     margin: 1rem 1rem;
     letter-spacing: 1px;
+    text-decoration: none;
   }
 }
 
@@ -59,9 +62,9 @@ header {
 }
 
 nav {
-  width: 100%;
-  text-align: center;
+  text-align: right;
   padding-top: .7rem;
+  padding-right: 1rem;
 
   a{
     color: $color-white;
@@ -69,12 +72,13 @@ nav {
     text-decoration: none;
     line-height: 1em;
     margin: 0 1rem;
-    padding: 10px 15px;
+    padding: 10px 10px;
     border-radius: 50px;
 
     &.router-link-exact-active {
-      color: $color-green;
-      background-color: $color-white;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 2px;
     }
   }
 

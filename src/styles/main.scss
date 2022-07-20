@@ -2,7 +2,6 @@
 @import "@braks/vue-flow/dist/style.css";
 
 body {
-  min-height: 100vh;
   color: $color-black;
   background: var(--color-background);
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -10,6 +9,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: auto;
 }
 
 h1 {
@@ -53,4 +53,12 @@ button {
   border: none;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
     Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+  &.pill{
+    color: $color-green;
+    font-weight: bold;
+    padding: 1rem;
+    border: 2px $color-green solid;
+    border-radius: 30px;
+  }
 }

@@ -1,57 +1,131 @@
-[
-  "intro-header" :
-    {
-      "en" : "Welcome to the Washtenaw County Prosecutor Dashboard",
-      "es" : ""
-    },
-  "intro-body" :
-    {
-      "en" : "A data dashboard and resource center to foster an accountable, transparent, and fair prosecutorial system in Washtenaw County.",
-      "es" : ""
-    },
-  "data-button" :
-    {
-      "en" : "Explore data",
-      "es" : ""
-    },
-  "credit-header" :
-    {
-      "en" : "Brought to you by",
-      "es" : ""
-    },
-  "county-header" :
-    {
-      "en" : "Washtenaw County Prosecutor Office",
-      "es" : ""
-    },
-  "credit-body" :
-    {
-      "en" : "WCPO pushed forth the transparency project and initiative.",
-      "es" : ""
-    },
-  "poverty-solutions-header" :
-    {
-      "en" : "Poverty Solutions",
-      "es" : ""
-    },
-  "poverty-solutions-body" :
-    {
-      "en" : "University of Michigan Poverty Solutions center manages the project's design and development.",
-      "es" : ""
-    },
-  "aclu-header" :
-    {
-      "en" : "ACLU",
-      "es" : ""
-    },
-  "aclu-body" :
-    {
-      "en" : "A key stakeholder in the transparency initiative and primary funding source for the project.",
-      "es" : ""
-    },
-  "id" :
-    {
-      "en" : "",
-      "es" : ""
-    }
-]
+{
+  "intro-header": {
+    "en": "Welcome to the Washtenaw County Prosecutor Dashboard",
+    "es": ""
+  },
+  "intro-body": {
+    "en": "A data dashboard and resource center to foster an accountable, transparent, and fair prosecutorial system in Washtenaw County.",
+    "es": ""
+  },
+  "data-button": {
+    "en": "Explore data",
+    "es": ""
+  },
+  "credit-header": {
+    "en": "Brought to you by...",
+    "es": ""
+  },
+  "county-header": {
+    "en": "Washtenaw County Prosecutor Office",
+    "es": ""
+  },
+  "county-body": {
+    "en": "WCPO pushed forth the transparency project and initiative.",
+    "es": ""
+  },
+  "poverty-solutions-header": {
+    "en": "Poverty Solutions",
+    "es": ""
+  },
+  "poverty-solutions-body": {
+    "en": "University of Michigan Poverty Solutions center manages the project's design and development.",
+    "es": ""
+  },
+  "aclu-header": {
+    "en": "ACLU",
+    "es": ""
+  },
+  "aclu-body": {
+    "en": "A key stakeholder in the transparency initiative and primary funding source for the project.",
+    "es": ""
+  },
+  "aclu-header": {
+    "en": "ACLU",
+    "es": ""
+  },
+  "aclu-body": {
+    "en": "A key stakeholder in the transparency initiative and primary funding source for the project.",
+    "es": ""
+  },
+  "credits-button": {
+    "en": "Learn more",
+    "es": ""
+  },
+  "empower-header": {
+    "en": "Empowering you to...",
+    "es": ""
+  },
+  "learn-header": {
+    "en": "Learn",
+    "es": ""
+  },
+  "learn-body": {
+    "en": "Learn about the prosecutorial system and working with data.",
+    "es": ""
+  },
+  "learn-button": {
+    "en": "Dashboard",
+    "es": ""
+  },
+  "analyze-header": {
+    "en": "Analyze",
+    "es": ""
+  },
+  "analyze-body": {
+    "en": "Analyze data to evaluate the system and drive decision making.",
+    "es": ""
+  },
+  "analyze-button": {
+    "en": "Analyze",
+    "es": ""
+  },
+  "engage-header": {
+    "en": "Engage",
+    "es": ""
+  },
+  "engage-body": {
+    "en": "Connect with resources using data to impart change.",
+    "es": ""
+  },
+  "engage-button": {
+    "en": "Engage",
+    "es": ""
+  },
+  "explore-header": {
+    "en": "Explore data about...",
+    "es": ""
+  },
+  "filing-decisions-header": {
+    "en": "Filing Decisions",
+    "es": ""
+  },
+
+  "filing-decisions-body": {
+    "en": "Who's getting referred, diverted and processed?",
+    "es": ""
+  },
+  "filed-charges-header": {
+    "en": "Filed Charges",
+    "es": ""
+  },
+  "filed-charges-body": {
+    "en": "Who recieves what charges?",
+    "es": ""
+  },
+  "habitual-offenders-header": {
+    "en": "Habitual Offenders",
+    "es": ""
+  },
+  "habitual-offenders-body": {
+    "en": "Who's labeled as a habitual offender?",
+    "es": ""
+  },
+  "case-outcomes-header": {
+    "en": "Case Outcomes",
+    "es": ""
+  },
+  "case-outcomes-body": {
+    "en": "Who recieves which type of case outcome?",
+    "es": ""
+  }
+}
