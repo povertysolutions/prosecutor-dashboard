@@ -1,19 +1,27 @@
 <template>
   <div >
     <VueFlow v-model="elements"
-             class="basicflow"
+             class="basicflow customnodeflow"
              :default-zoom="1"
              :min-zoom="1" :max-zoom="1"
              :nodes-draggable="false"
-             @pane-ready="onLoad">
+             :nodeTypes="nodeTypes"
+             @pane-ready="onLoad"
+            :connection-mode="connectionMode"
+            :connection-line-style="connectionLineStyle"
+            :fit-view-on-init="true"
+             >
     </VueFlow>
   </div>
 </template>
 
 <script>
-import { VueFlow, ConnectionMode, Controls, addEdge, updateEdge, MarkerType, Position } from '@braks/vue-flow'
+import { VueFlow, ConnectionMode, Controls, addEdge, updateEdge, MarkerType, Position, useVueFlow } from '@braks/vue-flow'
 import nodes from "../../assets/nodes.json"
 import CustomEdge from './CustomEdge.vue'
+import CustomNode from './CustomNode.vue'
+
+const { getNode } = useVueFlow()
 
 const onLoad = (flowInstance) => flowInstance.fitView()
 const onEdgeUpdateStart = (edge) => console.log('start update', edge)
@@ -25,9 +33,13 @@ const onConnect = (params) => (elements.value = addEdge(params, elements.value))
 
 export default {
   name: "Flowchart",
-  components: { VueFlow, CustomEdge },
+  components: { VueFlow, CustomNode, CustomEdge },
   data() {
     return {
+      nodeTypes: {
+        customNode: CustomNode,
+        connectionMode: ConnectionMode.Loose
+      },
       elements: [
         // { id: '1', type: 'input', label: 'Node 1', position: { x: 250, y: 5 }, class: 'light', draggable: false },
         // { id: '2', type: 'output', label: 'Node 2', position: { x: 100, y: 100 }, class: 'light' },
@@ -39,7 +51,7 @@ export default {
         { id: '1', label: 'Social Determinants', position: { x: 250, y: 50 }, class: 'independent' },
         { id: '2', label: 'Initial Arrest', position: { x: 100, y: 150 }, class: 'independent' },
         { id: '3', label: 'Warrant Request', position: {  x: 400, y: 150 }, class: 'independent' },
-        { id: '4', label: 'Referral',  position: { x: 250, y: 250 }, class: 'sole' },
+        { id: '4', label: 'Referral',  position: { x: 200, y: 250 }, class: 'sole', type: 'customNode' },
         { id: '5', label: 'Attorney and Court Assignment', position: { x: 100, y: 350 }, class: 'independent' },
         { id: '6', label: 'Rejection', position: { x: 400, y: 250 }, class: 'sole' },
         { id: '7', label: 'Warrant Arrest', position: { x: 100, y: 500 }, class: 'mixed', sourcePosition: Position.Right },
@@ -50,10 +62,10 @@ export default {
 
         { id: 'e1-3', source: '1', target: '2', markerEnd: MarkerType.ArrowClosed},
         { id: 'e1-2', source: '1', target: '3',  markerEnd: MarkerType.ArrowClosed},
-        { id: 'e2-4', source: '2', target: '4',  markerEnd: MarkerType.ArrowClosed},
-        { id: 'e3-4', source: '3', target: '4', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e4-5', source: '4', target: '5',  markerEnd: MarkerType.ArrowClosed},
-        { id: 'e4-6', source: '4', target: '6',  markerEnd: MarkerType.ArrowClosed},
+        { id: 'e2-4', source: '2', target: '4', targetHandle: 'a', markerEnd: MarkerType.ArrowClosed },
+        { id: 'e3-4', source: '3', target: '4', targetHandle: 'b', markerEnd: MarkerType.ArrowClosed},
+        { id: 'e4-5', source: '4', target: '5', sourceHandle: 'c', markerEnd: MarkerType.ArrowClosed},
+        { id: 'e4-6', source: '4', target: '6', sourceHandle: 'd', markerEnd: MarkerType.ArrowClosed},
         { id: 'e5-7', source: '5', target: '7',  markerEnd: MarkerType.ArrowClosed},
         { id: 'e5-8', source: '5', target: '8',  markerEnd: MarkerType.ArrowClosed},
         { id: 'e5-9', source: '5', target: '9',  markerEnd: MarkerType.ArrowClosed},
@@ -123,7 +135,7 @@ export default {
 .vue-flow__edges{
   path{
     stroke: #bbbbbb;
-    stroke-width: 2px;
+    stroke-width: 3px;
   }
 }
 
