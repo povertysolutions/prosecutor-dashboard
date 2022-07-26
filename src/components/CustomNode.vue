@@ -5,21 +5,23 @@
       <label>{{ label }}</label>
     </div>
   </div>
-  <Handle id="topLeft" type="target" :position="top" :style="{'left': topLeftOffset + 'px'}" />
+  <Handle v-if="data.topThirds" id="topLeft" type="target" :position="top" :style="{'left': topLeftOffset + 'px'}" />
   <Handle id="topCenter" type="target" :position="top" />
-  <Handle id="topRight" type="target" :position="top" :style="{'left': 'auto', 'right': topRightOffset + 'px'}" />
+  <!-- <Handle id="topCenter" type="source" :position="top" /> -->
+  <Handle v-if="data.topThirds" id="topRight" type="target" :position="top" :style="{'left': 'auto', 'right': topRightOffset + 'px'}" />
 
-  <Handle id="bottomLeft" type="source" :position="bottom" :style="{'left': bottomLeftOffset + 'px'}" />
+  <Handle v-if="data.bottomThirds" id="bottomLeft" type="source" :position="bottom" :style="{'left': bottomLeftOffset + 'px'}" />
   <Handle id="bottomCenter" type="source" :position="bottom" />
-  <Handle id="bottomRight" type="source" :position="bottom" :style="{'left': 'auto', 'right': bottomRightOffset + 'px'}" />
+  <Handle id="bottomCenter" type="target" :position="bottom" />
+  <Handle v-if="data.bottomThirds" id="bottomRight" type="source" :position="bottom" :style="{'left': 'auto', 'right': bottomRightOffset + 'px'}" />
 
-  <Handle id="leftTop" type="source" :position="left" :style="{'top': leftTopOffset + 'px'}" />
-  <Handle id="leftCenter" type="source" :position="left" />
-  <Handle id="leftBottom" type="source" :position="left" :style="{'bottom': 'auto', 'top': leftBottomOffset + 'px'}" />
+  <Handle v-if="data.leftThirds" id="leftTop" type="target" :position="left" :style="{'top': leftTopOffset + 'px'}" />
+  <Handle id="leftCenter" type="target" :position="left" />
+  <Handle v-if="data.leftThirds" id="leftBottom" type="target" :position="left" :style="{'bottom': 'auto', 'top': leftBottomOffset + 'px'}" />
 
-  <Handle id="rightTop" type="source" :position="right" :style="{'top': rightTopOffset + 'px'}" />
+  <Handle v-if="data.rightThirds" id="rightTop" type="source" :position="right" :style="{'top': rightTopOffset + 'px'}" />
   <Handle id="rightCenter" type="source" :position="right" />
-  <Handle id="rightBottom" type="source" :position="right" :style="{'bottom': 'auto', 'top': rightBottomOffset + 'px'}" />
+  <Handle v-if="data.rightThirds" id="rightBottom" type="source" :position="right" :style="{'top': 'auto', 'bottom': rightBottomOffset + 'px'}" />
 </template>
 
 //  ------topLeft topCenter topRight-------
@@ -44,7 +46,12 @@ export default{
     },
     data: {
       type: Object,
-      default: {}
+      default: {
+        topThirds: false,
+        bottomThirds: false,
+        leftThirds: false,
+        rightThirds: false
+      }
       //required: true,
     },
     // light:{
@@ -61,7 +68,7 @@ export default{
       leftTopOffset: 5,
       leftBottomOffset: -10,
       rightTopOffset: 5,
-      rightBottomOffset: -10,
+      rightBottomOffset: 10,
       top: Position.Top,
       bottom: Position.Bottom,
       right: Position.Right,

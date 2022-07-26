@@ -1,6 +1,6 @@
 <template>
   <div class="background">
-    <h2>This is the flowchart page.</h2>
+    <!-- <h2>This is the flowchart page.</h2> -->
     <Flowchart></Flowchart>
   </div>
 </template>
@@ -19,6 +19,6 @@ export default {
 .background{
   margin: 5rem 2rem;
   width: 100%;
-  height: 800px;
+  height: 2200px;
 }
 </style>
