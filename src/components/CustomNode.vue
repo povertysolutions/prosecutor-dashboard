@@ -1,10 +1,10 @@
 <template>
-  <div :class="['customNode', data.core ? 'core' : '']">
+  <button :class="['customNode', data.core ? 'core' : '']">
     <div class="centered">
       <div class="circle" v-if="data.core"></div>
       <label>{{ label }}</label>
     </div>
-  </div>
+  </button>
   <Handle v-if="data.topThirds" id="topLeft" type="target" :position="top" :style="{'left': topLeftOffset + 'px'}" />
   <Handle id="topCenter" type="target" :position="top" />
   <!-- <Handle id="topCenter" type="source" :position="top" /> -->
@@ -22,6 +22,7 @@
   <Handle v-if="data.rightThirds" id="rightTop" type="source" :position="right" :style="{'top': rightTopOffset + 'px'}" />
   <Handle id="rightCenter" type="source" :position="right" />
   <Handle v-if="data.rightThirds" id="rightBottom" type="source" :position="right" :style="{'top': 'auto', 'bottom': rightBottomOffset + 'px'}" />
+
 </template>
 
 //  ------topLeft topCenter topRight-------
@@ -50,7 +51,8 @@ export default{
         topThirds: false,
         bottomThirds: false,
         leftThirds: false,
-        rightThirds: false
+        rightThirds: false,
+        draggable: false
       }
       //required: true,
     },
@@ -97,9 +99,14 @@ export default{
   border: 2px $color-medium-grey solid;
 
   .centered{
+    transition: all 100ms ease-in-out;
     //max-width: 200px;
     margin: 8px 18px;
     text-align: center;
+
+    &:hover{
+      margin: 12px 24px;
+    }
 
     label{
       display: inline-block;
@@ -108,13 +115,18 @@ export default{
     }
   }
 
+
+
   &.core{
     background-color: $color-medium-grey;
 
     .centered{
       margin: 15px 30px;
-      text-align: left;
       min-width: 150px;
+
+      &:hover{
+        margin: 20px 36px;
+      }
       }
 
     .circle{

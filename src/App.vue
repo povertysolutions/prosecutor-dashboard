@@ -72,7 +72,7 @@ header {
   width: 100vw;
   height: 4rem;
   background-color: $color-green;
-  z-index: 1;
+  z-index: 1000;
   top: 0;
 
   .landing{

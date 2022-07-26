@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="flowchart">
     <VueFlow v-model="elements"
              class="basicflow customnodeflow"
              :default-zoom="1"
@@ -12,6 +12,8 @@
             :fit-view-on-init="true"
              >
     </VueFlow>
+    <NodeTakeover class="takeover" />
+
   </div>
 </template>
 
@@ -20,6 +22,7 @@ import { VueFlow, ConnectionMode, Controls, addEdge, updateEdge, MarkerType, Pos
 import nodes from "../../assets/nodes.json"
 import CustomEdge from './CustomEdge.vue'
 import CustomNode from './CustomNode.vue'
+import NodeTakeover from "./NodeTakeover"
 
 const { getNode } = useVueFlow()
 
@@ -33,7 +36,7 @@ const onConnect = (params) => (elements.value = addEdge(params, elements.value))
 
 export default {
   name: "Flowchart",
-  components: { VueFlow, CustomNode, CustomEdge },
+  components: { VueFlow, CustomNode, CustomEdge, NodeTakeover },
   data() {
     return {
       nodeTypes: {
@@ -48,7 +51,7 @@ export default {
         // { id: '5', type: 'output', label: 'Node 5', position: { x: 300, y: 300 }, class: 'light' },
 
         //{ id: '1', label: '', type: '', position: { x: 0, y: 0 }, class: '' },
-        { id: '1', label: 'Social Determinants', position: { x: 250, y: 0 }, class: 'independent', type: 'customNode', data: { core : true, bottomThirds: true }},
+        { id: '1', label: 'Social Determinants', position: { x: 250, y: 0 }, class: 'independent', type: 'customNode', data: { core : true, bottomThirds: true }, draggable: false},
         { id: '2', label: 'Initial Arrest', position: { x: 100, y: 150 }, class: 'independent', type: 'customNode' },
         { id: '3', label: 'Warrant Request', position: {  x: 400, y: 150 }, class: 'independent', type: 'customNode' },
         { id: '4', label: 'Referral',  position: { x: 250, y: 300 }, class: 'sole', type: 'customNode', data: { core : true, topThirds: true } },
@@ -126,6 +129,14 @@ export default {
 @import "@braks/vue-flow/dist/style.css";
 @import "@/styles/main.scss";
 //@import "@braks/vue-flow/dist/theme-default.css";
+.flowchart{
+
+
+}
+
+.takeover{
+    z-index: 1000;
+}
 
 .basicflow{
   position: absolute;
@@ -133,7 +144,6 @@ export default {
   //margin-left: -150px;
   width: 100%;
   height: 2200px;
-  z-index: -1;
 }
 
 // .vue-flow__node{
