@@ -48,30 +48,30 @@ export default {
         // { id: '5', type: 'output', label: 'Node 5', position: { x: 300, y: 300 }, class: 'light' },
 
         //{ id: '1', label: '', type: '', position: { x: 0, y: 0 }, class: '' },
-        { id: '1', label: 'Social Determinants', position: { x: 250, y: 50 }, class: 'independent' },
-        { id: '2', label: 'Initial Arrest', position: { x: 100, y: 150 }, class: 'independent' },
-        { id: '3', label: 'Warrant Request', position: {  x: 400, y: 150 }, class: 'independent' },
-        { id: '4', label: 'Referral',  position: { x: 200, y: 250 }, class: 'sole', type: 'customNode' },
-        { id: '5', label: 'Attorney and Court Assignment', position: { x: 100, y: 350 }, class: 'independent' },
-        { id: '6', label: 'Rejection', position: { x: 400, y: 250 }, class: 'sole' },
-        { id: '7', label: 'Warrant Arrest', position: { x: 100, y: 500 }, class: 'mixed', sourcePosition: Position.Right },
-        { id: '8', label: 'Diversion', position: { x: 400, y: 350 }, class: 'sole' },
-        { id: '9', label: 'Arraignment', position: { x: 350, y: 500 }, class: 'mixed', sourcePosition: Position.Right },
-        { id: '10', label: 'Specialty Courts', position: { x: 550, y: 450 }, class: 'mixed',  targetPosition: Position.Left },
+        { id: '1', label: 'Social Determinants', position: { x: 250, y: 0 }, class: 'independent', type: 'customNode', data: { core : true }},
+        { id: '2', label: 'Initial Arrest', position: { x: 100, y: 150 }, class: 'independent', type: 'customNode' },
+        { id: '3', label: 'Warrant Request', position: {  x: 400, y: 150 }, class: 'independent', type: 'customNode' },
+        { id: '4', label: 'Referral',  position: { x: 250, y: 300 }, class: 'sole', type: 'customNode', data: { core : true } },
+        // { id: '5', label: 'Attorney and Court Assignment', position: { x: 100, y: 300 }, class: 'independent' },
+        // { id: '6', label: 'Rejection', position: { x: 400, y: 200 }, class: 'sole' },
+        // { id: '7', label: 'Warrant Arrest', position: { x: 100, y: 450 }, class: 'mixed', sourcePosition: Position.Right },
+        // { id: '8', label: 'Diversion', position: { x: 400, y: 300 }, class: 'sole' },
+        // { id: '9', label: 'Arraignment', position: { x: 350, y: 450 }, class: 'mixed', sourcePosition: Position.Right },
+        // { id: '10', label: 'Specialty Courts', position: { x: 550, y: 400 }, class: 'mixed',  targetPosition: Position.Left },
 
 
-        { id: 'e1-3', source: '1', target: '2', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e1-2', source: '1', target: '3',  markerEnd: MarkerType.ArrowClosed},
-        { id: 'e2-4', source: '2', target: '4', targetHandle: 'a', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e3-4', source: '3', target: '4', targetHandle: 'b', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e4-5', source: '4', target: '5', sourceHandle: 'c', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e4-6', source: '4', target: '6', sourceHandle: 'd', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e5-7', source: '5', target: '7',  markerEnd: MarkerType.ArrowClosed},
-        { id: 'e5-8', source: '5', target: '8',  markerEnd: MarkerType.ArrowClosed},
-        { id: 'e5-9', source: '5', target: '9',  markerEnd: MarkerType.ArrowClosed},
-        { id: 'e7-9', source: '7', target: '9',  markerEnd: MarkerType.ArrowClosed},
-        { id: 'e8-10', source: '8', target: '10',  markerEnd: MarkerType.ArrowClosed},
-        { id: 'e9-10', source: '9', target: '10',  markerEnd: MarkerType.ArrowClosed },
+        { id: 'e1-3', source: '1', target: '2', sourceHandle: 'bottomLeft', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed},
+        { id: 'e1-2', source: '1', target: '3', sourceHandle: 'bottomRight', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed},
+        { id: 'e2-4', source: '2', target: '4', sourceHandle: 'bottomCenter', targetHandle: 'topLeft', markerEnd: MarkerType.ArrowClosed },
+        { id: 'e3-4', source: '3', target: '4', sourceHandle: 'bottomCenter', targetHandle: 'topRight', markerEnd: MarkerType.ArrowClosed},
+        // { id: 'e4-5', source: '4', target: '5', sourceHandle: 'bottomLeft', markerEnd: MarkerType.ArrowClosed},
+        // { id: 'e4-6', source: '4', target: '6', sourceHandle: 'bottomRight', markerEnd: MarkerType.ArrowClosed},
+        // { id: 'e5-7', source: '5', target: '7',  markerEnd: MarkerType.ArrowClosed},
+        // { id: 'e5-8', source: '5', target: '8',  markerEnd: MarkerType.ArrowClosed},
+        // { id: 'e5-9', source: '5', target: '9',  markerEnd: MarkerType.ArrowClosed},
+        // { id: 'e7-9', source: '7', target: '9',  markerEnd: MarkerType.ArrowClosed},
+        // { id: 'e8-10', source: '8', target: '10',  markerEnd: MarkerType.ArrowClosed},
+        // { id: 'e9-10', source: '9', target: '10',  markerEnd: MarkerType.ArrowClosed },
 
       ]
     }
@@ -98,39 +98,42 @@ export default {
 //@import "@braks/vue-flow/dist/theme-default.css";
 
 .basicflow{
-  position: fixed;
+  position: absolute;
+  margin-top: -150px;
   width: 100%;
   height: 100%;
+  //z-index: -1;
 }
 
-.vue-flow__node{
-  background-color: $color-medium-grey;
-  border-radius: 10px;
-
-  &.independent{
-    background-color: $color-light-blue;
-  }
-
-  &.sole{
-    background-color: $color-orange;
-  }
-
-  &.mixed{
-    background-color: $color-purple;
-  }
-
-  &.limited{
-    background-color: $color-dark-blue;
-  }
-
-  div{
-    max-width: 200px;
-    font-size: 20px;
-    padding: 10px 20px;
-    color: $color-white;
-    text-align: center;
-  }
-}
+// .vue-flow__node{
+//   background-color: $color-medium-grey;
+//   border-radius: 10px;
+//   //text-align: center;
+//
+//   &.independent{
+//     background-color: $color-light-blue;
+//   }
+//
+//   &.sole{
+//     background-color: $color-orange;
+//   }
+//
+//   &.mixed{
+//     background-color: $color-purple;
+//   }
+//
+//   &.limited{
+//     background-color: $color-dark-blue;
+//   }
+//
+//   div{
+//     max-width: 200px;
+//     font-size: 20px;
+//     padding: 10px 20px;
+//     color: $color-white;
+//     text-align: center;
+//   }
+// }
 
 .vue-flow__edges{
   path{
