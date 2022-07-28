@@ -2,6 +2,7 @@
   <div class="nodeTakeover">
 
     <section class="main">
+      <button @click="$emit('close')">x</button>
       <div class="text">
         <h2>This is a node takeover.</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -53,6 +54,13 @@ section{
     height: 80%;
     max-height: 500px;
     background-color: $color-light-blue;
+
+    button{
+      position: absolute;
+      color: $color-white;
+      font-size: 30px;
+      transform: scale(120%, 100%);
+    }
   }
 
   .text{

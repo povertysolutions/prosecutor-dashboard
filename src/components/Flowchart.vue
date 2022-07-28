@@ -11,8 +11,11 @@
             :connection-line-style="connectionLineStyle"
             :fit-view-on-init="true"
              >
+      <template #node-custom="props">
+        <CustomNode :data="props.data" @test="console.log('hello')" />
+      </template>
     </VueFlow>
-    <NodeTakeover class="takeover" />
+    <NodeTakeover class="takeover"  @close="closeTakeover" v-if="showTakeover"/>
 
   </div>
 </template>
@@ -34,11 +37,16 @@ const onEdgeUpdate = ({ edge, connection }) => {
 }
 const onConnect = (params) => (elements.value = addEdge(params, elements.value))
 
+const hello = () => {
+
+}
+
 export default {
   name: "Flowchart",
   components: { VueFlow, CustomNode, CustomEdge, NodeTakeover },
   data() {
     return {
+      showTakeover: false,
       nodeTypes: {
         customNode: CustomNode,
         connectionMode: ConnectionMode.Loose
@@ -51,7 +59,7 @@ export default {
         // { id: '5', type: 'output', label: 'Node 5', position: { x: 300, y: 300 }, class: 'light' },
 
         //{ id: '1', label: '', type: '', position: { x: 0, y: 0 }, class: '' },
-        { id: '1', label: 'Social Determinants', position: { x: 250, y: 0 }, class: 'independent', type: 'customNode', data: { core : true, bottomThirds: true }, draggable: false},
+        { id: '1', label: 'Social Determinants', position: { x: 250, y: 0 }, class: 'independent', type: 'customNode', data: { core : true, bottomThirds: true }},
         { id: '2', label: 'Initial Arrest', position: { x: 100, y: 150 }, class: 'independent', type: 'customNode' },
         { id: '3', label: 'Warrant Request', position: {  x: 400, y: 150 }, class: 'independent', type: 'customNode' },
         { id: '4', label: 'Referral',  position: { x: 250, y: 300 }, class: 'sole', type: 'customNode', data: { core : true, topThirds: true } },
@@ -112,12 +120,31 @@ export default {
   methods:{
     onLoad(){
       console.log("onload!");
+    },
+    openTakeover(){
+      console.log("openTakeover!");
+      this.showTakeover = true;
+    },
+    closeTakeover(){
+      console.log("closeTakeover!");
+      this.showTakeover = false;
     }
   },
   mounted() {
     // Add an element after mount
-    for (var i in nodes){
+    for (var i in this.elements){
       //this.elements.push(nodes[i]);
+      var elements = this.elements[i];
+      if (elements.type == 'customNode'){
+        elements.draggable = false;
+        elements.events = {
+          click: () => {
+            this.openTakeover();
+          }
+        }
+      }
+      //elements[i] = elements;
+
     }
 
   }

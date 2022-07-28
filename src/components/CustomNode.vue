@@ -1,5 +1,5 @@
 <template>
-  <button :class="['customNode', data.core ? 'core' : '']">
+  <button :class="['customNode', data.core ? 'core' : '']" @click="click">
     <div class="centered">
       <div class="circle" v-if="data.core"></div>
       <label>{{ label }}</label>
@@ -76,6 +76,12 @@ export default{
       right: Position.Right,
       left: Position.Left
     }
+  },
+  methods:{
+    click(){
+      console.log("click!");
+      this.$emit('test');
+    }
   }
 }
 
@@ -100,6 +106,7 @@ export default{
 
   .centered{
     transition: all 100ms ease-in-out;
+    transition-delay: 100ms;
     //max-width: 200px;
     margin: 8px 18px;
     text-align: center;
