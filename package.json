@@ -14,6 +14,7 @@
     "chartjs-adapter-moment": "^1.0.0",
     "core-js": "^3.8.3",
     "d3": "^7.4.4",
+    "fs": "^0.0.1-security",
     "moment": "^2.29.4",
     "vue": "^3.2.13",
     "vue-chartjs": "^4.1.1",
@@ -49,5 +50,10 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
+  }
 }

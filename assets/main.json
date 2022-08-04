@@ -1,6 +1,6 @@
 {
   "header" : "Section Header",
-  "graphTitle" : "Graph Title"
+  "graphTitle" : "Graph Title",
   "legend" : "Legend Title",
   "xaxis" : "x axis label",
   "yaxis" : "y axis label",

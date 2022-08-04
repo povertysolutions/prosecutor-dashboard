@@ -3,20 +3,45 @@
     "en": "1234 Fake Street, MI 1235",
     "es": ""
   },
+  "address_icon": {
+    "icon": "address.svg",
+    "desc_en" : "",
+    "desc_es" : ""
+  },
   "email": {
     "en": "email@client.com",
     "es": ""
+  },
+  "email_icon": {
+    "icon": "email.svg",
+    "desc_en" : "",
+    "desc_es" : ""
   },
   "phone": {
     "en": "(123) 456-7890",
     "es": ""
   },
+  "phone_icon": {
+    "icon": "phone.svg",
+    "desc_en" : "",
+    "desc_es" : ""
+  },
   "twitter": {
     "en": "@twitter_handle",
     "es": ""
   },
+  "twitter_icon": {
+    "icon": "twitter.svg",
+    "desc_en" : "",
+    "desc_es" : ""
+  },
   "facebook": {
     "en": "Facebook Page",
     "es": ""
+  },
+  "facebook_icon": {
+    "icon": "facebook.svg",
+    "desc_en" : "",
+    "desc_es" : ""
   }
 }

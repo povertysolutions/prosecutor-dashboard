@@ -1,8 +1,8 @@
 <template>
-  <button :class="['customNode', data.core ? 'core' : '']" @click="click">
+  <button :class="['customNode', data.core ? 'core' : '', data.influence]" @click="click">
     <div class="centered">
       <div class="circle" v-if="data.core"></div>
-      <label>{{ label }}</label>
+      <label :class="[data.influence]">{{ label }}</label>
     </div>
   </button>
   <Handle v-if="data.topThirds" id="topLeft" type="target" :position="top" :style="{'left': topLeftOffset + 'px'}" />
@@ -52,7 +52,8 @@ export default{
         bottomThirds: false,
         leftThirds: false,
         rightThirds: false,
-        draggable: false
+        draggable: false,
+        influence: ""
       }
       //required: true,
     },
@@ -96,6 +97,7 @@ export default{
 //   width: 100px;
 // }
 
+
 .customNode{
   //position: absolute;
   border-radius: 10px;
@@ -103,6 +105,24 @@ export default{
   //text-align: center;
   background-color: $color-white;
   border: 2px $color-medium-grey solid;
+
+  color: $color-medium-grey;
+
+  &.independent{
+    border-color: $color-light-blue;
+  }
+
+  &.sole{
+    border-color: $color-orange;
+  }
+
+  &.mixed{
+    border-color: $color-purple;
+  }
+
+  &.limited{
+    border-color: $color-dark-blue;
+  }
 
   .centered{
     transition: all 100ms ease-in-out;
@@ -117,8 +137,24 @@ export default{
 
     label{
       display: inline-block;
-      color: $color-medium-grey;
       font-size: 20px;
+      color: $color-medium-grey;
+
+      &.independent{
+        color: $color-light-blue;
+      }
+
+      &.sole{
+        color: $color-orange;
+      }
+
+      &.mixed{
+        color: $color-purple;
+      }
+
+      &.limited{
+        color: $color-dark-blue;
+      }
     }
   }
 
@@ -126,6 +162,22 @@ export default{
 
   &.core{
     background-color: $color-medium-grey;
+
+    &.independent{
+      background-color: $color-light-blue;
+    }
+
+    &.sole{
+      background-color: $color-orange;
+    }
+
+    &.mixed{
+      background-color: $color-purple;
+    }
+
+    &.limited{
+      background-color: $color-dark-blue;
+    }
 
     .centered{
       margin: 15px 30px;
@@ -147,7 +199,7 @@ export default{
 
     label{
       display: inline-block;
-      color: $color-white;
+      color: $color-white !important;
       max-width: 100px;
       margin-left: 15px;
       vertical-align: middle;

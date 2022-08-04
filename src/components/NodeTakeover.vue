@@ -34,12 +34,12 @@ section{
   padding: 2rem;
 
   h2{
-    color: $color-white;
+    color: $color-black;
     padding-top: 5rem;
   }
 
   p{
-    color: $color-white;
+    color: $color-black;
   }
 }
 
@@ -53,11 +53,11 @@ section{
     width: 85%;
     height: 80%;
     max-height: 500px;
-    background-color: $color-light-blue;
+    background-color: $color-light-grey;
 
     button{
       position: absolute;
-      color: $color-white;
+      color: $color-black;
       font-size: 30px;
       transform: scale(120%, 100%);
     }
@@ -75,7 +75,7 @@ section{
     margin-left: 1rem;
 
     h4{
-      color: $color-white;
+      color: $color-black;
       padding-bottom: 1rem;
     }
 
@@ -87,13 +87,23 @@ section{
   .top{
     width: 100%;
     height: 120px;
-    background-color: $color-dark-blue;
+    background-color: $color-white;
+    border: 2px solid $color-green;
     margin-bottom: 1rem;
+
+    p{
+      color: $color-green;
+    }
   }
   .bottom{
     width: 100%;
     height: 120px;
-    background-color: $color-dark-blue;
+    background-color: $color-white;
+    border: 2px solid $color-green;
+
+    p{
+      color: $color-green;
+    }
   }
 }
 
