@@ -26,6 +26,7 @@ import nodes from "../../assets/nodes.json"
 import CustomEdge from './CustomEdge.vue'
 import CustomNode from './CustomNode.vue'
 import NodeTakeover from "./NodeTakeover"
+import content from "../../assets/flowchart.json"
 
 const { getNode } = useVueFlow()
 
@@ -47,66 +48,68 @@ export default {
   data() {
     return {
       showTakeover: false,
+      lang: "en",
       nodeTypes: {
         customNode: CustomNode,
-        connectionMode: ConnectionMode.Loose
+        connectionMode: ConnectionMode.Loose,
+
       },
       elements: [
-        { id: '1', label: 'Social Determinants', position: { x: 250, y: 0 }, type: 'customNode', data: { core : true, bottomThirds: true, influence: 'independent', }},
-        { id: '2', label: 'Initial Arrest', position: { x: 100, y: 150 }, type: 'customNode', data: { influence: 'independent' } },
-        { id: '3', label: 'Warrant Request', position: {  x: 400, y: 150 }, type: 'customNode', data: {influence: 'independent' } },
-        { id: '4', label: 'Referral',  position: { x: 250, y: 300 }, type: 'customNode', data: { core : true, topThirds: true, influence: 'sole' } },
-        { id: '5', label: 'Attorney and Court Assignment', position: { x: 250, y: 450 }, type: 'customNode', data: { core : true, bottomThirds: true, influence: 'independent' } },
-        { id: '6', label: 'Rejection', position: { x: 550, y: 300 }, type: 'customNode', data: {influence: 'sole'} },
-        { id: '7', label: 'Warrant Arrest', position: { x: 100, y: 700 }, type: 'customNode', data: {influence: 'mixed'} },
-        { id: '8', label: 'Diversion', position: { x: 400, y: 650 }, type: 'customNode', data: {influence: 'sole'} },
-        { id: '9', label: 'Arraignment', position: { x: 250, y: 950 }, type: 'customNode', data: { core : true, topThirds: true, bottomThirds: true, influence: 'mixed' } },
-        { id: '10', label: 'Specialty Courts', position: { x: 400, y: 800 },  type: 'customNode', data: {influence: 'mixed'} },
+        { id: '1', position: { x: 250, y: 0 }, data: { txtId: "social", bottomThirds: true }},
+        { id: '2', position: { x: 100, y: 150 }, data: { txtId: "initial-arrest" }},
+        { id: '3', position: { x: 400, y: 150 }, data: { txtId: "warrent-request" }},
+        { id: '4', position: { x: 250, y: 300 }, data: { txtId: "referral", topThirds: true }},
+        { id: '5', position: { x: 250, y: 450 }, data: { txtId: "assignment", bottomThirds: true }},
+        { id: '6', position: { x: 550, y: 300 }, data: { txtId: "rejection" }},
+        { id: '7', position: { x: 100, y: 700 }, data: { txtId: "warrent-arrest" }},
+        { id: '8', position: { x: 400, y: 650 }, data: { txtId: "diversion" }},
+        { id: '9', position: { x: 250, y: 950 }, data: { txtId: "arraignment", topThirds: true, bottomThirds: true }},
+        { id: '10', position: { x: 400, y: 800 }, data: { txtId: "speciality" }},
 
-        { id: '11', label: 'Plea Offer', position: { x: 150, y: 1100 }, type: 'customNode', data: { influence: 'sole'} },
-        { id: '12', label: 'Trial', position: { x: 350, y: 1100 }, type: 'customNode',  data: { core : true, influence: 'mixed' }},
-        { id: '13', label: 'Aquittal or Dismissal', position: { x: 650, y: 1100 }, type: 'customNode', data: { influence: 'mixed'} },
-        { id: '14', label: 'Conviction', position: { x: 250, y: 1350 }, type: 'customNode',  data: { core : true, topThirds: true, rightThirds: true,  influence: 'mixed' } },
-        { id: '15', label: 'Fines', position: { x: 600, y: 1275 }, type: 'customNode', data: { influence: 'limited'} },
-        { id: '16', label: 'Community Service', position: { x: 600, y: 1350 }, type: 'customNode', data: { influence: 'limited'} },
-        { id: '17', label: 'Probation or Suspended Sentence', position: { x: 600, y: 1425 }, type: 'customNode', data: { influence: 'limited'} },
-        { id: '18', label: 'Incarceration', position: { x: 250, y: 1500 }, type: 'customNode',  data: { core : true, bottomThirds: true,  influence: 'limited' } },
-        { id: '19', label: 'Parole', position: { x: 250, y: 1650 }, type: 'customNode', data: { influence: 'limited'} },
-        { id: '20', label: 'Release', position: { x: 250, y: 1800 }, type: 'customNode', data: { core : true, topThirds: true, bottomThirds: true,  influence: 'limited' } },
-        { id: '21', label: 'Rehabilitation', position: { x: 100, y: 1950 }, type: 'customNode',  data: { core : true,  influence: 'independent' } },
-        { id: '22', label: 'Recidivism', position: { x: 400, y: 1950 },  type: 'customNode',  data: { core : true,  influence: 'independent'} },
+        { id: '11', position: { x: 150, y: 1100 }, data: { txtId: "plea" }},
+        { id: '12', position: { x: 350, y: 1100 }, data: { txtId: "trial" }},
+        { id: '13', position: { x: 650, y: 1100 }, data: { txtId: "aquittal-dismissal" }},
+        { id: '14', position: { x: 250, y: 1350 }, data: { txtId: "conviction", topThirds: true, rightThirds: true }},
+        { id: '15', position: { x: 600, y: 1275 }, data: { txtId: "fines" }},
+        { id: '16', position: { x: 600, y: 1350 }, data: { txtId: "community-service" }},
+        { id: '17', position: { x: 600, y: 1425 }, data: { txtId: "probation" }},
+        { id: '18', position: { x: 250, y: 1500 }, data: { txtId: "incarceration" }},
+        { id: '19', position: { x: 250, y: 1650 }, data: { txtId: "parole" }},
+        { id: '20', position: { x: 250, y: 1800 }, data: { txtId: "release", topThirds: true, bottomThirds: true }},
+        { id: '21', position: { x: 100, y: 1950 }, data: { txtId: "rehab" }},
+        { id: '22', position: { x: 400, y: 1950 }, data: { txtId: "recidivism" }},
 
 
-        { id: 'e1-3', source: '1', target: '2', sourceHandle: 'bottomLeft', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e1-2', source: '1', target: '3', sourceHandle: 'bottomRight', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e2-4', source: '2', target: '4', sourceHandle: 'bottomCenter', targetHandle: 'topLeft', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e3-4', source: '3', target: '4', sourceHandle: 'bottomCenter', targetHandle: 'topRight', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e4-5', source: '4', target: '5', sourceHandle: 'bottomCenter', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e4-6', source: '4', target: '6', sourceHandle: 'rightCenter', targetHandle: 'leftCenter', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e5-7', source: '5', target: '7', sourceHandle: 'bottomLeft', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e5-8', source: '5', target: '8', sourceHandle: 'bottomRight', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e5-9', source: '5', target: '9', sourceHandle: 'bottomCenter', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e7-9', source: '7', target: '9', sourceHandle: 'bottomCenter', targetHandle: 'topLeft', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e8-10', source: '8', target: '10', sourceHandle: 'bottomCenter', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed},
-        { id: 'e9-10', source: '10', target: '9', sourceHandle: 'bottomCenter', targetHandle: 'topRight', markerEnd: MarkerType.ArrowClosed }, //FLIPPED -- NEED TO FIX
+        { id: 'e1-3', source: '1', target: '2', sourceHandle: 'bottomLeft', targetHandle: 'topCenter' },
+        { id: 'e1-2', source: '1', target: '3', sourceHandle: 'bottomRight', targetHandle: 'topCenter' },
+        { id: 'e2-4', source: '2', target: '4', sourceHandle: 'bottomCenter', targetHandle: 'topLeft' },
+        { id: 'e3-4', source: '3', target: '4', sourceHandle: 'bottomCenter', targetHandle: 'topRight' },
+        { id: 'e4-5', source: '4', target: '5', sourceHandle: 'bottomCenter', targetHandle: 'topCenter' },
+        { id: 'e4-6', source: '4', target: '6', sourceHandle: 'rightCenter', targetHandle: 'leftCenter' },
+        { id: 'e5-7', source: '5', target: '7', sourceHandle: 'bottomLeft', targetHandle: 'topCenter' },
+        { id: 'e5-8', source: '5', target: '8', sourceHandle: 'bottomRight', targetHandle: 'topCenter' },
+        { id: 'e5-9', source: '5', target: '9', sourceHandle: 'bottomCenter', targetHandle: 'topCenter' },
+        { id: 'e7-9', source: '7', target: '9', sourceHandle: 'bottomCenter', targetHandle: 'topLeft' },
+        { id: 'e8-10', source: '8', target: '10', sourceHandle: 'bottomCenter', targetHandle: 'topCenter' },
+        { id: 'e9-10', source: '10', target: '9', sourceHandle: 'bottomCenter', targetHandle: 'topRight' }, //FLIPPED -- NEED TO FIX
 
-        { id: 'e9-11', source: '9', target: '11', sourceHandle: 'bottomLeft', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e9-12', source: '9', target: '12', sourceHandle: 'bottomRight', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e12-13', source: '12', target: '13', sourceHandle: 'rightCenter', targetHandle: 'leftCenter', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e11-14', source: '11', target: '14', sourceHandle: 'bottomCenter', targetHandle: 'topLeft', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e12-14', source: '12', target: '14', sourceHandle: 'bottomCenter', targetHandle: 'topRight', markerEnd: MarkerType.ArrowClosed },
+        { id: 'e9-11', source: '9', target: '11', sourceHandle: 'bottomLeft', targetHandle: 'topCenter' },
+        { id: 'e9-12', source: '9', target: '12', sourceHandle: 'bottomRight', targetHandle: 'topCenter' },
+        { id: 'e12-13', source: '12', target: '13', sourceHandle: 'rightCenter', targetHandle: 'leftCenter'},
+        { id: 'e11-14', source: '11', target: '14', sourceHandle: 'bottomCenter', targetHandle: 'topLeft' },
+        { id: 'e12-14', source: '12', target: '14', sourceHandle: 'bottomCenter', targetHandle: 'topRight' },
 
-        { id: 'e14-15', source: '14', target: '15', sourceHandle: 'rightTop', targetHandle: 'leftCenter', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e14-16', source: '14', target: '16', sourceHandle: 'rightCenter', targetHandle: 'leftCenter', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e14-17', source: '14', target: '17', sourceHandle: 'rightBottom', targetHandle: 'leftCenter', markerEnd: MarkerType.ArrowClosed },
+        { id: 'e14-15', source: '14', target: '15', sourceHandle: 'rightTop', targetHandle: 'leftCenter' },
+        { id: 'e14-16', source: '14', target: '16', sourceHandle: 'rightCenter', targetHandle: 'leftCenter' },
+        { id: 'e14-17', source: '14', target: '17', sourceHandle: 'rightBottom', targetHandle: 'leftCenter' },
 
-        { id: 'e14-18', source: '14', target: '18', sourceHandle: 'bottomCenter', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e18-19', source: '18', target: '19', sourceHandle: 'bottomLeft', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e19-20', source: '19', target: '20', sourceHandle: 'bottomCenter', targetHandle: 'topLeft', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e18-20', source: '18', target: '20', sourceHandle: 'bottomRight', targetHandle: 'topRight', markerEnd: MarkerType.ArrowClosed },
+        { id: 'e14-18', source: '14', target: '18', sourceHandle: 'bottomCenter', targetHandle: 'topCenter'},
+        { id: 'e18-19', source: '18', target: '19', sourceHandle: 'bottomLeft', targetHandle: 'topCenter'},
+        { id: 'e19-20', source: '19', target: '20', sourceHandle: 'bottomCenter', targetHandle: 'topLeft' },
+        { id: 'e18-20', source: '18', target: '20', sourceHandle: 'bottomRight', targetHandle: 'topRight' },
 
-        { id: 'e20-21', source: '20', target: '21', sourceHandle: 'bottomLeft', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed },
-        { id: 'e20-22', source: '20', target: '22', sourceHandle: 'bottomRight', targetHandle: 'topCenter', markerEnd: MarkerType.ArrowClosed },
+        { id: 'e20-21', source: '20', target: '21', sourceHandle: 'bottomLeft', targetHandle: 'topCenter' },
+        { id: 'e20-22', source: '20', target: '22', sourceHandle: 'bottomRight', targetHandle: 'topCenter' },
       ]
     }
   },
@@ -127,19 +130,37 @@ export default {
     // Add an element after mount
     for (var i in this.elements){
       //this.elements.push(nodes[i]);
-      var elements = this.elements[i];
-      if (elements.type == 'customNode'){
-        elements.draggable = false;
-        elements.events = {
+      var element = this.elements[i];
+      if (element.position != null){
+        var txtId = element.data.txtId;
+        element.type = "customNode";
+        element.draggable = false;
+
+
+
+        if (content[txtId]){
+          //console.log(content[txtId])
+        }
+        else{
+          console.log("could not find: " + txtId);
+        }
+
+        //element.label = content[txtId].label[this.lang]
+        element.data.content = content[txtId];
+        element.data.txtId = txtId;
+
+        element.events = {
           click: () => {
             this.openTakeover();
           }
         }
       }
+      else{
+        element.markerEnd = MarkerType.ArrowClosed;
+      }
       //elements[i] = elements;
 
     }
-
   }
 }
 </script>

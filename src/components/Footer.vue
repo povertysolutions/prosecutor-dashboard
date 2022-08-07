@@ -45,7 +45,6 @@ export default {
   },
   methods:{
     getIcon(model){
-      console.log(model);
       if (model && model["icon"]){
         return Asset.load("icons/" + model["icon"]);
       }

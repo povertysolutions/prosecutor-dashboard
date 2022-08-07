@@ -1,0 +1,363 @@
+{
+  "social": {
+    "label": {
+      "en": "Social Determinants",
+      "es": ""
+    },
+    "core": true,
+    "influence": "independent",
+    "icon": "people.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "initial-arrest": {
+    "label": {
+      "en": "Initial Arrest",
+      "es": ""
+    },
+    "icon": "",
+    "influence": "independent",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "warrent-request": {
+    "label": {
+      "en": "Warrant Request",
+      "es": ""
+    },
+    "influence": "independent",
+    "icon": "",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "referral": {
+    "label": {
+      "en": "Referral",
+      "es": ""
+    },
+    "core": true,
+    "influence" : "sole",
+    "icon": "multi-arrow.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "assignment": {
+    "label": {
+      "en": "Attorney and Court Assignment",
+      "es": ""
+    },
+    "core": true,
+    "influence": "independent",
+    "icon": "analyze.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "rejection": {
+    "label": {
+      "en": "Rejection",
+      "es": ""
+    },
+    "influence" : "sole",
+    "icon": "",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "warrent-arrest": {
+    "label": {
+      "en": "Warrant Arrest",
+      "es": ""
+    },
+    "influence": "mixed",
+    "icon": "",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "diversion": {
+    "label": {
+      "en": "Diversion",
+      "es": ""
+    },
+    "influence" : "sole",
+    "icon": "",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "arraignment": {
+    "label": {
+      "en": "Arraignment",
+      "es": ""
+    },
+    "core": true,
+    "icon": "law-book.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "speciality": {
+    "label": {
+      "en": "Specialty Courts",
+      "es": ""
+    },
+    "influence": "mixed",
+    "icon": "",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "plea": {
+    "label": {
+      "en": "Plea Offer",
+      "es": ""
+    },
+    "influence" : "sole",
+    "icon": "",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "trial": {
+    "label": {
+      "en": "Trial",
+      "es": ""
+    },
+    "core": true,
+    "influence": "mixed",
+    "icon": "gavel.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "aquittal-dismissal": {
+    "label": {
+      "en": "Aquittal or Dismissal",
+      "es": ""
+    },
+    "influence": "mixed",
+    "icon": "agreement.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "conviction": {
+    "label": {
+      "en": "Conviction",
+      "es": ""
+    },
+    "core": true,
+    "influence": "mixed",
+    "icon": "gavel.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "fines": {
+    "label": {
+      "en": "Fines",
+      "es": ""
+    },
+    "influence": "limited",
+    "icon": "",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "community-service": {
+    "label": {
+      "en": "Community Service",
+      "es": ""
+    },
+    "influence": "limited",
+    "icon": "",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "probation": {
+    "label": {
+      "en": "Probation or Suspended Sentence",
+      "es": ""
+    },
+    "influence": "limited",
+    "icon": "",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "incarceration": {
+    "label": {
+      "en": "Incarceration",
+      "es": ""
+    },
+    "core": true,
+    "influence": "limited",
+    "icon": "law-book.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "parole": {
+    "label": {
+      "en": "Parole",
+      "es": ""
+    },
+    "icon": "",
+    "influence": "limited",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "release": {
+    "label": {
+      "en": "Release",
+      "es": ""
+    },
+    "core": "true",
+    "influence": "limited",
+    "icon": "agreement.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "rehab": {
+    "label": {
+      "en": "Rehabilitation",
+      "es": ""
+    },
+    "core": true,
+    "influence": "independent",
+    "icon": "people.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  },
+  "recidivism": {
+    "label": {
+      "en": "Recidivism",
+      "es": ""
+    },
+    "core": true,
+    "influence": "independent",
+    "icon": "stamped-paper.svg",
+    "iconDesc": {
+      "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "",
+      "es": ""
+    }
+  }
+}

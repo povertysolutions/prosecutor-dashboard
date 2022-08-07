@@ -1,8 +1,8 @@
 <template>
-  <button :class="['customNode', data.core ? 'core' : '', data.influence]" @click="click">
+  <button :class="['customNode', core ? 'core' : '', influence]" @click="click">
     <div class="centered">
-      <div class="circle" v-if="data.core"></div>
-      <label :class="[data.influence]">{{ label }}</label>
+      <img class="circle" v-if="core" :src="icon"/>
+      <label :class="[influence]">{{ label }}</label>
     </div>
   </button>
   <Handle v-if="data.topThirds" id="topLeft" type="target" :position="top" :style="{'left': topLeftOffset + 'px'}" />
@@ -36,15 +36,12 @@
 <script>
 import { VueFlow, ConnectionMode, Controls, addEdge, updateEdge, MarkerType, Position, Handle } from '@braks/vue-flow'
 import { computed } from 'vue'
+import Asset from "@/utils/assets"
 
 export default{
   name: "CustomNode",
   components: { Handle },
   props: {
-    label:{
-      type: String,
-      default: "Default"
-    },
     data: {
       type: Object,
       default: {
@@ -53,7 +50,8 @@ export default{
         leftThirds: false,
         rightThirds: false,
         draggable: false,
-        influence: ""
+        content: Object,
+        txtId: ""
       }
       //required: true,
     },
@@ -75,14 +73,36 @@ export default{
       top: Position.Top,
       bottom: Position.Bottom,
       right: Position.Right,
-      left: Position.Left
+      left: Position.Left,
+      lang: "en"
+    }
+  },
+  computed:{
+    label(){
+      return this.data.content.label[this.lang];
+    },
+    core(){
+      return this.data.content.core;
+    },
+    influence(){
+      return this.data.content.influence;
+    },
+    icon(){
+      console.log(this.data.content.icon);
+      if (this.data.content.icon){
+        console.log(this.data.content.icon);
+        return Asset.load("icons/" + this.data.content.icon);
+      }
+      return "";
     }
   },
   methods:{
     click(){
-      console.log("click!");
       this.$emit('test');
     }
+  },
+  mounted(){
+
   }
 }
 
@@ -190,10 +210,10 @@ export default{
 
     .circle{
       display: inline-block;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background-color: $color-white;
+      width: 50px;
+      height: 50px;
+      //border-radius: 50%;
+      //background-color: $color-medium-grey;
       vertical-align: middle;
     }
 
