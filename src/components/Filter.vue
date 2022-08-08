@@ -2,11 +2,11 @@
     <div class="filter">
       <div class="fieldGroup">
         <h4>Sort by</h4>
-        <button v-for="(field, i) in dataset"
-                :class="['field', currentIndex == i ? 'selected' : '']"
-                @click="press(i)">
-          <div :class="['circle', currentIndex == i ? 'selected' : '']"></div>
-          {{ field.label }}
+        <button v-for="(object, field) in dataset"
+                :class="['field', currentField == field ? 'selected' : '']"
+                @click="press(field)">
+          <div :class="['circle', currentField == field ? 'selected' : '']"></div>
+          {{ object.label }}
 
         </button>
       </div>
@@ -29,20 +29,21 @@ import { endOfMonth, endOfYear, startOfMonth, startOfYear, subMonths } from 'dat
 
 export default {
   props: {
-    dataset: Array
+    dataset: Object
   },
   data(){
     return{
       currentIndex: 0,
+      currentField: "",
       dateModel: null,
       dateRange: []
 
     }
   },
   methods:{
-    press(index){
-      this.currentIndex = index;
-      this.$emit('filterChanged', this.dataset[index]);
+    press(field){
+      this.currentField = field;
+      this.$emit('filterChanged', this.dataset[field]);
     }
   },
   watch:{
@@ -69,6 +70,11 @@ export default {
     //       },
     //       { label: 'This year', range: [startOfYear(new Date()), endOfYear(new Date())] },
     //     ]);
+
+    console.log(this.dataset)
+    this.currentField = Object.keys(this.dataset)[0];
+    console.log("this.currentField: " + this.currentField);
+
   }
 
 }

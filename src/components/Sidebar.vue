@@ -1,11 +1,11 @@
 <template>
     <div class="sidebar">
-      <h3>Topics</h3>
-      <div class="topicsGroups">
-        <button v-for="(topic, i) in topics"
-                :class="['topic', currentIndex == i ? 'selected' : '']"
+      <h3>Filters</h3>
+      <div class="filterGroups">
+        <button v-for="(filter, i) in filters"
+                :class="['filter', currentIndex == i ? 'selected' : '']"
                 @click="press(i)">
-          {{ topic.title }}
+          {{ filter.label }}
           <div :class="['circle', currentIndex == i ? 'selected' : '']"></div>
         </button>
       </div>
@@ -15,27 +15,11 @@
 <script>
 export default {
   props: {
-    msg: String
+    filters: Object
   },
   data(){
     return{
-      currentIndex: 0,
-      topics:
-      [
-        {
-          "title" : "Filing Decisions"
-        },
-        {
-          "title" : "Filing Charges"
-        },
-        {
-          "title" : "Habitual Offenders"
-        },
-        {
-          "title" : "Case Outcomes"
-        }
-      ]
-
+      currentIndex: "race"
     }
   },
   methods:{
@@ -62,7 +46,7 @@ h3{
   margin: 1rem;
   margin-top: 2rem;
 }
-.topic{
+.filter{
   color: $color-medium-grey;
   width: 100%;
   text-align: left;
@@ -73,8 +57,6 @@ h3{
     color: $color-white;
     font-weight: 600;
   }
-
 }
-
 
 </style>

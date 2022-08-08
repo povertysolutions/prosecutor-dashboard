@@ -1,10 +1,10 @@
 <template>
   <div class="view">
     <div class="module">
-      <Sidebar></Sidebar>
+      <Sidebar :filters="filters"></Sidebar>
         <section class="main">
-          <h2>This is the dashboard.</h2>
-          <LineGraph class="graph" :dataset="chartData"></LineGraph>
+          <h2>{{currentTitle}}</h2>
+          <LineGraph class="graph" :dataset="chartData" :yLabel="currentYLabel"></LineGraph>
           <Legend class="legend" :title="currentLegendTitle" :dataset="legendData"></Legend>
           <Details class="details" :filters="filters" @filterChanged="updateFilter" @dateChanged="updateDate"></Details>
         </section>
@@ -20,6 +20,7 @@ import Legend from "@/components/Legend"
 import Filter from "@/components/Filter"
 
 import WarrentData from "../models.js"
+import filterJson from "../../assets/filters.json"
 
 export default {
   name: "Dashboard",
@@ -27,34 +28,29 @@ export default {
   data(){
     return {
       colors: ["#6979D3", "#FFA600", "#7b247d", "#33557d", "#f5e16e", "#DD5182", "#44279c", "#b670b8" ],
-      filters:
-      [
-        {
-          "label" : "Race",
-          "field" : "race"
-        },
-        {
-          "label" : "Location",
-          "field" : "region"
-        },
-        {
-          "label" : "Case Outcome",
-          "field" : "outcome"
-        },
-        {
-          "label" : "Charge Filed",
-          "field" : "type"
-        }
-      ],
       chartData: [],
       legendData: [],
-      currentFilter: null
+      currentFilter: null,
+      filters: filterJson,
+      lang: "en"
     }
   },
   computed:{
     currentLegendTitle(){
       if (this.currentFilter && this.currentFilter.label){
         return this.currentFilter.label;
+      }
+      return "";
+    },
+    currentTitle(){
+      if (this.currentFilter && this.currentFilter.title){
+        return this.currentFilter.title;
+      }
+      return "";
+    },
+    currentYLabel(){
+      if (this.currentFilter && this.currentFilter.yLabel){
+        return this.currentFilter.yLabel[this.lang];
       }
       return "";
     }
@@ -83,11 +79,10 @@ export default {
           }, 500);
 
         }
-
       }
     },
     sort(){
-      var field = this.currentFilter.field;
+      var field = this.currentFilter.y;
       var currentData = WarrentData.getDataBy(field);
 
       var chart = [];
@@ -104,7 +99,7 @@ export default {
     }
   },
   mounted(){
-    this.currentFilter = this.filters[0];
+    this.currentFilter = this.filters.race;
     this.sort();
   }
 }
@@ -114,20 +109,14 @@ export default {
 <style lang="scss" scoped>
 @import "@/styles/main.scss";
 
-.module{
-  //margin: 0 2rem;
-  //padding: 1rem;
-  //border: blue 2px solid;
-
-}
-
 .main{
   margin-left: 14rem;
   margin-top: 4rem;
 }
 
 h2{
-  margin: 2rem 0;
+  margin: 1.5rem 0;
+  display: inline-block;
 }
 
 .graph{

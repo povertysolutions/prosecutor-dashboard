@@ -26,7 +26,7 @@ export default {
   name: "Details",
   components: { Filter },
   props: {
-    filters: Array
+    filters: Object
   },
   data(){
     return{

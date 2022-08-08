@@ -1,0 +1,48 @@
+{
+  "race" : {
+    "label" : "Race",
+    "type" : "graph",
+    "x" : "year",
+    "y" : "race",
+    "yLabel": {
+      "en" : "Residents Prosecuted",
+      "es" : ""
+    },
+    "title" : "Residents Prosecuted by Year"
+  },
+  "location":
+  {
+    "label" : "Location",
+    "type" : "map",
+    "y" : "region",
+    "yLabel": {
+      "en" : "Charge Density",
+      "es" : ""
+    },
+    "title" : "Charge Density Map"
+  },
+  "charge" :
+  {
+    "label" : "Charge Filed",
+    "type" : "graph",
+    "x" : "race",
+    "y" : "type",
+    "yLabel": {
+      "en" : "Charge File Type",
+      "es" : ""
+    },
+    "title" : "Charge File by Race"
+  },
+  "outcome" :
+  {
+    "label" : "Case Outcome",
+    "type" : "graph",
+    "x" : "type",
+    "y" : "outcome",
+    "yLabel": {
+      "en" : "Case Outcome Type",
+      "es" : ""
+    },
+    "title" : "Case Outcome by Charge Filed"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "race": {
+    "en": "Race",
+    "es": ""
+  },
+  "location": {
+    "en": "Location",
+    "es": ""
+  },
+  "charge": {
+    "en": "Change Filed",
+    "es": ""
+  },
+  "outcome": {
+    "en": "Case Outcome",
+    "es": ""
+  }
+}

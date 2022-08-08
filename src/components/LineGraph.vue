@@ -31,7 +31,9 @@ export default {
       default: '',
       type: String
     },
-    dataset: Array
+    dataset: Array,
+    xLabel: String,
+    yLabel: String
   },
   computed:{
     chartData() {
@@ -47,6 +49,11 @@ export default {
         plugins: {
           legend: {
             display: false
+          },
+          defaults: {
+          fonts: {
+                size: 20
+            }
           }
         },
         elements: {
@@ -57,43 +64,34 @@ export default {
         scales: {
             xAxes: {
                 type: 'time',
+                autoSkip: true,
+                textStrokeWidth: 0,
                 time: {
                   unit: 'year',
-                  format: 'DD/MM/YYYY'
+                  stepSize: 2,
+                  //format: 'DD/MM/YYYY'
                 },
-                // unit: 'year'
-                // ticks: {
-                //     suggestedMin: '2010/01/01',
-                // },
+
             },
-            yAxes: {
-                // suggestedMin: 0,
-                // suggestedMax: 10,
-                scaleLabel: {
-                    display: true
+            x: {
+                title: {
+                    display: true,
+                    text: 'Time'
+                },
+                grid: {
+                    drawBorder: false
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: this.yLabel,
+                    padding: {
+                      bottom: 15
+                    }
                 }
             }
         }
-        // scales: {
-        //       xAxes: {
-        //           type: "time",
-        //           time: {
-        //               format: 'DD/MM/YYYY',
-        //               tooltipFormat: 'll',
-        //               unit: 'year',
-        //           },
-        //           scaleLabel: {
-        //               display: true,
-        //               labelString: 'Date'
-        //           }
-        //       },
-        //       yAxes: {
-        //           scaleLabel: {
-        //               display: true,
-        //               labelString: 'value'
-        //           }
-        //       }
-        //   }
       }
     }
   },
@@ -108,4 +106,7 @@ export default {
 
 <style lang="scss" scoped>
 
+.lineChart{
+
+}
 </style>
