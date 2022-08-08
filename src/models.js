@@ -1,9 +1,21 @@
-import data from "../assets/temp-data.json"
-
+//import data from "../assets/data/warrant-data.json"
 var currentModel = []
 
 var models = {
-  getDataBy(field){
+  loadFilterModel(topicModel){
+    var fileName = topicModel.filters;
+
+    var jsonData = require.context('../assets/data/', false, /\.json$/)
+    var loaded = jsonData('./' + fileName)
+
+    return JSON.parse(JSON.stringify(loaded));
+  },
+  getDataBy(dataFile, field){
+    var jsonData = require.context('../assets/data/', false, /\.json$/)
+    var loaded = jsonData('./' + dataFile)
+
+    var data = JSON.parse(JSON.stringify(loaded));
+
     var sorted = {}
 
     for (var i in data){
@@ -43,10 +55,10 @@ var models = {
     }
 
     //console.log(output);
-    currentModel = output;
+    //currentModel = output;
     return output;
 
-    //console.log(sorted)
+    console.log(sorted)
   },
 
   getByDate(dateModel){
@@ -83,7 +95,5 @@ var models = {
     return output;
   }
 }
-
-
 
 export default models;

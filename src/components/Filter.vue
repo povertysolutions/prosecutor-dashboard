@@ -2,10 +2,10 @@
     <div class="filter">
       <div class="fieldGroup">
         <h4>Sort by</h4>
-        <button v-for="(object, field) in dataset"
-                :class="['field', currentField == field ? 'selected' : '']"
-                @click="press(field)">
-          <div :class="['circle', currentField == field ? 'selected' : '']"></div>
+        <button v-for="(object, key) in dataset"
+                :class="['field', currentKey == key ? 'selected' : '']"
+                @click="press(key)">
+          <div :class="['circle', currentKey == key ? 'selected' : '']"></div>
           {{ object.label }}
 
         </button>
@@ -33,17 +33,16 @@ export default {
   },
   data(){
     return{
-      currentIndex: 0,
-      currentField: "",
+      currentKey: "",
       dateModel: null,
       dateRange: []
 
     }
   },
   methods:{
-    press(field){
-      this.currentField = field;
-      this.$emit('filterChanged', this.dataset[field]);
+    press(key){
+      this.currentKey = key;
+      this.$emit('filterChanged', this.dataset[key]);
     }
   },
   watch:{
@@ -52,6 +51,11 @@ export default {
       this.$emit('dateChanged', this.dateModel)
       for (var i in this.dateModel){
         //console.log(this.dateModel[i]);
+      }
+    },
+    dataset(){
+      if (this.dataset != null){
+        this.currentKey = Object.keys(this.dataset)[0];
       }
     }
   },
@@ -70,10 +74,6 @@ export default {
     //       },
     //       { label: 'This year', range: [startOfYear(new Date()), endOfYear(new Date())] },
     //     ]);
-
-    console.log(this.dataset)
-    this.currentField = Object.keys(this.dataset)[0];
-    console.log("this.currentField: " + this.currentField);
 
   }
 

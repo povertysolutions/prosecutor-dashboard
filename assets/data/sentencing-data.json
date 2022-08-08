@@ -1,0 +1,702 @@
+[
+    {
+        "id": "LXXQCOXTTX",
+        "race": "White",
+        "fileDate": "10/28/2001",
+        "chargeOption": "Felony",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "RIGLYPIDXQ",
+        "race": "Asian",
+        "fileDate": "01/30/2012",
+        "chargeOption": "Other",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "PWNEXOARNY",
+        "race": "Asian",
+        "fileDate": "12/06/2002",
+        "chargeOption": "Other",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "ADJMZNVOLC",
+        "race": "White",
+        "fileDate": "05/26/2015",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "GZLHDSFFBZ",
+        "race": "Hispanic",
+        "fileDate": "10/01/2007",
+        "chargeOption": "Other",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "NCHGUIMFAA",
+        "race": "Other",
+        "fileDate": "03/08/2012",
+        "chargeOption": "Felony",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "FMRWUMMSKX",
+        "race": "White",
+        "fileDate": "06/15/2006",
+        "chargeOption": "Other",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "UTHRZOIJZB",
+        "race": "Black",
+        "fileDate": "01/17/2019",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "OSQPRFOVID",
+        "race": "White",
+        "fileDate": "08/23/2012",
+        "chargeOption": "Other",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "XYDRJGYPTL",
+        "race": "Black",
+        "fileDate": "06/05/2004",
+        "chargeOption": "Felony",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "OIWZQKWFWC",
+        "race": "Black",
+        "fileDate": "05/09/2013",
+        "chargeOption": "Felony",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "YTXMGIDOHZ",
+        "race": "Asian",
+        "fileDate": "10/05/2012",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "AHURHDSAYP",
+        "race": "Hispanic",
+        "fileDate": "04/06/2018",
+        "chargeOption": "Felony",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "SVFVOSBTVI",
+        "race": "Other",
+        "fileDate": "04/18/2009",
+        "chargeOption": "Felony",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "RZMATMWYCD",
+        "race": "Black",
+        "fileDate": "02/06/2018",
+        "chargeOption": "Other",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "HQUCVZLKWU",
+        "race": "Hispanic",
+        "fileDate": "12/18/2016",
+        "chargeOption": "Felony",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "EYUZKZLEHM",
+        "race": "Hispanic",
+        "fileDate": "08/04/2009",
+        "chargeOption": "Other",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "TFMGVQSSXF",
+        "race": "White",
+        "fileDate": "08/07/2010",
+        "chargeOption": "Other",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "SRFQZDZYXD",
+        "race": "Hispanic",
+        "fileDate": "04/04/2010",
+        "chargeOption": "Other",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "IOFMUBAKYG",
+        "race": "White",
+        "fileDate": "04/28/2017",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "LWVPJQUPTD",
+        "race": "Other",
+        "fileDate": "01/17/2015",
+        "chargeOption": "Other",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "ZUCQTPUOPE",
+        "race": "Hispanic",
+        "fileDate": "01/20/2012",
+        "chargeOption": "Other",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "VUSDQXUEUY",
+        "race": "Asian",
+        "fileDate": "08/07/2014",
+        "chargeOption": "Other",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "NMQJWKJLJG",
+        "race": "Black",
+        "fileDate": "01/25/2018",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "ZTCKAZRMRB",
+        "race": "Other",
+        "fileDate": "12/06/2002",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "MOASZPLPAF",
+        "race": "Asian",
+        "fileDate": "05/20/2015",
+        "chargeOption": "Other",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "HLCLEKFDZX",
+        "race": "White",
+        "fileDate": "04/20/2003",
+        "chargeOption": "Felony",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "RDTUZGLBJJ",
+        "race": "Black",
+        "fileDate": "05/15/2011",
+        "chargeOption": "Other",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "CSDNPQYZMS",
+        "race": "Hispanic",
+        "fileDate": "06/23/2012",
+        "chargeOption": "Other",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "MQGBIWJZQY",
+        "race": "Hispanic",
+        "fileDate": "07/02/2010",
+        "chargeOption": "Felony",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "KPZIQFJYHK",
+        "race": "Black",
+        "fileDate": "09/29/2010",
+        "chargeOption": "Other",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "WUFRHENZDU",
+        "race": "Asian",
+        "fileDate": "05/12/2013",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "ZWORPEAPMK",
+        "race": "Other",
+        "fileDate": "10/07/2004",
+        "chargeOption": "Felony",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "JXBEIBDTVY",
+        "race": "Asian",
+        "fileDate": "12/17/2007",
+        "chargeOption": "Felony",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "RYIPMLVIEQ",
+        "race": "Hispanic",
+        "fileDate": "09/13/2003",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "UXMBKNJIMU",
+        "race": "Hispanic",
+        "fileDate": "11/27/2014",
+        "chargeOption": "Other",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "ICGWIIUMSX",
+        "race": "Black",
+        "fileDate": "10/19/2016",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "XFEKZGANPF",
+        "race": "White",
+        "fileDate": "01/13/2013",
+        "chargeOption": "Other",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "ZWCBERNGBH",
+        "race": "Other",
+        "fileDate": "07/15/2002",
+        "chargeOption": "Other",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "JFBURIBKCD",
+        "race": "Other",
+        "fileDate": "12/28/2002",
+        "chargeOption": "Other",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "PWJFZMIPKD",
+        "race": "Black",
+        "fileDate": "11/18/2015",
+        "chargeOption": "Felony",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "BUNRGXFWWN",
+        "race": "Other",
+        "fileDate": "01/18/2004",
+        "chargeOption": "Felony",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "QGKDREUKVI",
+        "race": "White",
+        "fileDate": "04/15/2011",
+        "chargeOption": "Felony",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "BIFJWTVXUS",
+        "race": "Asian",
+        "fileDate": "07/14/2011",
+        "chargeOption": "Felony",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "OZOQXQIQRI",
+        "race": "White",
+        "fileDate": "02/20/2012",
+        "chargeOption": "Felony",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "WAKMJSSJEQ",
+        "race": "Black",
+        "fileDate": "07/03/2016",
+        "chargeOption": "Felony",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "EKDVDEDMAC",
+        "race": "Black",
+        "fileDate": "07/17/2018",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "EHBXNXLZCT",
+        "race": "Hispanic",
+        "fileDate": "05/16/2011",
+        "chargeOption": "Felony",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "NTRUETIKLC",
+        "race": "Asian",
+        "fileDate": "08/12/2006",
+        "chargeOption": "Felony",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "OWOMDGRGDO",
+        "race": "Other",
+        "fileDate": "08/25/2003",
+        "chargeOption": "Other",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "HRMTHPCNTY",
+        "race": "Other",
+        "fileDate": "09/15/2007",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "FPHWPDMPQK",
+        "race": "Hispanic",
+        "fileDate": "04/11/2009",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "YZUTAIWDUD",
+        "race": "Hispanic",
+        "fileDate": "03/27/2004",
+        "chargeOption": "Other",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "YFHDARONBP",
+        "race": "Other",
+        "fileDate": "12/27/2003",
+        "chargeOption": "Felony",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "LSTSGQXBPJ",
+        "race": "Black",
+        "fileDate": "02/02/2004",
+        "chargeOption": "Felony",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "SGDFGXXIRD",
+        "race": "Black",
+        "fileDate": "03/31/2003",
+        "chargeOption": "Felony",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "EFJUHNEXZG",
+        "race": "White",
+        "fileDate": "11/21/2002",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "ZOFQGQPXNE",
+        "race": "White",
+        "fileDate": "07/19/2019",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "LNXCDJLSBZ",
+        "race": "Asian",
+        "fileDate": "11/02/2001",
+        "chargeOption": "Other",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "XWFLNAMGIZ",
+        "race": "Asian",
+        "fileDate": "04/05/2018",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "ZAEIRLWFBU",
+        "race": "Black",
+        "fileDate": "12/23/2017",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "EERYFACVKV",
+        "race": "Asian",
+        "fileDate": "09/29/2012",
+        "chargeOption": "Felony",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "WMLSTTKICP",
+        "race": "Hispanic",
+        "fileDate": "07/31/2010",
+        "chargeOption": "Other",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "KHOOUSPPDT",
+        "race": "Asian",
+        "fileDate": "05/27/2012",
+        "chargeOption": "Other",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "SHRVHODQJJ",
+        "race": "Other",
+        "fileDate": "07/22/2016",
+        "chargeOption": "Felony",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "PAVHBVUGSA",
+        "race": "White",
+        "fileDate": "01/18/2019",
+        "chargeOption": "Felony",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "IYJMYJWBJW",
+        "race": "Hispanic",
+        "fileDate": "04/16/2019",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "SLFUHGQKEV",
+        "race": "White",
+        "fileDate": "07/21/2006",
+        "chargeOption": "Felony",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "LGIYEMOGJE",
+        "race": "White",
+        "fileDate": "09/22/2002",
+        "chargeOption": "Felony",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "FPYYFROOJI",
+        "race": "Asian",
+        "fileDate": "05/28/2014",
+        "chargeOption": "Other",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "RNNYEAIUBY",
+        "race": "Asian",
+        "fileDate": "08/01/2008",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Prison"
+    },
+    {
+        "id": "ENLCFQYWEK",
+        "race": "Other",
+        "fileDate": "11/13/2019",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "KNUORLMTCC",
+        "race": "Asian",
+        "fileDate": "06/04/2003",
+        "chargeOption": "Felony",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "BRVGFFVOWE",
+        "race": "Hispanic",
+        "fileDate": "06/25/2017",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "ALBOJNFYUH",
+        "race": "White",
+        "fileDate": "09/12/2018",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "FBHWNQCYAT",
+        "race": "White",
+        "fileDate": "07/22/2012",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "LJCCRFPCER",
+        "race": "Asian",
+        "fileDate": "01/10/2003",
+        "chargeOption": "Felony",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "BNNFJNBJBB",
+        "race": "Hispanic",
+        "fileDate": "03/29/2004",
+        "chargeOption": "Felony",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "ZTECBPLVSZ",
+        "race": "Hispanic",
+        "fileDate": "04/15/2014",
+        "chargeOption": "Other",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "EVYZHRMPTX",
+        "race": "Hispanic",
+        "fileDate": "09/01/2005",
+        "chargeOption": "Felony",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "OXHWRZDAHB",
+        "race": "Other",
+        "fileDate": "05/20/2009",
+        "chargeOption": "Other",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "RLMDCRODQR",
+        "race": "Other",
+        "fileDate": "02/05/2014",
+        "chargeOption": "Other",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "LGFJUONJBT",
+        "race": "White",
+        "fileDate": "04/24/2003",
+        "chargeOption": "Other",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "GLYJIRWYVH",
+        "race": "White",
+        "fileDate": "02/15/2018",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "CMWWFVNVXK",
+        "race": "Black",
+        "fileDate": "02/01/2018",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "YYPQJNJPZM",
+        "race": "Asian",
+        "fileDate": "04/29/2014",
+        "chargeOption": "Other",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "YWZMRYUFUU",
+        "race": "Asian",
+        "fileDate": "05/30/2017",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "ABRHRHUJAN",
+        "race": "Hispanic",
+        "fileDate": "02/13/2000",
+        "chargeOption": "Other",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "RUNVHWZABJ",
+        "race": "Other",
+        "fileDate": "04/23/2005",
+        "chargeOption": "Felony",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "TYGFNGBDLV",
+        "race": "Other",
+        "fileDate": "09/05/2011",
+        "chargeOption": "Other",
+        "sentenceType": "Jail"
+    },
+    {
+        "id": "HQXTWFZIUT",
+        "race": "Black",
+        "fileDate": "02/25/2008",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "NXEYIEAGQL",
+        "race": "White",
+        "fileDate": "02/04/2005",
+        "chargeOption": "Other",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "CCRTWOOEZK",
+        "race": "Asian",
+        "fileDate": "07/29/2006",
+        "chargeOption": "Felony",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "ZAMXOCOACF",
+        "race": "Hispanic",
+        "fileDate": "08/09/2004",
+        "chargeOption": "Other",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "WZMRUDUOXZ",
+        "race": "Asian",
+        "fileDate": "06/16/2017",
+        "chargeOption": "Felony",
+        "sentenceType": "Other"
+    },
+    {
+        "id": "MQDUBUJNAV",
+        "race": "Black",
+        "fileDate": "06/29/2019",
+        "chargeOption": "Felony",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "PKJXJYXUHD",
+        "race": "Asian",
+        "fileDate": "12/02/2001",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Probation"
+    },
+    {
+        "id": "UZHBKHVAKI",
+        "race": "Other",
+        "fileDate": "07/03/2011",
+        "chargeOption": "Other",
+        "sentenceType": "Conditional Discharge"
+    },
+    {
+        "id": "NVDBRAZFSU",
+        "race": "White",
+        "fileDate": "04/13/2016",
+        "chargeOption": "Misdomeanor",
+        "sentenceType": "Supervision"
+    },
+    {
+        "id": "OFSNOZBIXS",
+        "race": "Asian",
+        "fileDate": "09/10/2018",
+        "chargeOption": "Felony",
+        "sentenceType": "Conditional Discharge"
+    }
+]

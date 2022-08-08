@@ -1,0 +1,35 @@
+{
+  "race" : {
+    "label" : "Race",
+    "type" : "graph",
+    "x" : "year",
+    "y" : "race",
+    "yLabel": {
+      "en" : "Residents Sentenced",
+      "es" : ""
+    },
+    "title" : "Residents Prosecuted by Year"
+  },
+  "charge" : {
+    "label" : "Charge Type",
+    "type" : "graph",
+    "x" : "race",
+    "y" : "chargeOption",
+    "yLabel": {
+      "en" : "Charge",
+      "es" : ""
+    },
+    "title" : "Charge Type by Race"
+  },
+  "sentencing" : {
+    "label" : "Sentence Type",
+    "type" : "graph",
+    "x" : "sentencingDate",
+    "y" : "sentenceType",
+    "yLabel": {
+      "en" : "Charge",
+      "es" : ""
+    },
+    "title" : "Sentencing Types Over Time"
+  }
+}

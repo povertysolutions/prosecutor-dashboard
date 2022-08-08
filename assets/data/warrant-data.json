@@ -1,0 +1,802 @@
+[
+  {
+    "id": "YLRQOGFQII",
+    "fileDate": "06/22/2010",
+    "race": "White",
+    "region": "Northfield",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Capias"
+  },
+  {
+    "id": "HOHFNFDBSY",
+    "fileDate": "01/15/2002",
+    "race": "Hispanic",
+    "region": "Sylvan",
+    "outcome": "Convicted",
+    "type": "Capias"
+  },
+  {
+    "id": "GDRSOZJKSJ",
+    "fileDate": "05/12/2019",
+    "race": "White",
+    "region": "Lima",
+    "outcome": "Convicted",
+    "type": "Arrest"
+  },
+  {
+    "id": "ZHRGPXRNGA",
+    "fileDate": "04/10/2001",
+    "race": "Black",
+    "region": "Lydon",
+    "outcome": "Convicted",
+    "type": "Search"
+  },
+  {
+    "id": "KCBVVOWRMF",
+    "fileDate": "06/19/2012",
+    "race": "Black",
+    "region": "Salem",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Alias"
+  },
+  {
+    "id": "GASBITKXHM",
+    "fileDate": "11/25/2000",
+    "race": "White",
+    "region": "Northfield",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Arrest"
+  },
+  {
+    "id": "EFEHILFJPO",
+    "fileDate": "01/12/2010",
+    "race": "White",
+    "region": "Salem",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Fugitive"
+  },
+  {
+    "id": "MPLLTXVGPB",
+    "fileDate": "04/17/2009",
+    "race": "White",
+    "region": "Dextor",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Bench"
+  },
+  {
+    "id": "AIVZWPSNRG",
+    "fileDate": "01/11/2017",
+    "race": "Other",
+    "region": "Northfield",
+    "outcome": "Declined Prosecution",
+    "type": "Arrest"
+  },
+  {
+    "id": "JOFRPMYVDK",
+    "fileDate": "11/25/2015",
+    "race": "Asian",
+    "region": "Lima",
+    "outcome": "Declined Prosecution",
+    "type": "Fugitive"
+  },
+  {
+    "id": "WYYJCZDZHL",
+    "fileDate": "06/16/2013",
+    "race": "White",
+    "region": "Salem",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Search"
+  },
+  {
+    "id": "YQDVVBPXQD",
+    "fileDate": "02/11/2016",
+    "race": "Hispanic",
+    "region": "Salem",
+    "outcome": "Convicted",
+    "type": "Bench"
+  },
+  {
+    "id": "XYKKPQTZIW",
+    "fileDate": "08/13/2003",
+    "race": "Asian",
+    "region": "Northfield",
+    "outcome": "Convicted",
+    "type": "Civil"
+  },
+  {
+    "id": "COXNETESMC",
+    "fileDate": "04/22/2017",
+    "race": "Other",
+    "region": "Dextor",
+    "outcome": "Declined Prosecution",
+    "type": "Bench"
+  },
+  {
+    "id": "RKFOCRPIRW",
+    "fileDate": "12/30/2015",
+    "race": "Black",
+    "region": "Scio",
+    "outcome": "Convicted",
+    "type": "Bench"
+  },
+  {
+    "id": "AOFWTJWMEG",
+    "fileDate": "07/10/2003",
+    "race": "Black",
+    "region": "Scio",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Search"
+  },
+  {
+    "id": "GUXSOOGPKM",
+    "fileDate": "05/03/2011",
+    "race": "Black",
+    "region": "Lydon",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Bench"
+  },
+  {
+    "id": "FCOLZDNVVF",
+    "fileDate": "03/31/2005",
+    "race": "Asian",
+    "region": "Webster",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Civil"
+  },
+  {
+    "id": "SUZBZTTNCR",
+    "fileDate": "05/01/2007",
+    "race": "Black",
+    "region": "Lima",
+    "outcome": "Convicted",
+    "type": "Bench"
+  },
+  {
+    "id": "RJLWFVTEUY",
+    "fileDate": "05/25/2009",
+    "race": "Other",
+    "region": "Lima",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Bench"
+  },
+  {
+    "id": "FATIZAXNRF",
+    "fileDate": "04/01/2018",
+    "race": "Other",
+    "region": "Salem",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Alias"
+  },
+  {
+    "id": "LAXVIASKWU",
+    "fileDate": "02/03/2005",
+    "race": "Black",
+    "region": "Salem",
+    "outcome": "Convicted",
+    "type": "Fugitive"
+  },
+  {
+    "id": "DELVXKZAHO",
+    "fileDate": "05/16/2014",
+    "race": "Asian",
+    "region": "Scio",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Civil"
+  },
+  {
+    "id": "OZWTJTWTHT",
+    "fileDate": "04/13/2014",
+    "race": "Asian",
+    "region": "Dextor",
+    "outcome": "Declined Prosecution",
+    "type": "Bench"
+  },
+  {
+    "id": "CHPZLUHJFO",
+    "fileDate": "09/17/2012",
+    "race": "White",
+    "region": "Salem",
+    "outcome": "Declined Prosecution",
+    "type": "Capias"
+  },
+  {
+    "id": "JRLHOULHGT",
+    "fileDate": "11/18/2008",
+    "race": "White",
+    "region": "Sylvan",
+    "outcome": "Declined Prosecution",
+    "type": "Alias"
+  },
+  {
+    "id": "TVJSKWZRKL",
+    "fileDate": "10/06/2008",
+    "race": "White",
+    "region": "Lydon",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Search"
+  },
+  {
+    "id": "DXNNVVACOG",
+    "fileDate": "01/12/2001",
+    "race": "Hispanic",
+    "region": "Scio",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Fugitive"
+  },
+  {
+    "id": "JLMGNNUTLK",
+    "fileDate": "11/08/2016",
+    "race": "Hispanic",
+    "region": "Northfield",
+    "outcome": "Declined Prosecution",
+    "type": "Search"
+  },
+  {
+    "id": "OIQISEUWWD",
+    "fileDate": "10/14/2016",
+    "race": "Hispanic",
+    "region": "Scio",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Bench"
+  },
+  {
+    "id": "DHBTJGGKPP",
+    "fileDate": "11/30/2005",
+    "race": "White",
+    "region": "Lydon",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Bench"
+  },
+  {
+    "id": "MKZIXVSAGH",
+    "fileDate": "05/18/2002",
+    "race": "Other",
+    "region": "Scio",
+    "outcome": "Convicted",
+    "type": "Alias"
+  },
+  {
+    "id": "ZBPURYLOFG",
+    "fileDate": "03/02/2003",
+    "race": "Other",
+    "region": "Scio",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Arrest"
+  },
+  {
+    "id": "SNRGPXFGXH",
+    "fileDate": "01/30/2012",
+    "race": "Other",
+    "region": "Scio",
+    "outcome": "Declined Prosecution",
+    "type": "Civil"
+  },
+  {
+    "id": "CUTNTBPALJ",
+    "fileDate": "04/22/2001",
+    "race": "White",
+    "region": "Lydon",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Bench"
+  },
+  {
+    "id": "QPDJLECFOZ",
+    "fileDate": "08/02/2011",
+    "race": "Asian",
+    "region": "Lima",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Arrest"
+  },
+  {
+    "id": "FXSJEMRYDZ",
+    "fileDate": "10/02/2015",
+    "race": "Asian",
+    "region": "Sylvan",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Arrest"
+  },
+  {
+    "id": "JQHYBLWSEC",
+    "fileDate": "11/07/2015",
+    "race": "Black",
+    "region": "Lima",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Alias"
+  },
+  {
+    "id": "VIVVAOLOXZ",
+    "fileDate": "08/14/2011",
+    "race": "Black",
+    "region": "Webster",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Capias"
+  },
+  {
+    "id": "ZOEQWXVKTR",
+    "fileDate": "05/31/2007",
+    "race": "Other",
+    "region": "Webster",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Arrest"
+  },
+  {
+    "id": "WOEDYRWHCW",
+    "fileDate": "07/22/2012",
+    "race": "Other",
+    "region": "Dextor",
+    "outcome": "Convicted",
+    "type": "Civil"
+  },
+  {
+    "id": "KTAOGEHCFR",
+    "fileDate": "02/20/2008",
+    "race": "Other",
+    "region": "Sylvan",
+    "outcome": "Convicted",
+    "type": "Fugitive"
+  },
+  {
+    "id": "IBTBNSUWWY",
+    "fileDate": "12/10/2000",
+    "race": "Black",
+    "region": "Scio",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Capias"
+  },
+  {
+    "id": "OEGVTTUTLQ",
+    "fileDate": "03/14/2001",
+    "race": "Asian",
+    "region": "Webster",
+    "outcome": "Convicted",
+    "type": "Arrest"
+  },
+  {
+    "id": "SJSFNQBIFP",
+    "fileDate": "05/12/2000",
+    "race": "Black",
+    "region": "Salem",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Bench"
+  },
+  {
+    "id": "CSIBMZGQKR",
+    "fileDate": "11/14/2011",
+    "race": "Hispanic",
+    "region": "Lydon",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Capias"
+  },
+  {
+    "id": "CJJJBSTFRQ",
+    "fileDate": "03/27/2012",
+    "race": "Other",
+    "region": "Sylvan",
+    "outcome": "Convicted",
+    "type": "Capias"
+  },
+  {
+    "id": "WYUSPPPZBN",
+    "fileDate": "02/16/2014",
+    "race": "White",
+    "region": "Lydon",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Arrest"
+  },
+  {
+    "id": "QSDKLKBGQN",
+    "fileDate": "06/10/2004",
+    "race": "Asian",
+    "region": "Scio",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Capias"
+  },
+  {
+    "id": "HYPVUOJXXH",
+    "fileDate": "01/23/2015",
+    "race": "Black",
+    "region": "Northfield",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Capias"
+  },
+  {
+    "id": "PDKPUWUPVL",
+    "fileDate": "04/20/2015",
+    "race": "Other",
+    "region": "Dextor",
+    "outcome": "Declined Prosecution",
+    "type": "Arrest"
+  },
+  {
+    "id": "XFZQPYSQCP",
+    "fileDate": "05/15/2008",
+    "race": "White",
+    "region": "Webster",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Capias"
+  },
+  {
+    "id": "WHKFOUWQIK",
+    "fileDate": "10/25/2004",
+    "race": "Black",
+    "region": "Webster",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Arrest"
+  },
+  {
+    "id": "DVOIDARZOU",
+    "fileDate": "07/06/2014",
+    "race": "Asian",
+    "region": "Dextor",
+    "outcome": "Convicted",
+    "type": "Alias"
+  },
+  {
+    "id": "EDVLFGUSYF",
+    "fileDate": "08/17/2004",
+    "race": "Hispanic",
+    "region": "Scio",
+    "outcome": "Declined Prosecution",
+    "type": "Capias"
+  },
+  {
+    "id": "PAOGXMNYZN",
+    "fileDate": "10/31/2010",
+    "race": "Asian",
+    "region": "Webster",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Alias"
+  },
+  {
+    "id": "UZNNUKHEEF",
+    "fileDate": "05/11/2012",
+    "race": "Other",
+    "region": "Salem",
+    "outcome": "Convicted",
+    "type": "Fugitive"
+  },
+  {
+    "id": "VPNTWCEFAJ",
+    "fileDate": "03/19/2012",
+    "race": "White",
+    "region": "Salem",
+    "outcome": "Declined Prosecution",
+    "type": "Arrest"
+  },
+  {
+    "id": "YGZIJJBCJM",
+    "fileDate": "01/11/2011",
+    "race": "Asian",
+    "region": "Salem",
+    "outcome": "Convicted",
+    "type": "Civil"
+  },
+  {
+    "id": "FTMHLZISTW",
+    "fileDate": "07/24/2002",
+    "race": "Black",
+    "region": "Scio",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Capias"
+  },
+  {
+    "id": "LFYCVMVHOA",
+    "fileDate": "07/18/2011",
+    "race": "Hispanic",
+    "region": "Lima",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Arrest"
+  },
+  {
+    "id": "KIGKFCMZII",
+    "fileDate": "06/11/2017",
+    "race": "Asian",
+    "region": "Webster",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Civil"
+  },
+  {
+    "id": "XXMKEWLAPE",
+    "fileDate": "05/02/2012",
+    "race": "Hispanic",
+    "region": "Webster",
+    "outcome": "Declined Prosecution",
+    "type": "Fugitive"
+  },
+  {
+    "id": "SFPJDTRNKO",
+    "fileDate": "06/06/2017",
+    "race": "White",
+    "region": "Scio",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Civil"
+  },
+  {
+    "id": "DODKTQNBCN",
+    "fileDate": "09/10/2017",
+    "race": "Hispanic",
+    "region": "Lydon",
+    "outcome": "Declined Prosecution",
+    "type": "Fugitive"
+  },
+  {
+    "id": "FZMJKTQCOF",
+    "fileDate": "12/16/2017",
+    "race": "Other",
+    "region": "Salem",
+    "outcome": "Convicted",
+    "type": "Alias"
+  },
+  {
+    "id": "HXSGGZBCTH",
+    "fileDate": "02/01/2011",
+    "race": "Black",
+    "region": "Northfield",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Civil"
+  },
+  {
+    "id": "LEIIKTATVJ",
+    "fileDate": "05/14/2006",
+    "race": "Black",
+    "region": "Scio",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Bench"
+  },
+  {
+    "id": "CJOUGAPSJY",
+    "fileDate": "11/29/2008",
+    "race": "Asian",
+    "region": "Lydon",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Civil"
+  },
+  {
+    "id": "XGAJEAIARK",
+    "fileDate": "08/13/2017",
+    "race": "White",
+    "region": "Webster",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Search"
+  },
+  {
+    "id": "PGWQLOBGKH",
+    "fileDate": "09/21/2016",
+    "race": "Other",
+    "region": "Lima",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Search"
+  },
+  {
+    "id": "UQONWSGRHV",
+    "fileDate": "07/07/2007",
+    "race": "Hispanic",
+    "region": "Salem",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Arrest"
+  },
+  {
+    "id": "CGXIUVWEBN",
+    "fileDate": "01/13/2011",
+    "race": "Black",
+    "region": "Sylvan",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Alias"
+  },
+  {
+    "id": "DBEEWCTDVS",
+    "fileDate": "07/16/2006",
+    "race": "Black",
+    "region": "Webster",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Alias"
+  },
+  {
+    "id": "ZRBLZDAWCO",
+    "fileDate": "09/12/2017",
+    "race": "Black",
+    "region": "Dextor",
+    "outcome": "Convicted",
+    "type": "Fugitive"
+  },
+  {
+    "id": "FWRDPSWYHY",
+    "fileDate": "12/18/2002",
+    "race": "Other",
+    "region": "Sylvan",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Arrest"
+  },
+  {
+    "id": "IDYPLFSQHY",
+    "fileDate": "07/24/2013",
+    "race": "Other",
+    "region": "Scio",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Civil"
+  },
+  {
+    "id": "PFAMHDFEQC",
+    "fileDate": "03/27/2005",
+    "race": "Other",
+    "region": "Webster",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Civil"
+  },
+  {
+    "id": "PKDXRUQRQS",
+    "fileDate": "10/05/2005",
+    "race": "Black",
+    "region": "Northfield",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Bench"
+  },
+  {
+    "id": "QBHUUARRZA",
+    "fileDate": "11/19/2018",
+    "race": "Asian",
+    "region": "Sylvan",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Bench"
+  },
+  {
+    "id": "KRZLBMYVTD",
+    "fileDate": "12/01/2003",
+    "race": "White",
+    "region": "Webster",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Fugitive"
+  },
+  {
+    "id": "GZCNVAYJQS",
+    "fileDate": "12/28/2009",
+    "race": "Asian",
+    "region": "Lydon",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Fugitive"
+  },
+  {
+    "id": "UTXPZQOZJE",
+    "fileDate": "01/29/2015",
+    "race": "Asian",
+    "region": "Webster",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Arrest"
+  },
+  {
+    "id": "DBOTJDWSDA",
+    "fileDate": "01/02/2017",
+    "race": "Hispanic",
+    "region": "Scio",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Civil"
+  },
+  {
+    "id": "TAQTXRMWAU",
+    "fileDate": "07/08/2017",
+    "race": "Black",
+    "region": "Sylvan",
+    "outcome": "Declined Prosecution",
+    "type": "Fugitive"
+  },
+  {
+    "id": "ZGRCUSJIOF",
+    "fileDate": "05/18/2018",
+    "race": "Other",
+    "region": "Webster",
+    "outcome": "Convicted",
+    "type": "Bench"
+  },
+  {
+    "id": "KOGNUWITGK",
+    "fileDate": "07/05/2012",
+    "race": "White",
+    "region": "Dextor",
+    "outcome": "Convicted",
+    "type": "Civil"
+  },
+  {
+    "id": "GCNXMABVDC",
+    "fileDate": "12/11/2016",
+    "race": "Black",
+    "region": "Lima",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Search"
+  },
+  {
+    "id": "XTAIBITXXT",
+    "fileDate": "08/10/2005",
+    "race": "Asian",
+    "region": "Webster",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Bench"
+  },
+  {
+    "id": "ABNCTBQKQZ",
+    "fileDate": "10/04/2003",
+    "race": "Other",
+    "region": "Salem",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Bench"
+  },
+  {
+    "id": "VAPIQTMLRG",
+    "fileDate": "03/13/2012",
+    "race": "Hispanic",
+    "region": "Lima",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Bench"
+  },
+  {
+    "id": "WCUJYUQRYP",
+    "fileDate": "03/01/2005",
+    "race": "Hispanic",
+    "region": "Dextor",
+    "outcome": "Dismissed / Aquitted",
+    "type": "Alias"
+  },
+  {
+    "id": "KTOJGRVXJG",
+    "fileDate": "06/01/2003",
+    "race": "Other",
+    "region": "Northfield",
+    "outcome": "Convicted",
+    "type": "Capias"
+  },
+  {
+    "id": "APXUJMKZFQ",
+    "fileDate": "10/10/2015",
+    "race": "Black",
+    "region": "Webster",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Alias"
+  },
+  {
+    "id": "FFXNWHXIDI",
+    "fileDate": "01/04/2018",
+    "race": "Black",
+    "region": "Salem",
+    "outcome": "Declined Prosecution",
+    "type": "Search"
+  },
+  {
+    "id": "BVIKEAZMSQ",
+    "fileDate": "07/11/2011",
+    "race": "Black",
+    "region": "Dextor",
+    "outcome": "Declined Prosecution",
+    "type": "Civil"
+  },
+  {
+    "id": "MHUAQQLKWW",
+    "fileDate": "08/22/2001",
+    "race": "Hispanic",
+    "region": "Scio",
+    "outcome": "Declined Prosecution",
+    "type": "Capias"
+  },
+  {
+    "id": "SMJIMBFHBP",
+    "fileDate": "09/04/2014",
+    "race": "White",
+    "region": "Lima",
+    "outcome": "Adjourned in Contemplation of Dismissal",
+    "type": "Bench"
+  },
+  {
+    "id": "EUHWCTHJEQ",
+    "fileDate": "03/30/2006",
+    "race": "Other",
+    "region": "Salem",
+    "outcome": "Declined Prosecution",
+    "type": "Bench"
+  },
+  {
+    "id": "VYZLNWLQFD",
+    "fileDate": "10/24/2013",
+    "race": "White",
+    "region": "Scio",
+    "outcome": "Convicted",
+    "type": "Arrest"
+  }
+]

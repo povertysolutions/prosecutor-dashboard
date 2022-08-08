@@ -1,0 +1,18 @@
+{
+  "warrents": {
+    "label": {
+      "en": "Warrants",
+      "es": ""
+    },
+    "data": "warrant-data.json",
+    "filters": "warrant-filters.json"
+  },
+  "sentencing": {
+    "label": {
+      "en": "Sentencing",
+      "es": ""
+    },
+    "data": "sentencing-data.json",
+    "filters": "sentencing-filters.json"
+  }
+}

@@ -1,7 +1,7 @@
 <template>
   <div class="view">
     <div class="module">
-      <Sidebar :filters="filters"></Sidebar>
+      <Sidebar :topics="topics" @topicChanged="updateTopic"></Sidebar>
         <section class="main">
           <h2>{{currentTitle}}</h2>
           <LineGraph class="graph" :dataset="chartData" :yLabel="currentYLabel"></LineGraph>
@@ -17,21 +17,23 @@ import Sidebar from "@/components/Sidebar"
 import LineGraph from "@/components/LineGraph"
 import Details from "@/components/Details"
 import Legend from "@/components/Legend"
-import Filter from "@/components/Filter"
 
 import WarrentData from "../models.js"
-import filterJson from "../../assets/filters.json"
+import topicsJson from "../../assets/topics.json"
+import filterJson from "../../assets/data/warrant-filters.json"
 
 export default {
   name: "Dashboard",
-  components: { Sidebar, LineGraph, Details, Legend, Filter },
+  components: { Sidebar, LineGraph, Details, Legend },
   data(){
     return {
       colors: ["#6979D3", "#FFA600", "#7b247d", "#33557d", "#f5e16e", "#DD5182", "#44279c", "#b670b8" ],
       chartData: [],
       legendData: [],
       currentFilter: null,
-      filters: filterJson,
+      currentTopic: null,
+      topics: topicsJson,
+      filters: null,
       lang: "en"
     }
   },
@@ -56,6 +58,16 @@ export default {
     }
   },
   methods:{
+    updateTopic(topic){
+      this.currentTopic = topic;
+      this.loadFilters();
+      this.sort();
+    },
+    loadFilters(){
+      this.filters = WarrentData.loadFilterModel(this.currentTopic);
+      var currentFilterKey = Object.keys(this.filters)[0]
+      this.currentFilter = this.filters[currentFilterKey];
+    },
     updateFilter(filter){
       this.currentFilter = filter;
       this.sort();
@@ -82,8 +94,10 @@ export default {
       }
     },
     sort(){
+      var dataFile = this.currentTopic.data;
+
       var field = this.currentFilter.y;
-      var currentData = WarrentData.getDataBy(field);
+      var currentData = WarrentData.getDataBy(dataFile, field);
 
       var chart = [];
       var legend = [];
@@ -99,7 +113,9 @@ export default {
     }
   },
   mounted(){
-    this.currentFilter = this.filters.race;
+    var firstTopic = Object.keys(this.topics)[0]
+    this.currentTopic = this.topics[firstTopic];
+    this.loadFilters();
     this.sort();
   }
 }
