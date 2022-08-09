@@ -88,6 +88,7 @@ export default {
 }
 
 h4{
+  padding-bottom: .5rem;
   //padding: .5rem 0;
 }
 
@@ -102,7 +103,7 @@ h4{
 .dateGroup{
   display: inline-block;
   vertical-align: top;
-  width: 50%;
+  width: 40%;
   //margin: 0 1rem;
 }
 
@@ -111,7 +112,7 @@ h4{
   color: $color-medium-grey;
   width: 100%;
   text-align: left;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
   list-style: none;
   vertical-align: middle;
 
@@ -127,6 +128,7 @@ h4{
     height: 1rem;
     border-radius: 30px;
     border: 2px $color-green solid;
+    margin-left: -10px;
 
     &.selected{
       background-color: $color-green;

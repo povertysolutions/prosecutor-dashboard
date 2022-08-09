@@ -49,11 +49,6 @@ export default {
         plugins: {
           legend: {
             display: false
-          },
-          defaults: {
-          fonts: {
-                size: 20
-            }
           }
         },
         elements: {
@@ -76,7 +71,13 @@ export default {
             x: {
                 title: {
                     display: true,
-                    text: 'Time'
+                    text: 'Time',
+                    font: {
+                        size: 18,
+                        family:'Roboto Medium'
+
+                    },
+                    color: "#000"
                 },
                 grid: {
                     drawBorder: false
@@ -88,7 +89,14 @@ export default {
                     text: this.yLabel,
                     padding: {
                       bottom: 15
-                    }
+                    },
+                    font: {
+                        size: 18,
+                        family:'Roboto Medium'
+
+
+                    },
+                    color: "#000"
                 }
             }
         }

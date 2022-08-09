@@ -1,6 +1,6 @@
 <template>
     <div class="legend">
-      <h3>{{ title }}</h3>
+      <h4>{{ title }}</h4>
       <ul class="itemGroups">
         <li v-for="(item, i) in dataset" class="item">
           <div class="circle" :style="{'background-color' : item.color}"></div>
@@ -56,9 +56,14 @@ export default {
 }
 
 
-h3{
+h4{
   margin-left: 30px;
-  margin-bottom: 1rem;
+}
+
+.itemGroups{
+  position: relative;
+  margin-top: .5rem;
+  margin-left: -.5rem;
 }
 .item{
   display: inline-block;

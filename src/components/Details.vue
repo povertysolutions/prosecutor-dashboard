@@ -84,17 +84,19 @@ export default {
 
 .tab{
   display: inline-block;
-  background-color: $color-medium-grey;
-  color: $color-white;
-  margin: 0 2px;
-  border-radius: $background-radius $background-radius 0 0;
+  //background-color: $color-medium-grey;
+  color: $color-grey;
+  //margin: 0 2px;
   width: 24%;
-  padding: 5px 0;
+  padding: 5px 0px;
+  font-weight: bold;
+  border-bottom: 2px solid;
+  border-color: $color-grey;
 
   &.selected{
-    background-color: $color-light-grey;
-    color: $color-black;
-    font-weight: 600;
+    //background-color: $color-light-grey;
+    color: $color-dark-green;
+    border-color: $color-dark-green;
   }
 
 
@@ -106,7 +108,7 @@ export default {
 .bg{
   width: 100%;
   height: 100%;
-  background-color: $color-light-grey;
+  //background-color: $color-light-grey;
   border-radius: 0 $background-radius $background-radius $background-radius;
 
   p{
@@ -121,7 +123,7 @@ export default {
   }
 
   .filter{
-    padding: 1rem;
+    padding: 1rem 3rem;
   }
 }
 

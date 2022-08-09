@@ -131,8 +131,9 @@ export default {
 }
 
 h2{
-  margin: 1.5rem 0;
+  margin: 1.5rem 0 2rem 4rem;
   display: inline-block;
+
 }
 
 .graph{
@@ -145,8 +146,9 @@ h2{
 
 .legend{
   display: inline-block;
-  width: 200px;
+  width: 150px;
   vertical-align: top;
+  padding-left: 2rem;
 }
 
 .details{
@@ -154,8 +156,9 @@ h2{
   width: 75%;
   min-height: 150px;
   height: 25vh;
-  margin-top: 1em;
+  margin-top: 2rem;
   padding-bottom: 9.5rem;
+  padding-left: 2rem;
 }
 
 </style>
