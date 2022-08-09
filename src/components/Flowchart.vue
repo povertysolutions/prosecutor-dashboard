@@ -12,10 +12,10 @@
             :fit-view-on-init="true"
              >
       <template #node-custom="props">
-        <CustomNode :data="props.data" @test="console.log('hello')" />
+        <CustomNode :data="props.data"/>
       </template>
     </VueFlow>
-    <NodeTakeover class="takeover"  @close="closeTakeover" v-if="showTakeover"/>
+    <NodeTakeover class="takeover"  @close="closeTakeover" v-if="!showTakeover"/>
 
   </div>
 </template>
@@ -27,6 +27,7 @@ import CustomEdge from './CustomEdge.vue'
 import CustomNode from './CustomNode.vue'
 import NodeTakeover from "./NodeTakeover"
 import content from "../../assets/flowchart.json"
+import ref from "vue"
 
 const { getNode } = useVueFlow()
 
@@ -49,6 +50,7 @@ export default {
     return {
       showTakeover: false,
       lang: "en",
+      currentNode: null,
       nodeTypes: {
         customNode: CustomNode,
         connectionMode: ConnectionMode.Loose,
@@ -118,7 +120,6 @@ export default {
       console.log("onload!");
     },
     openTakeover(){
-      console.log("openTakeover!");
       this.showTakeover = true;
     },
     closeTakeover(){
@@ -128,6 +129,7 @@ export default {
   },
   mounted() {
     // Add an element after mount
+
     for (var i in this.elements){
       //this.elements.push(nodes[i]);
       var element = this.elements[i];
@@ -149,8 +151,11 @@ export default {
         element.data.content = content[txtId];
         element.data.txtId = txtId;
 
+
+
         element.events = {
-          click: () => {
+          click: (event) => {
+            console.log(event.node.data.content);
             this.openTakeover();
           }
         }

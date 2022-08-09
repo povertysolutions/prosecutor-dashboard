@@ -1,5 +1,5 @@
 <template>
-  <button :class="['customNode', core ? 'core' : '', influence]" @click="click">
+  <button :class="['customNode', core ? 'core' : '', influence]" v-on:input="click(data.content)">
     <div class="centered">
       <img class="circle" v-if="core" :src="icon"/>
       <label :class="[influence]">{{ label }}</label>
@@ -97,8 +97,13 @@ export default{
     }
   },
   methods:{
-    click(){
-      this.$emit('test');
+    // test(){
+    //   this.$emit('click', 'this.data.content');
+    // }
+    click: function (model) {
+      // use event here as well as id
+      console.log('click extended!')
+
     }
   },
   mounted(){
