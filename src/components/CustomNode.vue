@@ -15,13 +15,13 @@
   <Handle id="bottomCenter" type="target" :position="bottom" />
   <Handle v-if="data.bottomThirds" id="bottomRight" type="source" :position="bottom" :style="{'left': 'auto', 'right': bottomRightOffset + 'px'}" />
 
-  <Handle v-if="data.leftThirds" id="leftTop" type="target" :position="left" :style="{'top': leftTopOffset + 'px'}" />
-  <Handle id="leftCenter" type="target" :position="left" />
-  <Handle v-if="data.leftThirds" id="leftBottom" type="target" :position="left" :style="{'bottom': 'auto', 'top': leftBottomOffset + 'px'}" />
+  <Handle v-if="data.leftThirds" id="leftTop" type="source" :position="left" :style="{'top': leftTopOffset + 'px'}" />
+  <Handle id="leftCenter" type="source" :position="left" />
+  <Handle v-if="data.leftThirds" id="leftBottom" type="source" :position="left" :style="{'top': 'auto', 'bottom': leftBottomOffset + 'px'}" />
 
-  <Handle v-if="data.rightThirds" id="rightTop" type="source" :position="right" :style="{'top': rightTopOffset + 'px'}" />
-  <Handle id="rightCenter" type="source" :position="right" />
-  <Handle v-if="data.rightThirds" id="rightBottom" type="source" :position="right" :style="{'top': 'auto', 'bottom': rightBottomOffset + 'px'}" />
+  <Handle v-if="data.rightThirds" id="rightTop" type="target" :position="right" :style="{'top': rightTopOffset + 'px'}" />
+  <Handle id="rightCenter" type="target" :position="right" />
+  <Handle v-if="data.rightThirds" id="rightBottom" type="target" :position="right" :style="{'top': 'auto', 'bottom': rightBottomOffset + 'px'}" />
 
 </template>
 
@@ -67,7 +67,7 @@ export default{
       bottomLeftOffset: 20,
       bottomRightOffset: 15,
       leftTopOffset: 5,
-      leftBottomOffset: -10,
+      leftBottomOffset: 10,
       rightTopOffset: 5,
       rightBottomOffset: 10,
       top: Position.Top,
@@ -95,19 +95,6 @@ export default{
       }
       return "";
     }
-  },
-  methods:{
-    // test(){
-    //   this.$emit('click', 'this.data.content');
-    // }
-    click: function (model) {
-      // use event here as well as id
-      console.log('click extended!')
-
-    }
-  },
-  mounted(){
-
   }
 }
 
@@ -129,29 +116,31 @@ export default{
   //transform: translate(-50%, 0);
   //text-align: center;
   background-color: $color-white;
-  border: 2px $color-medium-grey solid;
+  //border: 2px $color-medium-grey solid;
+  border: 2px $color-dark-blue solid;
 
-  color: $color-medium-grey;
+  //color: $color-medium-grey;
+  color: $color-dark-blue;
 
-  &.independent{
-    border-color: $color-light-blue;
-  }
-
-  &.sole{
-    border-color: $color-orange;
-  }
-
-  &.mixed{
-    border-color: $color-purple;
-  }
-
-  &.limited{
-    border-color: $color-dark-blue;
-  }
+  // &.independent{
+  //   border-color: $color-light-blue;
+  // }
+  //
+  // &.sole{
+  //   border-color: $color-orange;
+  // }
+  //
+  // &.mixed{
+  //   border-color: $color-purple;
+  // }
+  //
+  // &.limited{
+  //   border-color: $color-dark-blue;
+  // }
 
   .centered{
     transition: all 100ms ease-in-out;
-    transition-delay: 100ms;
+    //transition-delay: 100ms;
     //max-width: 200px;
     margin: 8px 18px;
     text-align: center;
@@ -163,46 +152,48 @@ export default{
     label{
       display: inline-block;
       font-size: 20px;
-      color: $color-medium-grey;
+      color: $color-dark-blue;
+      //color: $color-medium-grey;
 
-      &.independent{
-        color: $color-light-blue;
-      }
-
-      &.sole{
-        color: $color-orange;
-      }
-
-      &.mixed{
-        color: $color-purple;
-      }
-
-      &.limited{
-        color: $color-dark-blue;
-      }
+      // &.independent{
+      //   color: $color-light-blue;
+      // }
+      //
+      // &.sole{
+      //   color: $color-orange;
+      // }
+      //
+      // &.mixed{
+      //   color: $color-purple;
+      // }
+      //
+      // &.limited{
+      //   color: $color-dark-blue;
+      // }
     }
   }
 
 
 
   &.core{
-    background-color: $color-medium-grey;
+    //background-color: $color-medium-grey;
+    background-color: $color-dark-blue;
 
-    &.independent{
-      background-color: $color-light-blue;
-    }
-
-    &.sole{
-      background-color: $color-orange;
-    }
-
-    &.mixed{
-      background-color: $color-purple;
-    }
-
-    &.limited{
-      background-color: $color-dark-blue;
-    }
+    // &.independent{
+    //   background-color: $color-light-blue;
+    // }
+    //
+    // &.sole{
+    //   background-color: $color-orange;
+    // }
+    //
+    // &.mixed{
+    //   background-color: $color-purple;
+    // }
+    //
+    // &.limited{
+    //   background-color: $color-dark-blue;
+    // }
 
     .centered{
       margin: 15px 30px;

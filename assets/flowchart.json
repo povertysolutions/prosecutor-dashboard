@@ -12,9 +12,23 @@
       "es": ""
     },
     "description": {
-      "en": "",
+      "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Sentencing Length vs Time",
+        "es": ""
+      },
+      {
+        "en": "Arrest Type vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Arrest Type vs Time",
+        "es": ""
+      }
+    ]
   },
   "initial-arrest": {
     "label": {
@@ -30,7 +44,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Habitual Offender Labeling vs Race",
+        "es": ""
+      },
+      {
+        "en": "Sentencing Length vs Time",
+        "es": ""
+      }
+    ]
   },
   "warrent-request": {
     "label": {
@@ -46,7 +70,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Time vs Charge Type",
+        "es": ""
+      }
+    ]
   },
   "referral": {
     "label": {
@@ -54,7 +88,7 @@
       "es": ""
     },
     "core": true,
-    "influence" : "sole",
+    "influence": "sole",
     "icon": "multi-arrow.svg",
     "iconDesc": {
       "en": "",
@@ -63,7 +97,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Sentencing Length vs Time",
+        "es": ""
+      }
+    ]
   },
   "assignment": {
     "label": {
@@ -80,14 +124,24 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Sentencing Length vs Time",
+        "es": ""
+      },
+      {
+        "en": "Time vs Charge Type",
+        "es": ""
+      }
+    ]
   },
   "rejection": {
     "label": {
       "en": "Rejection",
       "es": ""
     },
-    "influence" : "sole",
+    "influence": "sole",
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -112,14 +166,28 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Habitual Offender Labeling vs Race",
+        "es": ""
+      },
+      {
+        "en": "Time vs Charge Type",
+        "es": ""
+      }
+    ]
   },
   "diversion": {
     "label": {
       "en": "Diversion",
       "es": ""
     },
-    "influence" : "sole",
+    "influence": "sole",
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -128,7 +196,13 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Sentencing Length vs Time",
+        "es": ""
+      }
+    ]
   },
   "arraignment": {
     "label": {
@@ -136,6 +210,7 @@
       "es": ""
     },
     "core": true,
+    "influence": "mixed",
     "icon": "law-book.svg",
     "iconDesc": {
       "en": "",
@@ -144,7 +219,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Time vs Charge Type",
+        "es": ""
+      }
+    ]
   },
   "speciality": {
     "label": {
@@ -160,14 +245,28 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Arrest Type vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Habitual Offender Labeling vs Race",
+        "es": ""
+      }
+    ]
   },
   "plea": {
     "label": {
       "en": "Plea Offer",
       "es": ""
     },
-    "influence" : "sole",
+    "influence": "sole",
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -176,7 +275,8 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": []
   },
   "trial": {
     "label": {
@@ -193,7 +293,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Time vs Charge Type",
+        "es": ""
+      }
+    ]
   },
   "aquittal-dismissal": {
     "label": {
@@ -209,7 +319,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Habitual Offender Labeling vs Race",
+        "es": ""
+      },
+      {
+        "en": "Time vs Charge Type",
+        "es": ""
+      }
+    ]
   },
   "conviction": {
     "label": {
@@ -226,7 +346,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Habitual Offender Labeling vs Race",
+        "es": ""
+      }
+    ]
   },
   "fines": {
     "label": {
@@ -242,7 +372,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Arrest Type vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Time vs Charge Type",
+        "es": ""
+      }
+    ]
   },
   "community-service": {
     "label": {
@@ -258,7 +398,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Arrest Type vs Time",
+        "es": ""
+      }
+    ]
   },
   "probation": {
     "label": {
@@ -274,7 +424,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Time vs Charge Type",
+        "es": ""
+      }
+    ]
   },
   "incarceration": {
     "label": {
@@ -291,7 +451,8 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": []
   },
   "parole": {
     "label": {
@@ -307,7 +468,13 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Arrest Type vs Sentencing Type",
+        "es": ""
+      }
+    ]
   },
   "release": {
     "label": {
@@ -324,7 +491,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Time vs Charge Type",
+        "es": ""
+      }
+    ]
   },
   "rehab": {
     "label": {
@@ -341,7 +518,17 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Arrest Type vs Sentencing Type",
+        "es": ""
+      }
+    ]
   },
   "recidivism": {
     "label": {
@@ -358,6 +545,20 @@
     "description": {
       "en": "",
       "es": ""
-    }
+    },
+    "links": [
+      {
+        "en": "Race vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Arrest Type vs Sentencing Type",
+        "es": ""
+      },
+      {
+        "en": "Habitual Offender Labeling vs Race",
+        "es": ""
+      }
+    ]
   }
 }

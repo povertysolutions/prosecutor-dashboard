@@ -4,7 +4,8 @@
       <button @click="$emit('close')"><img :src="closeIcon"/></button>
       <div class="text">
         <h2>{{model.label[lang]}}</h2>
-        <p>{{model.description[lang]}}</p>
+        <!-- <p>{{model.description[lang]}}</p> -->
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
         <br>
         <p v-if="model.influence === 'independent'">This stage is <b>independent</b> from the procescution.</p>
         <p v-if="model.influence === 'sole'">This stage is <b>solely</b> controlled by the prosecution</p>
@@ -12,7 +13,7 @@
         <p v-if="model.influence === 'limited'">This stage is <b>limited</b> influence from the procescution.</p>
       </div>
       <div class="side">
-        <h4>Explore data at this step. </h4>
+        <h4 v-if="model.links.length > 0">Explore data at this step. </h4>
         <section v-for="link in model.links" class="link">
           <img :src="chartIcon"/>
           <p>{{ link[lang] }}</p>
@@ -27,36 +28,12 @@ import Asset from "@/utils/assets"
 
 export default {
   name: "NodeTakeover",
+  props:{
+    model: Object
+  },
   data(){
     return {
-    lang: "en",
-    model: {
-        "label": {
-          "en": "Social Determinants",
-          "es": ""
-        },
-        "core": true,
-        "influence": "independent",
-        "icon": "people.svg",
-        "iconDesc": {
-          "en": "",
-          "es": ""
-        },
-        "description": {
-          "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-          "es": ""
-        },
-        "links": [
-          {
-            "en" : "Race vs Sentencing Type",
-            "es" : ""
-          },
-          {
-            "en" : "Time vs Charge Type",
-            "es" : ""
-          }
-        ]
-      }
+      lang: "en"
     }
   },
   computed:{
@@ -125,7 +102,7 @@ section{
   }
 
   .side{
-    width: 25%;
+    width: 28%;
     display: inline-block;
     vertical-align: top;
     margin-left: 5rem;
@@ -146,6 +123,11 @@ section{
     background-color: $color-white;
     margin-bottom: 1rem;
     padding: 1rem 1.5rem;
+    transition: all 100ms ease-in-out;
+
+    &:hover{
+      padding: 1.25rem 1.75rem;
+    }
 
     img{
       display: inline-block;
