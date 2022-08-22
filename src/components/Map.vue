@@ -1,70 +1,88 @@
 <template>
-  <div id="map">
-    <MglMap :accessToken="accessToken" :mapStyle="mapStyle" v-if="mapStyle">
-      <!-- <MglGeojsonLayer
-        :sourceId="geoJsonSource.data.id"
-        :source="geoJsonSource"
-        layerId="somethingSomething"
-        :layer="geoJsonLayer"
-      /> -->
-    </MglMap>
-  </div>
+  <l-map style="height:80vh" :zoom="zoom" :center="center">
+    <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
+    <l-geo-json v-if="geojson" :geojson="geojson" :options="options" :options-style="styleFunction" />
+  </l-map>
 </template>
 
 <script>
-import Mapbox from "mapbox-gl";
-import { MglMap, MglGeojsonLayer } from "vue-mapbox";
+// DON'T load Leaflet components here!
+// Its CSS is needed though, if not imported elsewhere in your application.
+import "leaflet/dist/leaflet.css"
+import { LMap, LGeoJson, LTileLayer} from "@vue-leaflet/vue-leaflet";
 
-const MAPBOX_STYLE_URL = 'mapbox://styles/mapbox/streets-v11';
+var jsonData = require("../../assets/boundaries.geojson")
 
 export default {
   components: {
-    MglMap,
-    MglGeojsonLayer
+    LMap,
+    LTileLayer,
+    LGeoJson
   },
   data() {
     return {
-      accessToken:
-        "pk.eyJ1IjoibWlrZWhhbWlsdG9uMDAiLCJhIjoiNDVjS2puUSJ9.aLvWM5BnllUGJ0e6nwMSEg", // your access token. Needed if you using Mapbox maps
-      //mapStyle: 'mapbox://styles/mapbox/streets-v11', // your map style
-      geoJsonSource: {
-        type: 'geojson',
-        data: {
-          id: "thisIsMySource",
-          type: "FeatureCollection",
-          features: [
-            {
-              type: "Feature",
-              geometry: {
-                type: "Point",
-                coordinates: [102.0, 0.5]
-              },
-              properties: {
-                id: "value0"
-              }
-            }
-          ]
-        },
-      },
-      geoJsonLayer: {
-        type: "circle",
-        paint: {
-          "circle-color": "red"
-        }
-      }
+      zoom: 8,
+      center: [43, -85],
+      // zoom: 6,
+      // center: [48, -1.219482],
+      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      geojson: jsonData
     };
   },
   computed:{
-    mapStyle(){
-      if (this.accessToken){
-        return MAPBOX_STYLE_URL;
+    options() {
+      return {
+        onEachFeature: this.onEachFeatureFunction
+      };
+    },
+    styleFunction() {
+        //const fillColor = this.fillColor; // important! need touch fillColor in computed for re-calculate when change fillColor
+        return () => {
+          return {
+            weight: 2,
+            color: "#ff0000",
+            opacity: 1,
+            fillColor: "#0000ff",
+            fillOpacity: 1
+          };
+        };
+      },
+      onEachFeatureFunction() {
+        if (!this.enableTooltip) {
+          return () => {};
+        }
+        return (feature, layer) => {
+          layer.bindTooltip(
+            "<div>code:" +
+              feature.properties.code +
+              "</div><div>nom: " +
+              feature.properties.nom +
+              "</div>",
+            { permanent: false, sticky: true }
+          );
+        };
       }
-      return '';
-    }
-  },
-  created() {
-    // We need to set mapbox-gl library here in order to use it in template
-    //this.mapbox = Mapbox;
+    },
+  // async beforeMount() {
+  //   // HERE is where to load Leaflet components!
+  //   const { circleMarker } = await import("leaflet/dist/leaflet-src.esm");
+  //
+  //   // And now the Leaflet circleMarker function can be used by the options:
+  //   this.geojsonOptions.pointToLayer = (feature, latLng) =>
+  //     circleMarker(latLng, { radius: 8 });
+  //   this.mapIsReady = true;
+  // },
+
+  mounted(){
+    // var jsonData = require("../../assets/county-boundaries.geojson")
+    // this.geojson = jsonData;
+    // var jsonData = require.context('../assets/data/', false, /\.json$/)
+    // var loaded = jsonData('./' + fileName)
+    //
+    // return JSON.parse(JSON.stringify(loaded));
+
+    console.log(this.geojson);
   }
 };
 </script>
