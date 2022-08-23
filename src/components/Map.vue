@@ -1,8 +1,10 @@
 <template>
-  <l-map style="height:80vh" :zoom="zoom" :center="center">
-    <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-    <l-geo-json v-if="geojson" :geojson="geojson" :options="options" :options-style="styleFunction" />
-  </l-map>
+  <div>
+    <l-map :zoom="zoom" :center="center" class="map">
+      <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
+      <l-geo-json v-if="geojson" :geojson="geojson" :options="options" :options-style="styleFunction" />
+    </l-map>
+  </div>
 </template>
 
 <script>
@@ -21,8 +23,8 @@ export default {
   },
   data() {
     return {
-      zoom: 8,
-      center: [43, -85],
+      zoom: 10,
+      center: [42.25, -83.9],
       // zoom: 6,
       // center: [48, -1.219482],
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -86,3 +88,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+@import "@/styles/main.scss";
+
+.map{
+  //width: 100%;
+}
+
+</style>

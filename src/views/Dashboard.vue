@@ -5,12 +5,23 @@
         <section class="main">
           <h2>{{currentTitle}}</h2>
           <LineGraph class="graph"
+                      v-if="currentType=='graph'"
                      :dataset="chartData"
                      :xLabel="currentXLabel"
-                     :yLabel="currentYLabel" 
+                     :yLabel="currentYLabel"
                      :timelineMode="currentYLabel === 'Year'">
           </LineGraph>
-          <Legend class="legend" :title="currentLegendTitle" :dataset="legendData"></Legend>
+
+          <Map v-if="currentType=='map'" class="map"/>
+
+          <Legend class="legend"
+
+                  :title="currentLegendTitle"
+                  :dataset="legendData">
+          </Legend>
+
+
+
           <Details class="details" :filters="filters" @filterChanged="updateFilter" @dateChanged="updateDate"></Details>
         </section>
     </div>
@@ -22,6 +33,7 @@ import Sidebar from "@/components/Sidebar"
 import LineGraph from "@/components/LineGraph"
 import Details from "@/components/Details"
 import Legend from "@/components/Legend"
+import Map from "@/components/Map"
 
 import Models from "../models.js"
 import topicsJson from "../../assets/topics.json"
@@ -29,7 +41,7 @@ import filterJson from "../../assets/data/warrant-filters.json"
 
 export default {
   name: "Dashboard",
-  components: { Sidebar, LineGraph, Details, Legend },
+  components: { Sidebar, LineGraph, Details, Legend, Map },
   data(){
     return {
       colors: ["#6979D3", "#FFA600", "#7b247d", "#33557d", "#f5e16e", "#DD5182", "#44279c", "#b670b8" ],
@@ -64,6 +76,12 @@ export default {
     currentYLabel(){
       if (this.currentFilter && this.currentFilter.yLabel){
         return this.currentFilter.yLabel[this.lang];
+      }
+      return "";
+    },
+    currentType(){
+      if (this.currentFilter && this.currentFilter.type){
+        return this.currentFilter.type;
       }
       return "";
     }
@@ -110,7 +128,7 @@ export default {
       var x = this.currentFilter.x;
       var y = this.currentFilter.y;
 
-      console.log("sorting by: " + x + ", " + y)
+      //console.log("sorting by: " + x + ", " + y)
       var currentData = Models.getDataBy(dataFile, x, y);
 
       var chart = [];
@@ -124,6 +142,8 @@ export default {
 
       this.chartData = chart;
       this.legendData = legend;
+
+      console.log("display type: " + this.currentType);
     }
   },
   mounted(){
@@ -145,7 +165,7 @@ export default {
 }
 
 h2{
-  margin: 1.5rem 0 2rem 4rem;
+  margin: 1.5rem 0 0 4rem;
   display: inline-block;
 
 }
@@ -155,7 +175,24 @@ h2{
   min-width: 300px;
   width: 75%;
   min-height: 200px;
-  height: 40vh;
+  height: 43vh;
+  padding-top: 2rem;
+  padding-bottom: 3vh;
+
+
+}
+.map{
+  display: inline-block;
+  min-width: 300px;
+  height: 45vh;
+  width: 70%;
+  min-height: 400px;
+  height: 50vh;
+  padding-left: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1vh;
+  margin-bottom: 5px;
+
 }
 
 .legend{
@@ -170,7 +207,6 @@ h2{
   width: 75%;
   min-height: 150px;
   height: 25vh;
-  margin-top: 2rem;
   padding-bottom: 9.5rem;
   padding-left: 2rem;
 }

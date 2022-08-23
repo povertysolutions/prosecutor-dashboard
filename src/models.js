@@ -37,7 +37,6 @@ var models = {
       }
       else{
         xCategory = item[x];
-        console.log("xCategory: " + xCategory)
       }
 
       if (sorted[value][xCategory] == null){
