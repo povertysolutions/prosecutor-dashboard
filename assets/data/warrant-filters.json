@@ -4,6 +4,10 @@
     "type" : "graph",
     "x" : "year",
     "y" : "race",
+    "xLabel": {
+      "en" : "Year",
+      "es" : ""
+    },
     "yLabel": {
       "en" : "Residents Prosecuted",
       "es" : ""
@@ -27,6 +31,10 @@
     "type" : "graph",
     "x" : "race",
     "y" : "type",
+    "xLabel": {
+      "en" : "Race",
+      "es" : ""
+    },
     "yLabel": {
       "en" : "Charge File Type",
       "es" : ""
@@ -38,6 +46,10 @@
     "label" : "Case Outcome",
     "type" : "graph",
     "x" : "type",
+    "xLabel": {
+      "en" : "Type",
+      "es" : ""
+    },
     "y" : "outcome",
     "yLabel": {
       "en" : "Case Outcome Type",

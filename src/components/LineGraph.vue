@@ -33,7 +33,8 @@ export default {
     },
     dataset: Array,
     xLabel: String,
-    yLabel: String
+    yLabel: String,
+    timelineMode: Boolean
   },
   computed:{
     chartData() {
@@ -57,21 +58,11 @@ export default {
             }
         },
         scales: {
-            xAxes: {
-                type: 'time',
-                autoSkip: true,
-                textStrokeWidth: 0,
-                time: {
-                  unit: 'year',
-                  stepSize: 2,
-                  //format: 'DD/MM/YYYY'
-                },
-
-            },
+            xAxes: '',
             x: {
                 title: {
                     display: true,
-                    text: 'Time',
+                    text: this.xLabel,
                     font: {
                         size: 18,
                         family:'Roboto Medium'
@@ -101,7 +92,25 @@ export default {
             }
         }
       }
+    },
+    xScale(){
+      if (this.timelineMode){
+        return {
+            type: 'time',
+            autoSkip: true,
+            textStrokeWidth: 0,
+            time: {
+              unit: 'year',
+              stepSize: 2,
+              //format: 'DD/MM/YYYY'
+            },
+        }
+      }
+      return {
+        type: 'linear'
+      }
     }
+
   },
   data() {
     return {

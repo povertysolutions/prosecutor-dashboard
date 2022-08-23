@@ -1,14 +1,14 @@
 export default{
   load(filename){
-    console.log("getting: " + filename);
+    //console.log("getting: " + filename);
     var file;
     try{
       file = require("../assets/" + filename);
-      console.log(file);
+      //console.log(file);
     }
     catch(e){
       file = "";
-      console.log("failed to load: " + filename);
+      //console.log("failed to load: " + filename);
     }
     return file;
   }

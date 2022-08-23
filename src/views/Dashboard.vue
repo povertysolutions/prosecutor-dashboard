@@ -4,7 +4,12 @@
       <Sidebar :topics="topics" @topicChanged="updateTopic"></Sidebar>
         <section class="main">
           <h2>{{currentTitle}}</h2>
-          <LineGraph class="graph" :dataset="chartData" :yLabel="currentYLabel"></LineGraph>
+          <LineGraph class="graph"
+                     :dataset="chartData"
+                     :xLabel="currentXLabel"
+                     :yLabel="currentYLabel" 
+                     :timelineMode="currentYLabel === 'Year'">
+          </LineGraph>
           <Legend class="legend" :title="currentLegendTitle" :dataset="legendData"></Legend>
           <Details class="details" :filters="filters" @filterChanged="updateFilter" @dateChanged="updateDate"></Details>
         </section>
@@ -18,7 +23,7 @@ import LineGraph from "@/components/LineGraph"
 import Details from "@/components/Details"
 import Legend from "@/components/Legend"
 
-import WarrentData from "../models.js"
+import Models from "../models.js"
 import topicsJson from "../../assets/topics.json"
 import filterJson from "../../assets/data/warrant-filters.json"
 
@@ -50,6 +55,12 @@ export default {
       }
       return "";
     },
+    currentXLabel(){
+      if (this.currentFilter && this.currentFilter.xLabel){
+        return this.currentFilter.xLabel[this.lang];
+      }
+      return "";
+    },
     currentYLabel(){
       if (this.currentFilter && this.currentFilter.yLabel){
         return this.currentFilter.yLabel[this.lang];
@@ -64,7 +75,7 @@ export default {
       this.sort();
     },
     loadFilters(){
-      this.filters = WarrentData.loadFilterModel(this.currentTopic);
+      this.filters = Models.loadFilterModel(this.currentTopic);
       var currentFilterKey = Object.keys(this.filters)[0]
       this.currentFilter = this.filters[currentFilterKey];
     },
@@ -77,7 +88,7 @@ export default {
 
         //console.log("updateDate: " + dateModel.length);
         if (dateModel[0] && dateModel[1]){
-          var currentData = WarrentData.getByDate(dateModel);
+          var currentData = Models.getByDate(dateModel);
           this.chartData = [];
 
           setTimeout(() => {
@@ -96,8 +107,11 @@ export default {
     sort(){
       var dataFile = this.currentTopic.data;
 
-      var field = this.currentFilter.y;
-      var currentData = WarrentData.getDataBy(dataFile, field);
+      var x = this.currentFilter.x;
+      var y = this.currentFilter.y;
+
+      console.log("sorting by: " + x + ", " + y)
+      var currentData = Models.getDataBy(dataFile, x, y);
 
       var chart = [];
       var legend = [];

@@ -3,6 +3,10 @@
     "label" : "Race",
     "type" : "graph",
     "x" : "year",
+    "xLabel": {
+      "en" : "Year",
+      "es" : ""
+    },
     "y" : "race",
     "yLabel": {
       "en" : "Residents Sentenced",
@@ -14,6 +18,10 @@
     "label" : "Charge Type",
     "type" : "graph",
     "x" : "race",
+    "xLabel": {
+      "en" : "Race",
+      "es" : ""
+    },
     "y" : "chargeOption",
     "yLabel": {
       "en" : "Charge",
@@ -24,7 +32,11 @@
   "sentencing" : {
     "label" : "Sentence Type",
     "type" : "graph",
-    "x" : "sentencingDate",
+    "x" : "year",
+    "xLabel": {
+      "en" : "Year",
+      "es" : ""
+    },
     "y" : "sentenceType",
     "yLabel": {
       "en" : "Charge",

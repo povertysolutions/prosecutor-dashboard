@@ -10,7 +10,10 @@ var models = {
 
     return JSON.parse(JSON.stringify(loaded));
   },
-  getDataBy(dataFile, field){
+
+  //will sort data so it will displayed on x, y axis
+  //
+  getDataBy(dataFile, x, y){
     var jsonData = require.context('../assets/data/', false, /\.json$/)
     var loaded = jsonData('./' + dataFile)
 
@@ -20,33 +23,54 @@ var models = {
 
     for (var i in data){
       var item = data[i];
-      var value = item[field];
+      var value = item[y];
       if (sorted[value] == null){
         sorted[value] = [];
       }
 
-      var date = new Date(Date.parse(item["fileDate"]));
-      var year = "+" + date.getFullYear().toString();
-      if (sorted[value][year] == null){
-        sorted[value][year] = 0;
-      }
-      sorted[value][year] += 1;
-    }
 
-    for (var type in sorted){
-      sorted[type] = sorted[type].sort((a, b) => (a.year > b.year) ? 1 : -1);
-    }
+      var xCategory;
+
+      if (x == "year"){
+        var date = new Date(Date.parse(item["fileDate"]));
+        xCategory = "+" + date.getFullYear().toString();
+      }
+      else{
+        xCategory = item[x];
+        console.log("xCategory: " + xCategory)
+      }
+
+      if (sorted[value][xCategory] == null){
+        sorted[value][xCategory] = 0;
+      }
+      sorted[value][xCategory] += 1;
+      }
+
+      // if (x == "year"){
+      //   for (var type in sorted){
+      //     //console.log(sorted[type]);
+      //     sorted[type] = sorted[type].sort((a, b) => (a[x] > b[x]) ? 1 : -1);
+      //   }
+      // }
 
     var output = {};
 
     for (var type in sorted){
       var formatted = [];
-      var years = sorted[type];
+      var xValues = sorted[type];
 
-      for (var year in years){
-        var correctedYear = year.slice(1);
+      for (var xValue in xValues){
+
+        if (x == "year"){
+          var correctedYear = xValue.slice(1);
+          formatted.push({"x" : correctedYear, "y" : xValues[xValue]})
+        }
+        else{
+
+          formatted.push({"x" : xValue, "y" : xValues[xValue]})
+        }
         //console.log(correctedYear);
-        formatted.push({"x" : correctedYear, "y" : years[year]})
+
       }
 
       formatted.sort((a, b) => (a.x > b.x) ? 1 : -1);
