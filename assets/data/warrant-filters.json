@@ -1,7 +1,7 @@
 {
   "race" : {
     "label" : "Race",
-    "type" : "map",
+    "type" : "graph",
     "x" : "year",
     "y" : "race",
     "xLabel": {

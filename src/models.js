@@ -2,6 +2,10 @@
 var currentModel = []
 
 var models = {
+  getCurrentModel(){
+    return currentModel;
+  },
+
   loadFilterModel(topicModel){
     var fileName = topicModel.filters;
 
@@ -78,7 +82,7 @@ var models = {
     }
 
     //console.log(output);
-    //currentModel = output;
+    currentModel = output;
     return output;
 
     console.log(sorted)

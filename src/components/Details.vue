@@ -14,7 +14,10 @@
                 @filterChanged="filterChanged"
                 @dateChanged="dateChanged">
         </Filter>
-        <p :class="[showFilter ? 'hidden' : '']">{{sections[currentIndex].body}}</p>
+
+        <Download class="download" v-if="showDownload"> </Download>
+
+        <p :class="[showFilter || showDownload ? 'hidden' : '']">{{sections[currentIndex].body}}</p>
         <!-- <div class="test"></div> -->
       </div>
     </div>
@@ -22,9 +25,10 @@
 
 <script>
 import Filter from "@/components/Filter"
+import Download from "@/components/Download"
 export default {
   name: "Details",
-  components: { Filter },
+  components: { Filter, Download },
   props: {
     filters: Object
   },
@@ -42,13 +46,13 @@ export default {
           "body" : "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         },
         {
-          "title" : "Goals",
+          "title" : "Filters",
           "body" : "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
         },
         {
-          "title" : "Filters",
+          "title" : "Download",
           "body" : "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
-        }
+        },
       ]
 
     }
@@ -67,8 +71,10 @@ export default {
   },
   computed:{
     showFilter(){
+      return this.currentIndex == this.sections.length - 2;
+    },
+    showDownload(){
       return this.currentIndex == this.sections.length - 1;
-
     }
   }
 
@@ -123,6 +129,10 @@ export default {
   }
 
   .filter{
+    padding: 1rem 3rem;
+  }
+
+  .download{
     padding: 1rem 3rem;
   }
 }
