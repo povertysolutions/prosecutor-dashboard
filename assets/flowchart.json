@@ -6,6 +6,7 @@
     },
     "core": true,
     "influence": "independent",
+    "separate" : true,
     "icon": "people.svg",
     "iconDesc": {
       "en": "",
@@ -37,6 +38,7 @@
     },
     "icon": "",
     "influence": "independent",
+    "separate" : true,
     "iconDesc": {
       "en": "",
       "es": ""
@@ -62,6 +64,7 @@
       "es": ""
     },
     "influence": "independent",
+    "separate" : true,
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -89,6 +92,7 @@
     },
     "core": true,
     "influence": "sole",
+    "separate" : false,
     "icon": "multi-arrow.svg",
     "iconDesc": {
       "en": "",
@@ -116,6 +120,7 @@
     },
     "core": true,
     "influence": "independent",
+    "separate" : false,
     "icon": "analyze.svg",
     "iconDesc": {
       "en": "",
@@ -142,6 +147,7 @@
       "es": ""
     },
     "influence": "sole",
+    "separate" : false,
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -158,6 +164,7 @@
       "es": ""
     },
     "influence": "mixed",
+    "separate" : false,
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -188,6 +195,7 @@
       "es": ""
     },
     "influence": "sole",
+    "separate" : false,
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -211,6 +219,7 @@
     },
     "core": true,
     "influence": "mixed",
+    "separate" : false,
     "icon": "law-book.svg",
     "iconDesc": {
       "en": "",
@@ -237,6 +246,7 @@
       "es": ""
     },
     "influence": "mixed",
+    "separate" : false,
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -267,6 +277,7 @@
       "es": ""
     },
     "influence": "sole",
+    "separate" : false,
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -285,6 +296,7 @@
     },
     "core": true,
     "influence": "mixed",
+    "separate" : false,
     "icon": "gavel.svg",
     "iconDesc": {
       "en": "",
@@ -311,6 +323,7 @@
       "es": ""
     },
     "influence": "mixed",
+    "separate" : false,
     "icon": "agreement.svg",
     "iconDesc": {
       "en": "",
@@ -338,6 +351,7 @@
     },
     "core": true,
     "influence": "mixed",
+    "separate" : false,
     "icon": "gavel.svg",
     "iconDesc": {
       "en": "",
@@ -364,6 +378,7 @@
       "es": ""
     },
     "influence": "limited",
+    "separate" : false,
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -390,6 +405,7 @@
       "es": ""
     },
     "influence": "limited",
+    "separate" : false,
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -416,6 +432,7 @@
       "es": ""
     },
     "influence": "limited",
+    "separate" : false,
     "icon": "",
     "iconDesc": {
       "en": "",
@@ -443,6 +460,7 @@
     },
     "core": true,
     "influence": "limited",
+    "separate" : true,
     "icon": "law-book.svg",
     "iconDesc": {
       "en": "",
@@ -461,6 +479,7 @@
     },
     "icon": "",
     "influence": "limited",
+    "separate" : true,
     "iconDesc": {
       "en": "",
       "es": ""
@@ -483,6 +502,7 @@
     },
     "core": "true",
     "influence": "limited",
+    "separate" : true,
     "icon": "agreement.svg",
     "iconDesc": {
       "en": "",
@@ -510,6 +530,7 @@
     },
     "core": true,
     "influence": "independent",
+    "separate" : true,
     "icon": "people.svg",
     "iconDesc": {
       "en": "",
@@ -537,6 +558,7 @@
     },
     "core": true,
     "influence": "independent",
+    "separate" : true,
     "icon": "stamped-paper.svg",
     "iconDesc": {
       "en": "",

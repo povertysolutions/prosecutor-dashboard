@@ -1,8 +1,8 @@
 <template>
-  <button :class="['customNode', core ? 'core' : '', influence]" v-on:input="click(data.content)">
+  <button :class="['customNode', core ? 'core' : '', influence, separate ? 'separate' : '']" v-on:input="click(data.content)">
     <div class="centered">
       <img class="circle" v-if="core" :src="icon"/>
-      <label :class="[influence]">{{ label }}</label>
+      <label :class="[influence, separate ? 'separate' : '']">{{ label }}</label>
     </div>
   </button>
   <Handle v-if="data.topThirds" id="topLeft" type="target" :position="top" :style="{'left': topLeftOffset + 'px'}" />
@@ -87,6 +87,9 @@ export default{
     influence(){
       return this.data.content.influence;
     },
+    separate(){
+      return this.data.content.separate;
+    },
     icon(){
       console.log(this.data.content.icon);
       if (this.data.content.icon){
@@ -122,6 +125,11 @@ export default{
   //color: $color-medium-grey;
   color: $color-dark-blue;
 
+
+  &.separate{
+    border-color: $color-light-orange;
+  }
+
   // &.independent{
   //   border-color: $color-light-blue;
   // }
@@ -155,6 +163,10 @@ export default{
       color: $color-dark-blue;
       //color: $color-medium-grey;
 
+      &.separate{
+        color: $color-light-orange;
+      }
+
       // &.independent{
       //   color: $color-light-blue;
       // }
@@ -179,6 +191,9 @@ export default{
     //background-color: $color-medium-grey;
     background-color: $color-dark-blue;
 
+    &.separate{
+      background-color: $color-light-orange;
+    }
     // &.independent{
     //   background-color: $color-light-blue;
     // }
@@ -221,6 +236,7 @@ export default{
       vertical-align: middle;
     }
   }
+
 
 }
 

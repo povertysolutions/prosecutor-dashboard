@@ -19,6 +19,6 @@ export default {
 .background{
   margin: 5rem 2rem;
   width: 100%;
-  height: 2200px;
+  height: 2600px;
 }
 </style>

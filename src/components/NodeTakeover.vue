@@ -54,12 +54,12 @@ section{
   border-radius: 20px;
 
   h2{
-    color: $color-black;
+    color: $color-white;
     padding-top: 5rem;
   }
 
   p{
-    color: $color-black;
+    color: $color-white;
   }
 }
 
@@ -75,10 +75,10 @@ section{
     width: 70%;
     height: 60%;
     max-height: 500px;
-    background-color: $color-pale-blue;
+    background-color: $color-green;
     padding: 3rem;
     margin: 0;
-    top: 45%;
+    top: 35%;
     left: 45%;
     transform: translate(-50%, -50%);
 

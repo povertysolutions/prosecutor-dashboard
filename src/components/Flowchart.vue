@@ -1,12 +1,21 @@
 <template>
   <div class="flowchart">
+    <section class="box pre">
+      <h3>Social Context</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </section>
+    <div class="bg"></div>
     <section class="box intro">
-      <h2>Introduction</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <h2>Prosecution Process</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </section>
+    <section class="box more">
+      <h2>Trial Begins</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </section>
     <section class="box conclusion">
-      <h3>Conclusion</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      <h3>Outcomes</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </section>
     <VueFlow v-model="elements"
              class="basicflow customnodeflow"
@@ -71,28 +80,28 @@ export default {
         { id: '1', position: { x: 550, y: 0 }, data: { txtId: "social", bottomThirds: true }},
         { id: '2', position: { x: 400, y: 150 }, data: { txtId: "initial-arrest" }},
         { id: '3', position: { x: 700, y: 150 }, data: { txtId: "warrent-request" }},
-        { id: '4', position: { x: 550, y: 300 }, data: { txtId: "referral", topThirds: true }},
-        { id: '5', position: { x: 550, y: 450 }, data: { txtId: "assignment", bottomThirds: true }},
-        { id: '6', position: { x: 350, y: 300 }, data: { txtId: "rejection" }},
-        { id: '7', position: { x: 400, y: 700 }, data: { txtId: "warrent-arrest" }},
-        { id: '8', position: { x: 700, y: 650 }, data: { txtId: "diversion" }},
-        { id: '9', position: { x: 550, y: 950 }, data: { txtId: "arraignment", topThirds: true, bottomThirds: true }},
-        { id: '10', position: { x: 700, y: 800 }, data: { txtId: "speciality" }},
+        { id: '4', position: { x: 550, y: 400 }, data: { txtId: "referral", topThirds: true }},
+        { id: '5', position: { x: 550, y: 550 }, data: { txtId: "assignment", bottomThirds: true }},
+        { id: '6', position: { x: 350, y: 400 }, data: { txtId: "rejection" }},
+        { id: '7', position: { x: 400, y: 800 }, data: { txtId: "warrent-arrest" }},
+        { id: '8', position: { x: 700, y: 750 }, data: { txtId: "diversion" }},
+        { id: '9', position: { x: 550, y: 1050 }, data: { txtId: "arraignment", topThirds: true, bottomThirds: true }},
+        { id: '10', position: { x: 700, y: 900 }, data: { txtId: "speciality" }},
 
-        { id: '11', position: { x: 700, y: 1100 }, data: { txtId: "plea" }},
-        { id: '12', position: { x: 400, y: 1100 }, data: { txtId: "trial" }},
-        { id: '13', position: { x: 100, y: 1100 }, data: { txtId: "aquittal-dismissal" }},
-        { id: '14', position: { x: 550, y: 1350 }, data: { txtId: "conviction", topThirds: true, leftThirds: true }},
+        { id: '11', position: { x: 700, y: 1200 }, data: { txtId: "plea" }},
+        { id: '12', position: { x: 400, y: 1200 }, data: { txtId: "trial" }},
+        { id: '13', position: { x: 100, y: 1200 }, data: { txtId: "aquittal-dismissal" }},
+        { id: '14', position: { x: 550, y: 1450 }, data: { txtId: "conviction", topThirds: true, leftThirds: true }},
 
-        { id: '15', position: { x: 300, y: 1275 }, data: { txtId: "fines" }},
-        { id: '16', position: { x: 180, y: 1350 }, data: { txtId: "community-service" }},
-        { id: '17', position: { x: 50, y: 1425 }, data: { txtId: "probation" }},
+        { id: '15', position: { x: 300, y: 1375 }, data: { txtId: "fines" }},
+        { id: '16', position: { x: 180, y: 1450 }, data: { txtId: "community-service" }},
+        { id: '17', position: { x: 50, y: 1525 }, data: { txtId: "probation" }},
 
-        { id: '18', position: { x: 550, y: 1500 }, data: { txtId: "incarceration" }},
-        { id: '19', position: { x: 550, y: 1650 }, data: { txtId: "parole" }},
-        { id: '20', position: { x: 550, y: 1800 }, data: { txtId: "release", topThirds: true, bottomThirds: true }},
-        { id: '21', position: { x: 400, y: 1950 }, data: { txtId: "rehab" }},
-        { id: '22', position: { x: 700, y: 1950 }, data: { txtId: "recidivism" }},
+        { id: '18', position: { x: 550, y: 1750 }, data: { txtId: "incarceration" }},
+        { id: '19', position: { x: 550, y: 1900 }, data: { txtId: "parole" }},
+        { id: '20', position: { x: 550, y: 2050 }, data: { txtId: "release", topThirds: true, bottomThirds: true }},
+        { id: '21', position: { x: 400, y: 2200 }, data: { txtId: "rehab" }},
+        { id: '22', position: { x: 700, y: 2200 }, data: { txtId: "recidivism" }},
 
 
         { id: 'e1-3', source: '1', target: '2', sourceHandle: 'bottomLeft', targetHandle: 'topCenter' },
@@ -183,7 +192,7 @@ export default {
 @import "@/styles/main.scss";
 //@import "@braks/vue-flow/dist/theme-default.css";
 .flowchart{
-
+  padding-top: 3rem;
 
 }
 
@@ -192,7 +201,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 2200px;
+  height: 2600px;
   background-color: $color-white;
   opacity: .85;
   z-index: 999;
@@ -202,23 +211,43 @@ export default {
     z-index: 1000;
 }
 
+.bg{
+  position: absolute;
+  width: 100%;
+  height: 1380px;
+  background-color: $color-pale-blue;
+  margin-top: 19rem;
+  left: 0;
+
+}
+
 .box{
   position: absolute;
   width: 350px;
   //background-color: $color-purple;
-  margin-top: 13rem;
+  margin-top: 15rem;
   margin-left: 3rem;
   padding: 2rem;
   color: $color-black;
   border-radius: 20px;
 
+  &.pre{
+    margin-top: 0rem;
+    margin-left: 3rem;
+  }
+
   &.intro{
-    margin-top: 13rem;
+    margin-top: 23rem;
+    margin-left: 3rem;
+  }
+
+  &.more{
+    margin-top: 55rem;
     margin-left: 3rem;
   }
 
   &.conclusion{
-    margin-top: 100rem;
+    margin-top: 120rem;
     margin-left: 3rem;
   }
 }
@@ -230,7 +259,7 @@ export default {
   margin-top: 2rem;
   margin-left: 13rem;
   width: 100%;
-  height: 2200px;
+  height: 2600px;
 }
 
 // .vue-flow__node{
