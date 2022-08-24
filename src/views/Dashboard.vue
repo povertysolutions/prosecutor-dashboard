@@ -15,12 +15,9 @@
           <Map v-if="currentType=='map'" class="map"/>
 
           <Legend class="legend"
-
                   :title="currentLegendTitle"
                   :dataset="legendData">
           </Legend>
-
-
 
           <Details class="details" :filters="filters" @filterChanged="updateFilter" @dateChanged="updateDate"></Details>
         </section>

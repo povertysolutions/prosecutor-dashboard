@@ -2,7 +2,11 @@
   <div>
     <l-map :zoom="zoom" :center="center" class="map">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-      <l-geo-json v-if="geojson" :geojson="geojson" :options="options" :options-style="styleFunction" />
+      <l-geo-json
+  v-if="show"
+  :geojson="geojson"
+  :options="options"
+/>
     </l-map>
   </div>
 </template>
@@ -12,8 +16,29 @@
 // Its CSS is needed though, if not imported elsewhere in your application.
 import "leaflet/dist/leaflet.css"
 import { LMap, LGeoJson, LTileLayer} from "@vue-leaflet/vue-leaflet";
+import Color from "colorjs.io";
 
 var jsonData = require("../../assets/boundaries.geojson")
+
+function calculateColor(feature){
+  var r = Math.random();
+  let color = new Color("#dce0f7");
+  let color2 = new Color("#955196");
+  let gradient = color.range(color2);
+  var randomColor = gradient(r);
+  var converted = rgbToHex(randomColor)
+  return converted;
+}
+
+function componentToHex(c) {
+  var n = Math.floor(c * 255)
+  var hex = n.toString(16);
+  return hex.length == 1 ? "0" + hex : hex;
+}
+function rgbToHex(c) {
+  var color = c.srgb;
+  return "#" + componentToHex(color[0]) + componentToHex(color[1]) + componentToHex(color[2]);
+}
 
 export default {
   components: {
@@ -29,53 +54,54 @@ export default {
       // center: [48, -1.219482],
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      geojson: jsonData
-    };
+      geojson: jsonData,
+      show: true,
+      enableTooltip: true,
+      options: {
+        style: function(feature) {
+          var randomColor = calculateColor(feature);
+          return {
+            lineColor: "#000000",
+            weight: 1,
+            color: randomColor,
+            fillOpacity: .6
+          }
+        }
+      }
+    }
+  },
+  methods:{
+
   },
   computed:{
-    options() {
-      return {
-        onEachFeature: this.onEachFeatureFunction
+    styleFunction() {
+      const fillColor = this.fillColor; // important! need touch fillColor in computed for re-calculate when change fillColor
+      return () => {
+        return {
+          weight: 2,
+          color: "#ECEFF1",
+          opacity: 1,
+          fillColor: fillColor,
+          fillOpacity: 1
+        };
       };
     },
-    styleFunction() {
-        //const fillColor = this.fillColor; // important! need touch fillColor in computed for re-calculate when change fillColor
-        return () => {
-          return {
-            weight: 2,
-            color: "#ff0000",
-            opacity: 1,
-            fillColor: "#0000ff",
-            fillOpacity: 1
-          };
-        };
-      },
-      onEachFeatureFunction() {
-        if (!this.enableTooltip) {
-          return () => {};
-        }
-        return (feature, layer) => {
-          layer.bindTooltip(
-            "<div>code:" +
-              feature.properties.code +
-              "</div><div>nom: " +
-              feature.properties.nom +
-              "</div>",
-            { permanent: false, sticky: true }
-          );
-        };
+    onEachFeatureFunction() {
+      if (!this.enableTooltip) {
+        return () => {};
       }
+      return (feature, layer) => {
+        layer.bindTooltip(
+          "<div>code:" +
+            feature.properties.code +
+            "</div><div>nom: " +
+            feature.properties.nom +
+            "</div>",
+          { permanent: false, sticky: true }
+        );
+      };
+    }
     },
-  // async beforeMount() {
-  //   // HERE is where to load Leaflet components!
-  //   const { circleMarker } = await import("leaflet/dist/leaflet-src.esm");
-  //
-  //   // And now the Leaflet circleMarker function can be used by the options:
-  //   this.geojsonOptions.pointToLayer = (feature, latLng) =>
-  //     circleMarker(latLng, { radius: 8 });
-  //   this.mapIsReady = true;
-  // },
-
   mounted(){
     // var jsonData = require("../../assets/county-boundaries.geojson")
     // this.geojson = jsonData;
@@ -84,7 +110,9 @@ export default {
     //
     // return JSON.parse(JSON.stringify(loaded));
 
-    console.log(this.geojson);
+    //console.log(this.geojson);
+    //var c = this.calculateColor("hey");
+
   }
 };
 </script>
