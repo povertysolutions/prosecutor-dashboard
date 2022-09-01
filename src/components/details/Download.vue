@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Models from "../models.js"
+import Models from "../../utils/models.js"
 
 export default {
   data(){

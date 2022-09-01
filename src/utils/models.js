@@ -9,7 +9,7 @@ var models = {
   loadFilterModel(topicModel){
     var fileName = topicModel.filters;
 
-    var jsonData = require.context('../assets/data/', false, /\.json$/)
+    var jsonData = require.context('../../assets/data/', false, /\.json$/)
     var loaded = jsonData('./' + fileName)
 
     return JSON.parse(JSON.stringify(loaded));
@@ -18,7 +18,7 @@ var models = {
   //will sort data so it will displayed on x, y axis
   //
   getDataBy(dataFile, x, y){
-    var jsonData = require.context('../assets/data/', false, /\.json$/)
+    var jsonData = require.context('../../assets/data/', false, /\.json$/)
     var loaded = jsonData('./' + dataFile)
 
     var data = JSON.parse(JSON.stringify(loaded));

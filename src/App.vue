@@ -1,13 +1,11 @@
 <template>
   <header>
     <div class="wrapper">
-      <!-- <Module class="test" msg="You did it!"/> -->
-
       <header>
         <RouterLink class="link header landing" to="/">Prosecutor Dashboard</RouterLink>
         <nav>
           <RouterLink class="link header" to="/dashboard">Data</RouterLink>
-          <RouterLink class="link header" to="/background">Flowchart</RouterLink>
+          <RouterLink class="link header" to="/flowchart">Flowchart</RouterLink>
           <RouterLink class="link header" to="/about">About</RouterLink>
           <RouterLink class="link header" to="/resources">Resources</RouterLink>
         </nav>
@@ -21,7 +19,6 @@
 
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import Module from "@/components/Module.vue";
 import Footer from "@/components/Footer.vue";
 
 </script>

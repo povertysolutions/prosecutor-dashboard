@@ -28,11 +28,11 @@
 <script>
 import Sidebar from "@/components/Sidebar"
 import LineGraph from "@/components/LineGraph"
-import Details from "@/components/Details"
+import Details from "@/components/details/Details"
 import Legend from "@/components/Legend"
 import Map from "@/components/Map"
 
-import Models from "../models.js"
+import Models from "../utils/models.js"
 import topicsJson from "../../assets/topics.json"
 import filterJson from "../../assets/data/warrant-filters.json"
 

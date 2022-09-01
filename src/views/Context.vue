@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import Flowchart from "@/components/Flowchart"
+import Flowchart from "@/components/context/Flowchart.vue"
 
 export default {
-  name: "Background",
+  name: "Context",
   components: { Flowchart }
 }
 

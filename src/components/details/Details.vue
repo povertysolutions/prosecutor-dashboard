@@ -24,8 +24,9 @@
 </template>
 
 <script>
-import Filter from "@/components/Filter"
-import Download from "@/components/Download"
+import Filter from "./Filter"
+import Download from "./Download"
+
 export default {
   name: "Details",
   components: { Filter, Download },

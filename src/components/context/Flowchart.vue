@@ -42,11 +42,11 @@
 
 <script>
 import { VueFlow, ConnectionMode, Controls, addEdge, updateEdge, MarkerType, Position, useVueFlow } from '@braks/vue-flow'
-import nodes from "../../assets/nodes.json"
+import nodes from "@/../assets/nodes.json"
 import CustomEdge from './CustomEdge.vue'
 import CustomNode from './CustomNode.vue'
 import NodeTakeover from "./NodeTakeover"
-import content from "../../assets/flowchart.json"
+import content from "@/../assets/flowchart.json"
 import ref from "vue"
 
 const { getNode } = useVueFlow()
