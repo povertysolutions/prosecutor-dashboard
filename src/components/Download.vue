@@ -30,11 +30,9 @@ export default {
   },
   methods:{
     press(next){
-      console.log(next);
       this.currentFileType = next;
     },
     downloadData(){
-      console.log("click!")
       var data = Models.getCurrentModel();
       console.log(data);
       var dataStr = "data:text/" + this.currentFileType + ";charset=utf-8," + encodeURIComponent(JSON.stringify(data));

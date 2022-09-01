@@ -58,7 +58,16 @@ export default {
             }
         },
         scales: {
-            xAxes: '',
+            xAxes: {
+                type: 'time',
+                autoSkip: true,
+                textStrokeWidth: 0,
+                time: {
+                  unit: 'year',
+                  stepSize: 2,
+                  //format: 'DD/MM/YYYY'
+                },
+            },
             x: {
                 title: {
                     display: true,

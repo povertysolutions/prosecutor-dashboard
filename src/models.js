@@ -57,6 +57,7 @@ var models = {
       // }
 
     var output = {};
+    var firstYear, lastYear = 0;
 
     for (var type in sorted){
       var formatted = [];
@@ -64,29 +65,54 @@ var models = {
 
       for (var xValue in xValues){
 
-        if (x == "year"){
+        if (x === "year"){
           var correctedYear = xValue.slice(1);
+          if (correctedYear < firstYear){
+            firstYear = correctedYear;
+          }
+          if (correctedYear > lastYear){
+            lastYear = correctedYear;
+          }
           formatted.push({"x" : correctedYear, "y" : xValues[xValue]})
         }
         else{
-
           formatted.push({"x" : xValue, "y" : xValues[xValue]})
         }
         //console.log(correctedYear);
-
       }
 
       formatted.sort((a, b) => (a.x > b.x) ? 1 : -1);
+
       output[type] = formatted;
-      //console.log(sorted[type])
+
     }
 
-    //console.log(output);
+
+
+    // console.log(output);
+    // if (x === "year"){
+    //   fillEmptyYears(output);
+    // }
     currentModel = output;
     return output;
 
+
     console.log(sorted)
   },
+
+  // fillEmptyYears(dataset){
+  //
+  //
+  //   for (var type in dataset){
+  //     var xValues = dataset[type];
+  //     var currentYear;
+  //
+  //     for (var xValue in xValues){
+  //       if (!currentYear){
+  //         currentYear =
+  //       }
+  //     }
+  // },
 
   getByDate(dateModel){
     console.log("getByDate...")

@@ -34,7 +34,7 @@ export default {
   },
   data(){
     return{
-      currentIndex: 3,
+      currentIndex: 0,
       sections:
       [
         {
