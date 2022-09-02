@@ -1,6 +1,6 @@
 <template>
   <footer v-if="loaded">
-    <img class="logo">
+    <img class="logo" :src="getIcon(content.main_icon)">
 
     <div>
       <ul>
@@ -50,27 +50,6 @@ export default {
       }
       return "";
     }
-  },
-
-  mounted(){
-    //const fs = require('fs');
-    // const dir = "../../assets";
-    // if (fs.exists(dir)){
-    //   console.log("dir exists!")
-    // }
-    // else{
-    //   console.log("dir not found")
-    // }
-
-    // var file = "..\\..\\assets\\icons\\address.png"
-    // if (file.exists){
-    //   console.log("file exists, loading...")
-    //   var image = require(path);
-    // }
-    // else{
-    //   console.log("file does not exist!")
-    // }
-
   }
 }
 
@@ -88,11 +67,11 @@ footer {
 
   .logo{
     display: inline-block;
-    margin: 2rem 2rem;
+    margin: 3rem 4rem;
     width: 5rem;
     height: 5rem;
-    background-color: $color-light-grey;
-    margin-right: 10rem;
+    //background-color: $color-light-grey;
+    margin-right: 4rem;
 
   }
 

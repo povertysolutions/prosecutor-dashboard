@@ -1,4 +1,9 @@
 {
+  "main_icon": {
+    "icon": "scale.svg",
+    "desc_en" : "",
+    "desc_es" : ""
+  },
   "address": {
     "en": "1234 Fake Street, MI 1235",
     "es": ""

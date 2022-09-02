@@ -4,7 +4,7 @@
       <h3>Social Context</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </section>
-    <div class="bg"></div>
+    <div class="flowchart-bg"></div>
     <section class="box intro">
       <h2>Prosecution Process</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -138,9 +138,6 @@ export default {
     }
   },
   methods:{
-    onLoad(){
-      console.log("onload!");
-    },
     openTakeover(nextNode){
       this.currentNode = nextNode;
       this.showTakeover = true;
@@ -211,7 +208,7 @@ export default {
     z-index: 1000;
 }
 
-.bg{
+.flowchart-bg{
   position: absolute;
   width: 100%;
   height: 1380px;

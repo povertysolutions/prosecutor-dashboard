@@ -1,27 +1,25 @@
 <template>
   <div class="view">
-    <div class="module">
-      <Sidebar :topics="topics" @topicChanged="updateTopic"></Sidebar>
-        <section class="main">
-          <h2>{{currentTitle}}</h2>
-          <LineGraph class="graph"
-                      v-if="currentType=='graph'"
-                     :dataset="chartData"
-                     :xLabel="currentXLabel"
-                     :yLabel="currentYLabel"
-                     :timelineMode="currentYLabel === 'Year'">
-          </LineGraph>
+    <Sidebar :topics="topics" @topicChanged="updateTopic"></Sidebar>
+      <section class="main">
+        <h2>{{currentTitle}}</h2>
+        <LineGraph class="graph"
+                    v-if="currentType=='graph'"
+                   :dataset="chartData"
+                   :xLabel="currentXLabel"
+                   :yLabel="currentYLabel"
+                   :timelineMode="currentYLabel === 'Year'">
+        </LineGraph>
 
-          <Map v-if="currentType=='map'" class="map"/>
+        <Map v-if="currentType=='map'" class="map"/>
 
-          <Legend class="legend"
-                  :title="currentLegendTitle"
-                  :dataset="legendData">
-          </Legend>
+        <Legend class="legend"
+                :title="currentLegendTitle"
+                :dataset="legendData">
+        </Legend>
 
-          <Details class="details" :filters="filters" @filterChanged="updateFilter" @dateChanged="updateDate"></Details>
-        </section>
-    </div>
+        <Details class="details" :filters="filters" @filterChanged="updateFilter" @dateChanged="updateDate"></Details>
+      </section>
   </div>
 </template>
 
@@ -204,7 +202,7 @@ h2{
   width: 75%;
   min-height: 150px;
   height: 25vh;
-  padding-bottom: 9.5rem;
+  padding-bottom: 7rem;
   padding-left: 2rem;
 }
 

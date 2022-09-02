@@ -53,12 +53,7 @@ export default{
         content: Object,
         txtId: ""
       }
-      //required: true,
-    },
-    // light:{
-    //   type: Boolean,
-    //   default: false
-    // },
+    }
   },
   data(){
     return{
@@ -91,9 +86,7 @@ export default{
       return this.data.content.separate;
     },
     icon(){
-      console.log(this.data.content.icon);
       if (this.data.content.icon){
-        console.log(this.data.content.icon);
         return Asset.load("icons/" + this.data.content.icon);
       }
       return "";
@@ -107,11 +100,6 @@ export default{
 
 @import "@braks/vue-flow/dist/style.css";
 @import "@/styles/main.scss";
-
-// .customNode{
-//   width: 100px;
-// }
-
 
 .customNode{
   //position: absolute;

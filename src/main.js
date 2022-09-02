@@ -10,3 +10,4 @@ const app = createApp(App);
 app.use(router);
 app.component('Datepicker', Datepicker);
 app.mount("#app");
+document.title = "Prosecutor Dashboard";

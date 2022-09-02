@@ -2,7 +2,10 @@
   <header>
     <div class="wrapper">
       <header>
-        <RouterLink class="link header landing" to="/">Prosecutor Dashboard</RouterLink>
+        <RouterLink class="link header landing" to="/">
+          <img class="logo" :src="Asset.load('icons/scale.svg')">
+          Prosecutor Dashboard
+        </RouterLink>
         <nav>
           <RouterLink class="link header" to="/dashboard">Data</RouterLink>
           <RouterLink class="link header" to="/flowchart">Flowchart</RouterLink>
@@ -20,6 +23,7 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 import Footer from "@/components/Footer.vue";
+import Asset from "@/utils/assets"
 
 </script>
 
@@ -54,9 +58,12 @@ header {
   }
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.logo{
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2px;
+  vertical-align: top;
 }
 
 nav {
