@@ -4,52 +4,46 @@
      <div>
        <h1>{{content["intro-header"][lang]}}</h1>
        <p>{{content["intro-body"][lang]}}</p>
-       <button class="pill"> {{content["data-button"][lang]}} </button>
+
      </div>
-     <img>
-    </section>
-    <hr>
-    <section class="data">
-      <h2>{{content["empower-header"][lang]}}</h2>
+
      <div>
-       <img>
-       <h4>{{content["learn-header"][lang]}}</h4>
-       <p>{{content["learn-body"][lang]}}</p>
-       <button class="pill"> {{content["learn-button"][lang]}} </button>
-     </div>
-     <div>
-       <img>
-       <h4>{{content["analyze-header"][lang]}}</h4>
-       <p>{{content["analyze-body"][lang]}}</p>
-       <button class="pill"> {{content["analyze-button"][lang]}} </button>
-     </div>
-     <div>
-       <img>
-       <h4>{{content["engage-header"][lang]}}</h4>
-       <p>{{content["engage-body"][lang]}}</p>
-       <button class="pill"> {{content["engage-button"][lang]}} </button>
+       <button class="pill">
+         <img :src="icon('multi-arrow.svg')" />
+         <div>
+           <h3>{{content["learn-header"][lang]}}</h3>
+           <p>{{content["learn-body"][lang]}}</p>
+         </div>
+       </button>
+       <button class="pill">
+         <img :src="icon('analyze.svg')"/>
+         <div>
+           <h3>{{content["analyze-header"][lang]}}</h3>
+           <p>{{content["analyze-body"][lang]}}</p>
+         </div>
+       </button>
      </div>
     </section>
     <hr>
     <section class="resources">
      <h2>{{content["explore-header"][lang]}}</h2>
      <div>
-       <img>
+       <img :src="icon('flowchart.svg')">
        <h4>{{content["filing-decisions-header"][lang]}}</h4>
        <p>{{content["filing-decisions-body"][lang]}}</p>
      </div>
      <div>
-       <img>
+       <img :src="icon('flowchart.svg')">
        <h4>{{content["filed-charges-header"][lang]}}</h4>
        <p>{{content["filed-charges-body"][lang]}}</p>
      </div>
      <div>
-       <img>
+       <img :src="icon('flowchart.svg')">
        <h4>{{content["habitual-offenders-header"][lang]}}</h4>
        <p>{{content["habitual-offenders-body"][lang]}}</p>
      </div>
      <div>
-       <img>
+       <img :src="icon('flowchart.svg')">
        <h4>{{content["case-outcomes-header"][lang]}}</h4>
        <p>{{content["case-outcomes-body"][lang]}}</p>
      </div>
@@ -58,17 +52,17 @@
     <section class="credits">
     <h2>{{content["credit-header"][lang]}}</h2>
      <div>
-       <img>
+       <img :src="icon('washtenaw2.jpg')">
        <h4>{{content["county-header"][lang]}}</h4>
        <p>{{content["county-body"][lang]}}</p>
      </div>
      <div>
-       <img>
+       <img :src="icon('um.png')">
        <h4>{{content["poverty-solutions-header"][lang]}}</h4>
        <p>{{content["poverty-solutions-body"][lang]}}</p>
      </div>
      <div>
-       <img>
+       <img :src="icon('aclu.png')">
        <h4>{{content["aclu-header"][lang]}}</h4>
        <p>{{content["aclu-body"][lang]}}</p>
      </div>
@@ -79,6 +73,7 @@
 
 <script>
 import content from "../../assets/landing.json"
+import Asset from "@/utils/assets"
 
 export default {
   name: "Landing",
@@ -86,6 +81,11 @@ export default {
     return{
       lang: "en",
       content: content
+    }
+  },
+  methods: {
+    icon(file){
+      return Asset.load("icons/" + file);
     }
   }
 }
@@ -100,6 +100,7 @@ export default {
   //border: 1px blue solid;
 }
 
+
 hr{
   margin: 2rem 0;
 }
@@ -109,19 +110,47 @@ section{
 }
 
 .intro{
+  .pill{
+    background-color: $color-dark-blue;
+    border-color: $color-dark-blue;
+    margin-bottom: 1rem;
+    text-align: left;
+    padding: 2rem;
+    height: 12rem;
+
+    &:first-child {
+      background-color: $color-light-orange;
+      border-color: $color-light-orange;
+    }
+
+    img{
+      display: inline-block;
+      width: 5rem;
+      height: 5rem;
+      vertical-align: middle;
+      margin-right: 2rem;
+      margin-left: 1rem;
+    }
+
+    div{
+      display: inline-block;
+      vertical-align: middle;
+      width: 65%;
+      display: inline-block;
+      color: $color-white;
+    }
+
+    p{
+      font-weight: normal;
+      margin-top: .5rem;
+    }
+  }
 
   div{
     width: 40%;
     display: inline-block;
     vertical-align: top;
     margin-right: 3rem;
-  }
-
-  img{
-    display: inline-block;
-    background-color: $color-light-grey;
-    width: 500px;
-    height: 350px;
   }
 }
 
@@ -139,11 +168,10 @@ section{
     vertical-align: top;
 
     img{
-      width: 6rem;
-      height: 6rem;
-      background-color: $color-light-grey;
-      border-radius: 50%;
+      width: auto;
+      height: 5rem;
       margin-bottom: 1rem;
+      background-color: $color-white;
     }
 
     p{

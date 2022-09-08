@@ -4,11 +4,12 @@
       <section class="main">
         <h2>{{currentTitle}}</h2>
         <LineGraph class="graph"
-                    v-if="currentType=='graph'"
+                    v-if="!loadingData"
+                    v-show="currentType=='graph'"
                    :dataset="chartData"
                    :xLabel="currentXLabel"
                    :yLabel="currentYLabel"
-                   :timelineMode="currentYLabel === 'Year'">
+                   :timelineMode="currentYLabel === 'Year'"             >
         </LineGraph>
 
         <Map v-if="currentType=='map'" class="map"/>
@@ -34,6 +35,8 @@ import Models from "../utils/models.js"
 import topicsJson from "../../assets/topics.json"
 import filterJson from "../../assets/data/warrant-filters.json"
 
+import Asset from "@/utils/assets"
+
 export default {
   name: "Dashboard",
   components: { Sidebar, LineGraph, Details, Legend, Map },
@@ -46,7 +49,8 @@ export default {
       currentTopic: null,
       topics: topicsJson,
       filters: null,
-      lang: "en"
+      lang: "en",
+      loadingData: false
     }
   },
   computed:{
@@ -118,6 +122,7 @@ export default {
       }
     },
     sort(){
+      this.loadingData = true;
       var dataFile = this.currentTopic.data;
 
       var x = this.currentFilter.x;
@@ -139,6 +144,9 @@ export default {
       this.legendData = legend;
 
       console.log("display type: " + this.currentType);
+      this.loadingData = false;
+
+      console.log(this.chartData);
     }
   },
   mounted(){

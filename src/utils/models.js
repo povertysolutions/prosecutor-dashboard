@@ -94,10 +94,11 @@ var models = {
     //   fillEmptyYears(output);
     // }
     currentModel = output;
+    console.log(output)
     return output;
 
 
-    console.log(sorted)
+
   },
 
   // fillEmptyYears(dataset){

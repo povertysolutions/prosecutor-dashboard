@@ -43,10 +43,27 @@ export default {
         datasets : this.dataset
       }
     },
+    xScale(){
+      if (!this.timelineMode){
+        return {
+            type: 'time',
+            autoSkip: true,
+            textStrokeWidth: 0,
+            time: {
+              unit: 'year',
+              stepSize: 2,
+            },
+        }
+      }
+      return {
+        type: 'linear'
+      }
+    },
     chartOptions(){
       return{
         responsive: true,
         maintainAspectRatio: false,
+        animation: false,
         plugins: {
           legend: {
             display: false
@@ -58,16 +75,7 @@ export default {
             }
         },
         scales: {
-            xAxes: {
-                type: 'time',
-                autoSkip: true,
-                textStrokeWidth: 0,
-                time: {
-                  unit: 'year',
-                  stepSize: 2,
-                  //format: 'DD/MM/YYYY'
-                },
-            },
+            xAxes: this.xScale,
             x: {
                 title: {
                     display: true,
@@ -102,23 +110,8 @@ export default {
         }
       }
     },
-    xScale(){
-      if (this.timelineMode){
-        return {
-            type: 'time',
-            autoSkip: true,
-            textStrokeWidth: 0,
-            time: {
-              unit: 'year',
-              stepSize: 2,
-              //format: 'DD/MM/YYYY'
-            },
-        }
-      }
-      return {
-        type: 'linear'
-      }
-    }
+
+
 
   },
   data() {
