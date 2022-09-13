@@ -9,7 +9,8 @@
                    :dataset="chartData"
                    :xLabel="currentXLabel"
                    :yLabel="currentXLabel"
-                   :timelineMode="currentXLabel === 'Year'"             >
+                   :timelineMode="currentXLabel === 'Year'"
+                   :barMode="currentXLabel !== 'Year'"            >
         </LineGraph>
 
         <Map v-if="currentType=='map'" class="map"/>
@@ -136,7 +137,7 @@ export default {
       var legend = [];
       var index = 0;
       for (var type in currentData){
-        chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
+        chart.push( {"data" : currentData[type], "borderColor": this.colors[index], "backgroundColor": this.colors[index]})
         legend.push({"label" : type, "color" : this.colors[index]})
         index++;
       }

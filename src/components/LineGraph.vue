@@ -1,5 +1,6 @@
 <template>
-  <Line
+  <Component
+    :is="barMode ? 'Bar' : 'Line'"
     class="lineChart"
     :chart-options="chartOptions"
     :chart-data="chartData"
@@ -21,7 +22,7 @@ var timeFormat = 'DD/MM/YYYY';
 
 export default {
   name: 'LineGraph',
-  components: { Line },
+  components: { Line, Bar },
   props: {
     datasetIdKey: {
       type: String,
@@ -34,7 +35,8 @@ export default {
     dataset: Array,
     xLabel: String,
     yLabel: String,
-    timelineMode: Boolean
+    timelineMode: Boolean,
+    barMode: Boolean
   },
   computed:{
     chartData() {
