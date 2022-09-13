@@ -5,11 +5,11 @@
         <h2>{{currentTitle}}</h2>
         <LineGraph class="graph"
                     v-if="!loadingData"
-                    v-show="currentType=='graph'"
+                    v-show="currentType !='map'"
                    :dataset="chartData"
                    :xLabel="currentXLabel"
-                   :yLabel="currentYLabel"
-                   :timelineMode="currentYLabel === 'Year'"             >
+                   :yLabel="currentXLabel"
+                   :timelineMode="currentXLabel === 'Year'"             >
         </LineGraph>
 
         <Map v-if="currentType=='map'" class="map"/>
@@ -95,6 +95,7 @@ export default {
       this.filters = Models.loadFilterModel(this.currentTopic);
       var currentFilterKey = Object.keys(this.filters)[0]
       this.currentFilter = this.filters[currentFilterKey];
+      console.log("currentFilter: " + this.currentFilter);
     },
     updateFilter(filter){
       this.currentFilter = filter;
@@ -128,7 +129,7 @@ export default {
       var x = this.currentFilter.x;
       var y = this.currentFilter.y;
 
-      //console.log("sorting by: " + x + ", " + y)
+      console.log("sorting by: " + x + ", " + y)
       var currentData = Models.getDataBy(dataFile, x, y);
 
       var chart = [];
@@ -146,10 +147,11 @@ export default {
       console.log("display type: " + this.currentType);
       this.loadingData = false;
 
-      console.log(this.chartData);
+      //console.log(this.chartData);
     }
   },
   mounted(){
+    this.loadingData = true;
     var firstTopic = Object.keys(this.topics)[0]
     this.currentTopic = this.topics[firstTopic];
     this.loadFilters();

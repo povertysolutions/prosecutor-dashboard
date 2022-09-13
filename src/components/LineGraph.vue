@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { Line } from 'vue-chartjs'
+import { Line, Bar } from 'vue-chartjs'
 import Chart from 'chart.js/auto';
 import 'chartjs-adapter-moment';
 
@@ -44,19 +44,21 @@ export default {
       }
     },
     xScale(){
-      if (!this.timelineMode){
+      if (this.timelineMode){
         return {
             type: 'time',
             autoSkip: true,
             textStrokeWidth: 0,
+            labels: [],
             time: {
               unit: 'year',
-              stepSize: 2,
+              stepSize: 5,
             },
         }
       }
       return {
-        type: 'linear'
+        type: 'category',
+        labels: []
       }
     },
     chartOptions(){
@@ -110,9 +112,6 @@ export default {
         }
       }
     },
-
-
-
   },
   data() {
     return {

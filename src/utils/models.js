@@ -94,7 +94,7 @@ var models = {
     //   fillEmptyYears(output);
     // }
     currentModel = output;
-    console.log(output)
+    //console.log(output)
     return output;
 
 

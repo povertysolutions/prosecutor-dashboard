@@ -4,9 +4,7 @@
      <div>
        <h1>{{content["intro-header"][lang]}}</h1>
        <p>{{content["intro-body"][lang]}}</p>
-
      </div>
-
      <div>
        <button class="pill">
          <img :src="icon('multi-arrow.svg')" />
@@ -24,31 +22,22 @@
        </button>
      </div>
     </section>
+
     <hr>
-    <section class="resources">
+
+    <section class="explore">
      <h2>{{content["explore-header"][lang]}}</h2>
-     <div>
-       <img :src="icon('flowchart.svg')">
-       <h4>{{content["filing-decisions-header"][lang]}}</h4>
-       <p>{{content["filing-decisions-body"][lang]}}</p>
-     </div>
-     <div>
-       <img :src="icon('flowchart.svg')">
-       <h4>{{content["filed-charges-header"][lang]}}</h4>
-       <p>{{content["filed-charges-body"][lang]}}</p>
-     </div>
-     <div>
-       <img :src="icon('flowchart.svg')">
-       <h4>{{content["habitual-offenders-header"][lang]}}</h4>
-       <p>{{content["habitual-offenders-body"][lang]}}</p>
-     </div>
-     <div>
-       <img :src="icon('flowchart.svg')">
-       <h4>{{content["case-outcomes-header"][lang]}}</h4>
-       <p>{{content["case-outcomes-body"][lang]}}</p>
+
+
+     <div v-for="topic in topics">
+       <div class="circle"></div>
+       <img :src="icon(topic.icon)">
+       <h4>{{topic["label"][lang]}}</h4>
      </div>
     </section>
+
     <hr>
+
     <section class="credits">
     <h2>{{content["credit-header"][lang]}}</h2>
      <div>
@@ -73,6 +62,7 @@
 
 <script>
 import content from "../../assets/landing.json"
+import topicsJson from "../../assets/topics.json"
 import Asset from "@/utils/assets"
 
 export default {
@@ -80,7 +70,8 @@ export default {
   data(){
     return{
       lang: "en",
-      content: content
+      content: content,
+      topics: topicsJson
     }
   },
   methods: {
@@ -154,7 +145,7 @@ section{
   }
 }
 
-.data, .resources, .credits{
+.data, .explore, .credits{
   h2{
     padding-bottom: 2rem;
   }
@@ -171,7 +162,6 @@ section{
       width: auto;
       height: 5rem;
       margin-bottom: 1rem;
-      background-color: $color-white;
     }
 
     p{
@@ -182,6 +172,33 @@ section{
   .credits{
     button{
       display: inline-block;
+    }
+  }
+}
+
+.explore{
+
+  img{
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    margin-top: 1rem;
+    transform: translate(-150%, 0);
+
+  }
+  .circle{
+    background-color: $color-green;
+    border-radius: 10%;
+    width: 1rem;
+    height: 8rem;
+    display: inline-block;
+  }
+
+  button{
+    transition: all 100ms ease-in-out;
+
+    &:hover{
+      transform: scale(105%)
     }
   }
 }

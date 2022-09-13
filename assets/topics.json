@@ -4,6 +4,7 @@
       "en": "Warrants",
       "es": ""
     },
+    "icon" : "stamped-paper.svg",
     "data": "warrant-data.json",
     "filters": "warrant-filters.json"
   },
@@ -12,6 +13,7 @@
       "en": "Sentencing",
       "es": ""
     },
+    "icon" : "gavel.svg",
     "data": "sentencing-data.json",
     "filters": "sentencing-filters.json"
   }

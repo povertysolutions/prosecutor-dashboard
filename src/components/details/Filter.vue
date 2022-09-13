@@ -61,6 +61,7 @@ export default {
   },
   mounted(){
     this.dateModel = ref();
+    this.currentKey = Object.keys(this.dataset)[0];
     // var startDate = new Date(Date.parse("01/2000"));
     // var endDate = new Date(Date.parse("01/2020"));
     // this.dateRange = [startDate, endDate];

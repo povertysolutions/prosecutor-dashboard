@@ -113,6 +113,10 @@ export default{
   //color: $color-medium-grey;
   color: $color-dark-blue;
 
+  transition: all 100ms ease-in-out;
+
+  
+
 
   &.separate{
     border-color: $color-light-orange;
@@ -134,16 +138,17 @@ export default{
   //   border-color: $color-dark-blue;
   // }
 
+  &:hover{
+    transform: scale(105%)
+  }
+
   .centered{
-    transition: all 100ms ease-in-out;
+
     //transition-delay: 100ms;
     //max-width: 200px;
     margin: 8px 18px;
     text-align: center;
 
-    &:hover{
-      margin: 12px 24px;
-    }
 
     label{
       display: inline-block;
@@ -202,9 +207,6 @@ export default{
       margin: 15px 30px;
       min-width: 150px;
 
-      &:hover{
-        margin: 20px 36px;
-      }
       }
 
     .circle{
