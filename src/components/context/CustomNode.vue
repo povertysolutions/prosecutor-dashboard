@@ -1,5 +1,6 @@
 <template>
-  <button :class="['customNode', core ? 'core' : '', influence, separate ? 'separate' : '']" v-on:input="click(data.content)">
+  <button :class="['customNode', core ? 'core' : '', influence, separate ? 'separate' : '', 'shrink-hover']"
+          v-on:input="click(data.content)">
     <div class="centered">
       <img class="circle" v-if="core" :src="icon"/>
       <label :class="[influence, separate ? 'separate' : '']">{{ label }}</label>
@@ -113,11 +114,6 @@ export default{
   //color: $color-medium-grey;
   color: $color-dark-blue;
 
-  transition: all 100ms ease-in-out;
-
-  
-
-
   &.separate{
     border-color: $color-light-orange;
   }
@@ -138,17 +134,10 @@ export default{
   //   border-color: $color-dark-blue;
   // }
 
-  &:hover{
-    transform: scale(105%)
-  }
 
   .centered{
-
-    //transition-delay: 100ms;
-    //max-width: 200px;
     margin: 8px 18px;
     text-align: center;
-
 
     label{
       display: inline-block;
@@ -177,8 +166,6 @@ export default{
       // }
     }
   }
-
-
 
   &.core{
     //background-color: $color-medium-grey;
@@ -226,9 +213,6 @@ export default{
       vertical-align: middle;
     }
   }
-
-
 }
-
 
 </style>

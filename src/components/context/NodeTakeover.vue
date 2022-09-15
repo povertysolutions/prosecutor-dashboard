@@ -14,7 +14,7 @@
       </div>
       <div class="side">
         <h4 v-if="model.links.length > 0">Explore data at this step. </h4>
-        <section v-for="link in model.links" class="link">
+        <section v-for="link in model.links" class="link shrink-hover">
           <img :src="chartIcon"/>
           <p>{{ link[lang] }}</p>
         </section>
@@ -75,7 +75,7 @@ section{
     width: 70%;
     height: 60%;
     max-height: 500px;
-    background-color: $color-green;
+    background-color: $color-dark-green;
     padding: 3rem;
     margin: 0;
     top: 35%;
@@ -109,7 +109,7 @@ section{
     margin-top: 5rem;
 
     h4{
-      color: $color-black;
+      color: $color-white;
       padding-bottom: 1rem;
     }
 
@@ -123,11 +123,6 @@ section{
     background-color: $color-white;
     margin-bottom: 1rem;
     padding: 1rem 1.5rem;
-    transition: all 100ms ease-in-out;
-
-    &:hover{
-      padding: 1.25rem 1.75rem;
-    }
 
     img{
       display: inline-block;
