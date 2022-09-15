@@ -2,12 +2,12 @@
     <div class="sidebar">
       <h3>Topics</h3>
       <div class="topicGroups">
-        <button v-for="(object, key) in topics"
-                :class="['topic', currentKey == key ? 'selected' : '']"
-                @click="press(key)">
+        <RouterLink v-for="(object, key) in topics"
+                :class="['topic', key == topicId ? 'selected' : '']"
+                :to="'/dashboard/' + key">
           {{ object.label.en }}
-          <div :class="['circle', currentIndex == key ? 'selected' : '']"></div>
-        </button>
+          <!-- <div :class="['circle', currentIndex == key ? 'selected' : '']"></div> -->
+        </RouterLink>
       </div>
     </div>
 </template>
@@ -15,24 +15,9 @@
 <script>
 export default {
   props: {
-    topics: Object
-  },
-  data(){
-    return{
-      currentKey: null
-    }
-  },
-  methods:{
-    press(key){
-      this.currentKey = key;
-      this.$emit('topicChanged', this.topics[key]);
-    }
-  },
-
-  mounted(){
-    this.currentKey = Object.keys(this.topics)[0];
+    topics: Object,
+    topicId: String
   }
-
 }
 </script>
 
@@ -56,6 +41,8 @@ h3{
   width: 100%;
   text-align: left;
   padding: 10px 15px;
+  text-decoration: none;
+  display: inline-block;
   //font-size: 1.1rem;
   &.selected {
     background-color: #ffffff33;

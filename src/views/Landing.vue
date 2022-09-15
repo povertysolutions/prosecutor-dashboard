@@ -1,25 +1,25 @@
 <template>
   <div class="landing">
     <section class="intro">
-     <div>
+     <div class="intro-text">
        <h1>{{content["intro-header"][lang]}}</h1>
        <p>{{content["intro-body"][lang]}}</p>
      </div>
-     <div>
-       <button class="pill">
+     <div class="intro-links">
+      <RouterLink class="pill shrink-hover" to="/flowchart">
          <img :src="icon('multi-arrow.svg')" />
          <div>
            <h3>{{content["learn-header"][lang]}}</h3>
            <p>{{content["learn-body"][lang]}}</p>
          </div>
-       </button>
-       <button class="pill">
+       </RouterLink>
+       <RouterLink class="pill shrink-hover" to="/dashboard/warrants">
          <img :src="icon('analyze.svg')"/>
          <div>
            <h3>{{content["analyze-header"][lang]}}</h3>
            <p>{{content["analyze-body"][lang]}}</p>
          </div>
-       </button>
+       </RouterLink>
      </div>
     </section>
 
@@ -27,7 +27,6 @@
 
     <section class="explore">
      <h2>{{content["explore-header"][lang]}}</h2>
-
 
      <div v-for="topic in topics">
        <div class="circle"></div>
@@ -101,13 +100,26 @@ section{
 }
 
 .intro{
+
+  .intro-text{
+    display: inline-block;
+    width: 40%;
+    padding-right: 3rem;
+  }
+
+  .intro-links{
+    display: inline-block;
+    width: 50%;
+  }
+
   .pill{
+    display: inline-block;
     background-color: $color-dark-blue;
     border-color: $color-dark-blue;
     margin-bottom: 1rem;
     text-align: left;
     padding: 2rem;
-    height: 12rem;
+    min-width: 25rem;
 
     &:first-child {
       background-color: $color-light-orange;
@@ -126,8 +138,7 @@ section{
     div{
       display: inline-block;
       vertical-align: middle;
-      width: 65%;
-      display: inline-block;
+      width: 70%;
       color: $color-white;
     }
 
@@ -135,13 +146,6 @@ section{
       font-weight: normal;
       margin-top: .5rem;
     }
-  }
-
-  div{
-    width: 40%;
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 3rem;
   }
 }
 
@@ -177,7 +181,6 @@ section{
 }
 
 .explore{
-
   img{
     width: 5rem;
     height: 5rem;

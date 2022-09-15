@@ -1,6 +1,6 @@
 <template>
   <div class="view">
-    <Sidebar :topics="topics" @topicChanged="updateTopic"></Sidebar>
+    <Sidebar :topics="topics" :topicId="topicId"></Sidebar>
       <section class="main">
         <h2>{{currentTitle}}</h2>
         <LineGraph class="graph"
@@ -41,13 +41,16 @@ import Asset from "@/utils/assets"
 export default {
   name: "Dashboard",
   components: { Sidebar, LineGraph, Details, Legend, Map },
+  props:{
+    topicId: String
+  },
   data(){
     return {
       colors: ["#6979D3", "#FFA600", "#7b247d", "#33557d", "#f5e16e", "#DD5182", "#44279c", "#b670b8" ],
       chartData: [],
       legendData: [],
-      currentFilter: null,
-      currentTopic: null,
+      currentFilter: null, //object
+      currentTopic: null, //object
       topics: topicsJson,
       filters: null,
       lang: "en",
@@ -149,15 +152,56 @@ export default {
       this.loadingData = false;
 
       //console.log(this.chartData);
+    },
+
+    initialize(){
+      this.loadingData = true;
+
+      console.log("topicId: " + this.topicId)
+      if (this.topicId === undefined){
+        var firstTopic = Object.keys(this.topics)[0]
+        console.log("topicId is null, defaulting to first topic: " + firstTopic)
+        var nextPath = "/dashboard/" + firstTopic
+        console.log("nextPath: " + nextPath)
+
+        this.$router.push({ path: nextPath })
+        //
+        // setTimeout(() => {
+        //   console.log("reload!")
+        //   if (this.topicId !== undefined){
+        //     console.log("next topicId: " + this.topicId);
+        //     this.initialize();
+        //   }
+        // }, 500);
+        //
+        //
+
+        return;
+      }
+      else{
+        this.currentTopic = this.topics[this.topicId];
+      }
+
+      console.log("currentTopic model: " + this.currentModel)
+      this.loadFilters();
+      this.sort();
+    }
+  },
+  watch: {
+    // $route (to, from){
+    //   console.log("hello!")
+    //   this.initialize();
+    // },
+    topicId (to, from){
+      console.log("hello!")
+      this.initialize();
     }
   },
   mounted(){
-    this.loadingData = true;
-    var firstTopic = Object.keys(this.topics)[0]
-    this.currentTopic = this.topics[firstTopic];
-    this.loadFilters();
-    this.sort();
-  }
+    console.log("hi!")
+    this.initialize();
+  },
+
 }
 
 </script>

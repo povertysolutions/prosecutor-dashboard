@@ -18,10 +18,17 @@ const router = createRouter({
       component: () => import("../views/About.vue"),
     },
     {
-      path: "/dashboard",
+      path: "/dashboard/:topicId",
       name: "dashboard",
       component: () => import("../views/Dashboard.vue"),
+      props: true
     },
+    // {
+    //   path: "/dashboard",
+    //   name: "dashboard",
+    //   component: () => import("../views/Dashboard.vue"),
+    //   props: true
+    // },
     {
       path: "/resources",
       name: "resources",
