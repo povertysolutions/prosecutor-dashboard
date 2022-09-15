@@ -28,32 +28,32 @@
     <section class="explore">
      <h2>{{content["explore-header"][lang]}}</h2>
 
-     <div v-for="topic in topics">
+     <RouterLink v-for="(topic, key) in topics" :to="'/dashboard/' + key + '/'" class="unstyled-link shrink-hover">
        <div class="circle"></div>
        <img :src="icon(topic.icon)">
        <h4>{{topic["label"][lang]}}</h4>
-     </div>
+     </RouterLink>
     </section>
 
     <hr>
 
     <section class="credits">
     <h2>{{content["credit-header"][lang]}}</h2>
-     <div>
+     <a class="unstyled-link shrink-hover" href="https://www.washtenaw.org/1070/Prosecuting-Attorney">
        <img :src="icon('washtenaw2.jpg')">
        <h4>{{content["county-header"][lang]}}</h4>
        <p>{{content["county-body"][lang]}}</p>
-     </div>
-     <div>
+     </a>
+     <a class="unstyled-link shrink-hover" href="https://poverty.umich.edu/">
        <img :src="icon('um.png')">
        <h4>{{content["poverty-solutions-header"][lang]}}</h4>
        <p>{{content["poverty-solutions-body"][lang]}}</p>
-     </div>
-     <div>
+     </a>
+     <a class="unstyled-link shrink-hover" href="https://www.aclu.org/">
        <img :src="icon('aclu.png')">
        <h4>{{content["aclu-header"][lang]}}</h4>
        <p>{{content["aclu-body"][lang]}}</p>
-     </div>
+     </a>
      <!-- <button class="pill"> {{content["credits-button"][lang]}} </button> -->
     </section>
   </div>
@@ -153,7 +153,7 @@ section{
   h2{
     padding-bottom: 2rem;
   }
-  div{
+  div, a{
     width: 30%;
     min-width: 10rem;
     max-width: 15rem;
@@ -161,6 +161,7 @@ section{
     padding-right: 1rem;
     text-align: center;
     vertical-align: top;
+    color: $color-black;
 
     img{
       width: auto;
@@ -181,27 +182,26 @@ section{
 }
 
 .explore{
-  img{
-    width: 5rem;
-    height: 5rem;
-    position: absolute;
-    margin-top: 1rem;
-    transform: translate(-150%, 0);
 
-  }
-  .circle{
-    background-color: $color-green;
-    border-radius: 10%;
-    width: 1rem;
-    height: 8rem;
-    display: inline-block;
-  }
+  .unstyled-link{
+    padding-right: 2rem;
+    color: $color-black;
+    text-align: center;
 
-  button{
-    transition: all 100ms ease-in-out;
+    img{
+      width: 5rem;
+      height: 5rem;
+      position: absolute;
+      margin-top: 1rem;
+      transform: translate(-150%, 0);
 
-    &:hover{
-      transform: scale(105%)
+    }
+    .circle{
+      background-color: $color-green;
+      border-radius: 10%;
+      width: 1rem;
+      height: 8rem;
+      display: inline-block;
     }
   }
 }
