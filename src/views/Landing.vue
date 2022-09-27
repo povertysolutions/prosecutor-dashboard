@@ -2,22 +2,22 @@
   <div class="landing">
     <section class="intro">
      <div class="intro-text">
-       <h1>{{content["intro-header"][lang]}}</h1>
-       <p>{{content["intro-body"][lang]}}</p>
+       <h1>{{ getText(content["intro-header"]) }}</h1>
+       <p>{{ getText(content["intro-body"]) }}</p>
      </div>
      <div class="intro-links">
       <RouterLink class="pill shrink-hover" to="/flowchart">
          <img :src="icon('multi-arrow.svg')" />
          <div>
-           <h3>{{content["learn-header"][lang]}}</h3>
-           <p>{{content["learn-body"][lang]}}</p>
+           <h3>{{ getText(content["learn-header"]) }}</h3>
+           <p>{{ getText(content["learn-body"]) }}</p>
          </div>
        </RouterLink>
        <RouterLink class="pill shrink-hover" to="/dashboard/warrants">
          <img :src="icon('analyze.svg')"/>
          <div>
-           <h3>{{content["analyze-header"][lang]}}</h3>
-           <p>{{content["analyze-body"][lang]}}</p>
+           <h3>{{ getText(content["analyze-header"]) }}</h3>
+           <p>{{ getText(content["analyze-body"]) }}</p>
          </div>
        </RouterLink>
      </div>
@@ -26,12 +26,12 @@
     <hr>
 
     <section class="explore">
-     <h2>{{content["explore-header"][lang]}}</h2>
+     <h2>{{ getText(content["explore-header"]) }}</h2>
 
      <RouterLink v-for="(topic, key) in topics" :to="'/dashboard/' + key + '/'" class="unstyled-link shrink-hover">
        <div class="circle"></div>
        <img :src="icon(topic.icon)">
-       <h4>{{topic["label"][lang]}}</h4>
+       <h4>{{ getText(topic["label"]) }}</h4>
      </RouterLink>
     </section>
 
@@ -41,18 +41,18 @@
     <h2>{{content["credit-header"][lang]}}</h2>
      <a class="unstyled-link shrink-hover" href="https://www.washtenaw.org/1070/Prosecuting-Attorney">
        <img :src="icon('washtenaw2.jpg')">
-       <h4>{{content["county-header"][lang]}}</h4>
-       <p>{{content["county-body"][lang]}}</p>
+       <h4>{{ getText(content["county-header"]) }}</h4>
+       <p>{{ getText(content["county-body"]) }}</p>
      </a>
      <a class="unstyled-link shrink-hover" href="https://poverty.umich.edu/">
        <img :src="icon('um.png')">
-       <h4>{{content["poverty-solutions-header"][lang]}}</h4>
-       <p>{{content["poverty-solutions-body"][lang]}}</p>
+       <h4>{{ getText(content["poverty-solutions-header"]) }}</h4>
+       <p>{{ getText(content["poverty-solutions-body"]) }}</p>
      </a>
      <a class="unstyled-link shrink-hover" href="https://www.aclu.org/">
        <img :src="icon('aclu.png')">
-       <h4>{{content["aclu-header"][lang]}}</h4>
-       <p>{{content["aclu-body"][lang]}}</p>
+       <h4>{{ getText(content["aclu-header"]) }}</h4>
+       <p>{{ getText(content["aclu-body"])}}</p>
      </a>
      <!-- <button class="pill"> {{content["credits-button"][lang]}} </button> -->
     </section>
@@ -63,6 +63,7 @@
 import content from "../../assets/landing.json"
 import topicsJson from "../../assets/topics.json"
 import Asset from "@/utils/assets"
+import Text from "@/utils/text"
 
 export default {
   name: "Landing",
@@ -76,7 +77,21 @@ export default {
   methods: {
     icon(file){
       return Asset.load("icons/" + file);
+    },
+    getText(model){
+      return Text.get(model);
+    },
+    currentLang(){
+      return "";
     }
+
+      //return Text.getCurrentLa
+  },
+
+  mounted(){
+    //console.log(Text.getId())
+    //console.log("current language id:" + Text.currentLanguageId);
+    console.log("current language id: " + Text.get(this.content["intro-header"]));
   }
 }
 
