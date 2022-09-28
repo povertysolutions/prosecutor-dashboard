@@ -8,9 +8,14 @@ export default{
   getId(){
     return currentId;
   },
-  get(textModel){
-    if (textModel && textModel[currentId]){
-      return textModel[currentId];
+  get(textModel, langId){
+    if (textModel){
+      if (langId !== "en"){ //to do -- standin for missing translation
+        return "(" + langId + ")" + textModel["en"];
+      }
+      else{
+        return textModel[langId]
+      }
     }
     return "ERROR - missing text";
   },

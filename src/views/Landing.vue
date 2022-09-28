@@ -64,6 +64,7 @@ import content from "../../assets/landing.json"
 import topicsJson from "../../assets/topics.json"
 import Asset from "@/utils/assets"
 import Text from "@/utils/text"
+import { mapGetters } from "vuex"
 
 export default {
   name: "Landing",
@@ -74,12 +75,22 @@ export default {
       topics: topicsJson
     }
   },
+  computed:{
+    ...mapGetters({
+      langId: "lang/id",
+    }),
+  },
+  watch:{
+    langId(){
+      console.log("langId: " + this.langId)
+    }
+  },
   methods: {
     icon(file){
       return Asset.load("icons/" + file);
     },
     getText(model){
-      return Text.get(model);
+      return Text.get(model, this.langId);
     },
     currentLang(){
       return "";

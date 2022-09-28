@@ -1,6 +1,7 @@
-import languages from "@/../assets/languages.json"
-import Assets from "../assets"
-import Vue from "vue"
+import languages from "../../assets/languages.json"
+import Assets from "../utils/assets"
+import { createApp } from 'vue'
+import { createStore } from 'vuex'
 
 var namespace = "Text.Store:: "
 
@@ -24,14 +25,18 @@ export default {
     },
     mutations: {
         load(state){
+          console.log("loading lang...");
             if (languages === null){
                 state.error = true;
                 state.error_msg = namespace + "ERROR: 'languages' data is missing or malformatted.";
                 return;
             }
 
-            Vue.set(state, "model", languages);
-            var currentId = languages[0].id;
+            state.model = languages;
+            state.id = languages[0].id;
+        },
+        setLang(state, nextId){
+          state.id = nextId;
         },
         setLoading(state, value) {
             state.loading = value;
@@ -48,6 +53,9 @@ export default {
             commit('load');
             commit('setLoaded', true);
             commit('setLoading', false);
+        },
+        setLang({commit}, nextId){
+          commit('setLang', nextId)
         }
     }
 }

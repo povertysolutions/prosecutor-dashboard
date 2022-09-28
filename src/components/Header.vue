@@ -10,7 +10,7 @@
       <RouterLink class="link header" to="/about">About</RouterLink>
       <RouterLink class="link header" to="/resources">Resources</RouterLink>
 
-        <button :class="['pill', (lang.id === currentLangId ? 'selected' : '')]" v-for="lang in langModel" @click="translate(lang.id)">
+        <button :class="['pill', (lang.id === langId ? 'selected' : '')]" v-for="lang in langModel" @click="translate(lang.id)">
           {{ lang.id }}
         </button>
     </nav>
@@ -21,30 +21,26 @@
 <script>
 import Asset from "@/utils/assets"
 import Text from "@/utils/text"
+import { mapGetters } from "vuex"
 
 export default {
   name: "Header",
   computed: {
+    ...mapGetters({
+      langId: "lang/id",
+    }),
     langModel(){
       return Text.getModel();
-    },
-    currentLangId(){
-      return Text.getId();
     }
   },
   methods:{
     translate(id){
-      console.log("id: " + id);
-      Text.updateLanguage(id);
+      this.$store.dispatch('lang/setLang', id)
     }
   },
   mounted(){
-
     console.log("lang model: " + Text.getModel())
-
   }
-
-
 }
 
 </script>

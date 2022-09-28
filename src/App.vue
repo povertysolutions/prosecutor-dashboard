@@ -7,12 +7,24 @@
   <Footer/>
 </template>
 
-<script setup>
+<script>
 import { RouterLink, RouterView } from "vue-router";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import Asset from "@/utils/assets"
 import languages from "@/../assets/languages.json"
+
+import { mapGetters } from "vuex"
+
+export default {
+  name: 'App',
+  components:{
+    Header, Footer
+  },
+  mounted(){
+      this.$store.dispatch('lang/load')
+  }
+}
 
 
 </script>
