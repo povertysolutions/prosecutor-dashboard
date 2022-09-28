@@ -2,24 +2,28 @@
   <div class="view">
     <Sidebar :topics="topics" :topicId="topicId"></Sidebar>
       <section class="main">
-        <h2>{{currentTitle}}</h2>
-        <LineGraph class="graph"
-                    v-if="!loadingData"
-                    v-show="currentType !='map'"
-                   :dataset="chartData"
-                   :xLabel="currentXLabel"
-                   :yLabel="currentXLabel"
-                   :timelineMode="currentXLabel === 'Year'"
-                   :barMode="currentXLabel !== 'Year'"            >
-        </LineGraph>
+        <div ref="graphGroup">
+          <h2>{{currentTitle}}</h2>
+          <LineGraph class="graph"
+                      v-if="!loadingData"
+                      v-show="currentType !='map'"
+                     :dataset="chartData"
+                     :xLabel="currentXLabel"
+                     :yLabel="currentXLabel"
+                     :timelineMode="currentXLabel === 'Year'"
+                     :barMode="currentXLabel !== 'Year'"            >
+          </LineGraph>
 
-        <Map v-if="currentType=='map'" class="map"/>
+          <Map v-if="currentType=='map'" class="map"/>
 
-        <Legend class="legend"
-                :title="currentLegendTitle"
-                :dataset="legendData">
-        </Legend>
-
+          <Legend class="legend"
+                  :title="currentLegendTitle"
+                  :dataset="legendData">
+          </Legend>
+          <button class="downloadButton" @click="capture">
+            <img :src="icon('download.svg')" />
+          </button>
+        </div>
         <Details class="details" :filters="filters" @filterChanged="updateFilter" @dateChanged="updateDate"></Details>
       </section>
   </div>
@@ -37,6 +41,8 @@ import topicsJson from "../../assets/topics.json"
 import filterJson from "../../assets/data/warrant-filters.json"
 
 import Asset from "@/utils/assets"
+
+import domtoimage from "dom-to-image-more";
 
 export default {
   name: "Dashboard",
@@ -90,6 +96,9 @@ export default {
     }
   },
   methods:{
+    icon(file){
+      return Asset.load("icons/" + file);
+    },
     updateTopic(topic){
       this.currentTopic = topic;
       this.loadFilters();
@@ -185,6 +194,23 @@ export default {
       console.log("currentTopic model: " + this.currentModel)
       this.loadFilters();
       this.sort();
+    },
+    async capture() {
+      console.log("starting capture...")
+
+      var node = this.$refs.graphGroup;
+
+      domtoimage
+        .toPng(node)
+        .then(function (dataUrl) {
+          //var img = new Image();
+          //img.src = dataUrl;
+          console.log(dataUrl);
+          //document.body.appendChild(img);
+        })
+        .catch(function (error) {
+          console.error("oops, something went wrong!", error);
+        });
     }
   },
   watch: {
@@ -250,6 +276,18 @@ h2{
   width: 150px;
   vertical-align: top;
   padding-left: 2rem;
+}
+
+.downloadButton{
+  width: 2rem;
+  height: 2rem;
+  left: 3rem;
+  bottom: 3rem;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .details{
