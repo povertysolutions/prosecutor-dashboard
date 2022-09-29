@@ -10,8 +10,8 @@
                      :dataset="chartData"
                      :xLabel="currentXLabel"
                      :yLabel="currentXLabel"
-                     :timelineMode="currentXLabel === 'Year'"
-                     :barMode="currentXLabel !== 'Year'"            >
+                     :timelineMode="currentXLabel.includes('Year')"
+                     :barMode="!currentXLabel.includes('Year')"            >
           </LineGraph>
 
           <Map v-if="currentType=='map'" class="map"/>
@@ -20,6 +20,7 @@
                   :title="currentLegendTitle"
                   :dataset="legendData">
           </Legend>
+
           <button class="downloadButton" @click="capture">
             <img :src="icon('download.svg')" />
           </button>
@@ -39,8 +40,9 @@ import Map from "@/components/Map"
 import Models from "../utils/models.js"
 import topicsJson from "../../assets/topics.json"
 import filterJson from "../../assets/data/warrant-filters.json"
-
 import Asset from "@/utils/assets"
+import Text from "@/utils/text"
+import { mapGetters } from "vuex"
 
 import domtoimage from "dom-to-image-more";
 
@@ -59,11 +61,13 @@ export default {
       currentTopic: null, //object
       topics: topicsJson,
       filters: null,
-      lang: "en",
       loadingData: false
     }
   },
   computed:{
+    ...mapGetters({
+      langId: "lang/id",
+    }),
     currentLegendTitle(){
       if (this.currentFilter && this.currentFilter.label){
         return this.currentFilter.label;
@@ -78,13 +82,13 @@ export default {
     },
     currentXLabel(){
       if (this.currentFilter && this.currentFilter.xLabel){
-        return this.currentFilter.xLabel[this.lang];
+        return this.getText(this.currentFilter.xLabel);
       }
       return "";
     },
     currentYLabel(){
       if (this.currentFilter && this.currentFilter.yLabel){
-        return this.currentFilter.yLabel[this.lang];
+        return this.getText(this.currentFilter.yLabel);
       }
       return "";
     },
@@ -96,6 +100,9 @@ export default {
     }
   },
   methods:{
+    getText(model){
+      return Text.get(model, this.langId);
+    },
     icon(file){
       return Asset.load("icons/" + file);
     },

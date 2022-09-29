@@ -6,25 +6,25 @@
       <ul>
         <!-- <img :style="[{src: `url('${getIcon(content.address_icon)}')`}]"> -->
         <img :src="getIcon(content.address_icon)">
-        <p>{{content.address[lang]}}</p>
+        <p>{{getText(content.address)}}</p>
       </ul>
       <ul>
         <img :src="getIcon(content.phone_icon)">
-        <p>{{content.phone[lang]}}</p>
+        <p>{{getText(content.phone)}}</p>
       </ul>
       <ul>
         <img :src="getIcon(content.email_icon)">
-        <p>{{content.email[lang]}}</p>
+        <p>{{getText(content.email)}}</p>
       </ul>
     </div>
     <div>
       <ul>
         <img :src="getIcon(content.twitter_icon)">
-        <p>{{content.twitter[lang]}}</p>
+        <p>{{getText(content.twitter)}}</p>
       </ul>
       <ul>
         <img :src="getIcon(content.facebook_icon)">
-        <p>{{content.facebook[lang]}}</p>
+        <p>{{getText(content.facebook)}}</p>
       </ul>
     </div>
   </footer>
@@ -33,17 +33,26 @@
 <script>
 import content from "../../assets/footer.json"
 import Asset from "@/utils/assets"
+import Text from "@/utils/text"
+import { mapGetters } from "vuex"
 
 export default {
   name: "About",
   data(){
     return{
-      lang: "en",
       content: content,
       loaded: true,
     }
   },
+  computed:{
+    ...mapGetters({
+      langId: "lang/id",
+    }),
+  },
   methods:{
+    getText(model){
+      return Text.get(model, this.langId);
+    },
     getIcon(model){
       if (model && model["icon"]){
         return Asset.load("icons/" + model["icon"]);

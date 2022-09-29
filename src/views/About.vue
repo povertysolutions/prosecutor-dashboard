@@ -18,7 +18,6 @@ export default {
   name: "About",
   data(){
     return{
-      lang: "en",
       content: content
     }
   }

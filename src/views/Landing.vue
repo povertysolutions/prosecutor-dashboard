@@ -70,7 +70,6 @@ export default {
   name: "Landing",
   data(){
     return{
-      lang: "en",
       content: content,
       topics: topicsJson
     }
@@ -80,29 +79,13 @@ export default {
       langId: "lang/id",
     }),
   },
-  watch:{
-    langId(){
-      console.log("langId: " + this.langId)
-    }
-  },
   methods: {
     icon(file){
       return Asset.load("icons/" + file);
     },
     getText(model){
       return Text.get(model, this.langId);
-    },
-    currentLang(){
-      return "";
     }
-
-      //return Text.getCurrentLa
-  },
-
-  mounted(){
-    //console.log(Text.getId())
-    //console.log("current language id:" + Text.currentLanguageId);
-    console.log("current language id: " + Text.get(this.content["intro-header"]));
   }
 }
 

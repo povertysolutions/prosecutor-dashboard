@@ -3,8 +3,8 @@
     <section class="main">
       <button @click="$emit('close')"><img :src="closeIcon"/></button>
       <div class="text">
-        <h2>{{model.label[lang]}}</h2>
-        <!-- <p>{{model.description[lang]}}</p> -->
+        <h2>{{ getText(model.label) }}</h2>
+        <!-- <p>{{ getText(model.description)}}</p> -->
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
         <br>
         <p v-if="model.influence === 'independent'">This stage is <b>independent</b> from the procescution.</p>
@@ -16,7 +16,7 @@
         <h4 v-if="model.links.length > 0">Explore data at this step. </h4>
         <section v-for="link in model.links" class="link shrink-hover">
           <img :src="chartIcon"/>
-          <p>{{ link[lang] }}</p>
+          <p>{{ getText(link) }}</p>
         </section>
       </div>
     </section>
@@ -25,23 +25,29 @@
 
 <script>
 import Asset from "@/utils/assets"
+import Text from "@/utils/text"
+
+import { mapGetters } from "vuex"
 
 export default {
   name: "NodeTakeover",
   props:{
     model: Object
   },
-  data(){
-    return {
-      lang: "en"
-    }
-  },
   computed:{
+    ...mapGetters({
+      langId: "lang/id",
+    }),
     chartIcon(){
       return Asset.load("icons/line-chart.svg");
     },
     closeIcon(){
       return Asset.load("icons/x.svg");
+    }
+  },
+  methods:{
+    getText(model){
+      return Text.get(model, this.langId);
     }
   }
 }

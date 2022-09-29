@@ -69,7 +69,6 @@ export default {
   data() {
     return {
       showTakeover: false,
-      lang: "en",
       currentNode: null,
       nodeTypes: {
         customNode: CustomNode,

@@ -2,7 +2,6 @@
     <div class="wrapper">
       <Header/>
     </div>
-
   <RouterView class="router"/>
   <Footer/>
 </template>

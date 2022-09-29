@@ -38,6 +38,8 @@
 import { VueFlow, ConnectionMode, Controls, addEdge, updateEdge, MarkerType, Position, Handle } from '@braks/vue-flow'
 import { computed } from 'vue'
 import Asset from "@/utils/assets"
+import Text from "@/utils/text"
+import { mapGetters } from "vuex"
 
 export default{
   name: "CustomNode",
@@ -70,12 +72,14 @@ export default{
       bottom: Position.Bottom,
       right: Position.Right,
       left: Position.Left,
-      lang: "en"
     }
   },
   computed:{
+    ...mapGetters({
+      langId: "lang/id",
+    }),
     label(){
-      return this.data.content.label[this.lang];
+      return this.getText(this.data.content.label, this.langId);
     },
     core(){
       return this.data.content.core;
@@ -91,6 +95,11 @@ export default{
         return Asset.load("icons/" + this.data.content.icon);
       }
       return "";
+    }
+  },
+  methods:{
+    getText(model){
+      return Text.get(model, this.langId);
     }
   }
 }
