@@ -77,8 +77,8 @@ header {
 
 nav {
   text-align: right;
-  padding-top: .2rem;
-  padding-right: 3rem;
+  padding-top: .5rem;
+  padding-right: 4rem;
 
   a{
     color: $color-white;
@@ -102,8 +102,8 @@ nav {
   display: inline-block;
   color: $color-white;
   border-color: $color-white;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   margin-right: .5rem;
   padding: 0;
   border-radius: 50%;
