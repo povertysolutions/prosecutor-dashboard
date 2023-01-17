@@ -4,13 +4,14 @@
       <button @click="$emit('close')"><img :src="closeIcon"/></button>
       <div class="text">
         <h2>{{ getText(model.label) }}</h2>
-        <!-- <p>{{ getText(model.description)}}</p> -->
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <h4>{{ getText(model.subheader) }}</h4>
+        <p>{{ getText(model.description)}}</p>
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> -->
         <br>
-        <p v-if="model.influence === 'independent'">This stage is <b>independent</b> from the procescution.</p>
+        <!-- <p v-if="model.influence === 'independent'">This stage is <b>independent</b> from the procescution.</p>
         <p v-if="model.influence === 'sole'">This stage is <b>solely</b> controlled by the prosecution</p>
         <p v-if="model.influence === 'mixed'">This stage has <b>mixed</b> influence from the procescution and other factors.</p>
-        <p v-if="model.influence === 'limited'">This stage is <b>limited</b> influence from the procescution.</p>
+        <p v-if="model.influence === 'limited'">This stage is <b>limited</b> influence from the procescution.</p> -->
       </div>
       <div class="side">
         <h4 v-if="model.links.length > 0">Explore data at this step. </h4>
@@ -58,14 +59,14 @@ export default {
 
 section{
   border-radius: 20px;
+  color: $color-white;
 
   h2{
-    color: $color-white;
     padding-top: 5rem;
   }
 
-  p{
-    color: $color-white;
+  h4{
+    padding-top: 1rem;
   }
 }
 

@@ -12,8 +12,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "What are the root causes of crime?",
+      "es": ""
+    },
     "description": {
-      "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+      "en": "Research shows that underlying circumstances, including a lack of access to economic opportunity, a lack of individual support networks, and unaddressed trauma and a lack of access to mental health resources, to name a few factors, significantly impact the likelihood of someone's criminal involvement. Unfortunately the criminal justice system is not equipped to treat these underlying needs, and can in fact exascerbate them, leading to escalating cycles of recidivism and poverty.",
       "es": ""
     },
     "links": [
@@ -43,8 +47,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "What happens when someone is arrested without a warrant? ",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "When an officer has \"probable cause\" to believe a person has committed a crime, or that a person has witnessed a crime, then the officer can arrest that person without a warrant. That arrest triggers certain constitutional protections, including that the person arrested can only be held for 48 hours before appearing in court and either being released on bond, or held in jail until the next court date. For low level misdemeanor offenses or violations, the arresting officer can instead issue a ticket requiring the person arrested to appear on the arraignment date on their own recognizance, allowing their release in the meantime (instead of being held and transported to court by the police). Upon arrest, the officer files an incident report which includes: identifying information of the arrestee, the type of crime(s) allegedly committed, the date, time, and location of the arrest, and what happened during the incident. In Washtenaw County, the officer must also submit body camera footage of the arrest. If a victim is involved, the victim may submit their own statement in the report as well. The prosecutor is not involved in the arrest stage, but prosecutor's policy may influence officers in their decision whether to make an arrest. For example, if a prosecutor has made it known they will not prosecute certain charges, an officer may not make an arrest for those charges. Or if a prosecutor has rigorous probable cause standards, an officer may be less likely to make an arrest with weak probable cause. In Washtenaw County, the prosecutor has stopped pursuing charges from pretext stops, with a few exceptions, due to the lack of probable cause involved in these arrests. As a result, an officer may be less likely to make a pretext stop in the first place. ",
       "es": ""
     },
     "links": [
@@ -70,8 +78,12 @@
       "en": "",
       "es": ""
     },
-    "description": {
+    "subheader": {
       "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "Most cases begin with a warrant request, where the police request permission from the Prosecutor to take a person into custody. Police can make arrests without warrants for crimes they witness. Prosectors can approve the warrant if they “reasonably believe that probable cause exists that the suspect committed the offense.” Usually prosecutors will want to approve warrants in situations where they believe they can prove the suspect to be guilty beyond a reasonable doubt.",
       "es": ""
     },
     "links": [
@@ -98,8 +110,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "The Prosecutor decides whether to pursue charges",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "The arresting officer refers the case (or warrant request), along with the incident report, body camera footage, and other relevant evidence, to the prosecutor's office. The officer also reccomends specific criminal charges for the suspect. However, it is the prosecutor who decides what charges to bring, or, indeed, whether to bring charges at all. This is the stage where the prosecutor decides whether to dismiss, divert, or prosecute the charges. If they decide to prosecute the charges, then the case is arraigned. If it is a misdemeanor, the person charged enters a plea (not guilty, guilty, or no contest (treated the same as guilty) at the arraignment date. If the charge is a felony charge, the person facing charges does not enter a plea at the arraignment date. ",
       "es": ""
     },
     "links": [
@@ -126,8 +142,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Beginning the court process",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "If the prosecutor decides to pursue the case, the defendant is assigned to a court and judge. Most criminal cases either go to district court or circuit court. Judges in each court are elected to six year terms. The Sixth Amendment guarantees all defendants the right to a lawyer. Many defendants choose to hire their own lawyer, who might specialize in the defendants particular type of case. If the defendant cannot afford to hire their own lawyer, a public defender will represent them. ",
       "es": ""
     },
     "links": [
@@ -153,10 +173,15 @@
       "en": "",
       "es": ""
     },
-    "description": {
-      "en": "",
+    "subheader": {
+      "en": "Not enough evidence",
       "es": ""
-    }
+    },
+    "description": {
+      "en": "The prosecutor may choose to reject the case if there is insufficient evidence to support charges. The charges are dismissed and the arrestee goes free without a criminal record. Standards of evidence vary depending on the incident and the crime. As of 2021, the Washtenaw County Prosecutor recquires all referred cases to include body camera footage of the arrest. Lack of footage will result in an automatic rejection. Although a dismissal means no criminal charges will be brought for the case, an arrest record can still have collateral consequences. Although in Michigan, 60 days after the rejection of a case, the arrest record is expunged, background checks may pick up the arrest in the interim, with consequences for immigration, employment, and housing.",
+      "es": ""
+    },
+    "links": []
   },
   "warrent-arrest": {
     "label": {
@@ -170,8 +195,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Conducting a warrant arrest",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "If prosecutor decides to approve a warrant request and judge signs it, the requesting officer now has authority to arrest the identified suspect or search their homes for evidence of illegal activity. They are able to confiscate any incriminating evidence they find. However, the fourth amendment protects people from \"unreasonable searches and seizures\" and sets standards for police conduct during and arrest. For example, officers often must follow a \"knock and announce\" rule to make their presence known and give the suspect reasonable time to answer the door. If the court deems the officer's conduct \"unreasonable\", it may choose to exclude evidence collected during the arrest. However, these rules become waived if there is a threat of bodily harm or escape, giving officers broad latitude. ",
       "es": ""
     },
     "links": [
@@ -201,8 +230,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "An alternative to the traditional process",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "Diversion is an alternative to the traditional justice process, designed to remedy criminal behavior while keeping the offender out of the formal criminal justice system. They are most often pursued for offenders who are first-time, non-violent, or otherwise considered at low risk to reoffend. Diversion tactics vary based on the specifics of each case, but can involve community service, group and individual counseling sessions, restorative justice, and specialized rehabilitative courts like youth or drug court. If a victim is involved, the offender may also be required to make direct restitutions for damages. The particular requirements for referral to diversion programs, including where they occur in the process (pre-arraignment, pre-plea, or post-plea), varies by jurisdiction and case type. ",
       "es": ""
     },
     "links": [
@@ -225,8 +258,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "The first court appearance",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "In the arraignment stage, the arrestee, now known as the \"defendant\", makes their initial court appearance before the judge and prosecutor. The judge informs the defendant of the criminal charges filed against him or her, and the defendant must enter a plea of \"guilty\" or \"not guilty\". If the defendant pleads \"guilty\", sentencing begins immediately. If the defendant pleads \"not guilty\", the case will move into the trial stage, where they have an opportunity to defend their innocence. Criminal cases differ from civil cases-- civil cases are typically disputes between two private parties, as in a lawsuit. Criminal cases are led by the government (known as \"the people\"). The prosecutor is only involved with criminal cases. At this stage, the prosecutor may offer the defendant a \"plea bargain\", in which the defendant pleads \"guilty\" in exchange for a lighter sentence. The judge may also choose to move the case into a \"problem-solving\" court designed to remedy the case outside the traditional criminal justice system. ",
       "es": ""
     },
     "links": [
@@ -252,8 +289,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Problem-solving Courts",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "Specialty courts, also known as \"problem-solving\" courts, are a form of diversion in which the judge and prosecutor refer the case to a non-adversarial system where all parties work together to solve the problem at hand. If the offender violates the conditions imposed by the court, the case may return to the criminal court track. The specific nature of specialty courts vary between counties. Washtenaw County offers three types of specialty court: veteran treatment court: for veterans with mental health or substance abuse issues. Clients move through an 18-24 month program in which they are closely monitored. The court gives them a treatment plan, along with access to resources and a supportive community. Mental health court: for offenders whose crimes are the result of a mental illness. A social work team provides the client therapeutic treatment while connecting them with education, housing, and employment resources. Sobriety court: for repeat offender DUIs and other crimes stemming from drug or alcohol addiction. The client is enrolled in a treatment program and closely monitored for sobriety. ",
       "es": ""
     },
     "links": [
@@ -283,8 +324,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "How the vast majority of cases end",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "In a plea bargain, the Prosecutor offers to reduce the defendant's criminal charges and seek a lesser sentence in exchange for a guilty plea before the trial. A plea bargain can help a defendant avoid severe sentencing, high court costs, and a lengthy trial. However plea bargaining also carries serious consequences. Because it requires an admission of guilt, it precludes a defendant from maintaining their innocence. Plea bargaining still results in a criminal record and sentence, and the corresponding loss of rights and priviledges. Many low-income people without adequate legal representation accept plea offers even when they are innocent or there is insufficient evidence because they fear they would be found guilty on the more severe set of charges in an unpredictable trial setting, or because they cannot afford to spend time in a lengthy trial. Some prosecutors may exploit this fear by deliberately over-charging a defendant and offering a plea bargain, thereby increasing their conviction rate. ",
       "es": ""
     },
     "links": []
@@ -302,8 +347,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Only 5% of all cases go to trial ",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "The American court system is predicated on the notion that the accused is innocent until proven guilty. Here, the defendant has an opportunity to show their innocence through a formal examination of evidence and witnesses. The Prosecutor is tasked with proving the defendant's guilt beyond a reasonable doubt. Not all trials have juries -- only cases with \"serious\" offenses carrying more than six month's prison time typically feature a jury. In lower-level cases, the judge makes the final determination of guilt. The length of the trial depends on the severity and complexity of the case. A low level misdemeanor trial typically lasts between one day and two weeks, while a felony trial with a jury could last up to a year. ",
       "es": ""
     },
     "links": [
@@ -329,8 +378,12 @@
       "en": "",
       "es": ""
     },
-    "description": {
+    "subheader": {
       "en": "",
+      "es": ""
+    },
+    "description": {
+      "en": "If the judge or jury still have reasonable doubt at the end of the trial, the defendant is acquitted and cleared of criminal charges, although they may still be held liable in civil disputes with the victim or other aggrieved parties. The court may also dismiss the case, which terminates the trial wwithout any determination of guilt or conviction. Cases may also dismiss the case, which terminates the trial without any determination of guilt or conviction. Cases may be dismissed for a number of reasons, including if the Prosecutor fails to move the case forward, due process is violated, or lack of jurisdiction. Dismissal is not the same as a \"not guilty\" verdict, and the case may still remain on the defendant's criminal record. ",
       "es": ""
     },
     "links": [
@@ -357,8 +410,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "A Guilty Verdict",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "If the Prosecutor is able to eliminate all reasonable doubt over the defendant's guilt, the defendant is convicted and the judge sentences them to punishment. The sentence can carry multiple elements, such as the payment of fines and community service. The judge follows a set of federal guidelines determining the maximum and minimum sentencing requirements for each crime. However, there have been recent efforts to eliminate \"mandatory minimum\" sentencing requirements, which prevent the judge from exercising discretion to give out lenient sentences. While the ultimate decision to convict falls to the judge or jury, Prosecutors are often judged by their conviction rate-- many have a political incentive to convict as many defendants as possible, especially in cases of violent crime. ",
       "es": ""
     },
     "links": [
@@ -384,8 +441,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Paying for Crime",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "If the Court decides the defendant has adequate finances, a court may order a convicted defendant to pay a fine. Dollar amounts are set by statute and generally increase for more severe crimes. Fines may be combined with community service, incarceration, probation, or other forms of sentencing. They are most common in traffic violations and low level misdemeanors. If the defendant fails to pay the fine within a certain time period, they may incur more serious consequences. Courts usually seek alternatives to fines for indigent defendants who are unable to pay. The defendant may also be liable for other court costs, such as those for victim assessments, DNA testing, and probation fees. ",
       "es": ""
     },
     "links": [
@@ -411,8 +472,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Repaying the Community",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "Many misdemeanor sentences involve some form of community service, in which the court orders the dependant to volunteer with a local oganization for a specified number of hours. Community service might be combined with other sentencing options, such as fines, incarceration, or probation. If the defendant fails to adequately complete the community service, they may incure more severe consequences. Common court order destinations in Washtenaw County include non-profits like the United Way, Salvation Army, and Meals on Wheels. ",
       "es": ""
     },
     "links": [
@@ -438,8 +503,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Conditional Release",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "Like parole, probation is a form of conditional release. However, it is typically offered earlier in the sentence as a response to good behavior. The inmate is subject to strict monitoring throughout the probationary period, and may be re-incarcerated if they violate the terms of probation. In Washtenaw County, those on probation may be required to pay supervision fees on top of other legal costs.  A suspended sentence allows for a probationary period before the defendant ever goes to jail. If the terms of the probation are violated, the sentence takes effect and the individual is incarcerated. ",
       "es": ""
     },
     "links": [
@@ -466,8 +535,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "The Prison System ",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "Many convictions carry prison sentences, which can range from a few days for a small misdemeanor to a lifetime for a serious felony. America's incarceration system is fragmented. Jails are operated on the county level and are reserved for pretrial detainees and minor offenders, while those convicted of more serious charges tend to go to state or federal prison. Although exact measures vary, most experts agree that the United States has the world's highest incarceration rate, especially for Black men. The Sherriff's Community Correction's office manages the Washtenaw County Jail. There are 30 active state prisons currently located throughout Michigan. The state has closed or consolidated nine additional prisons over the past decade. ",
       "es": ""
     },
     "links": []
@@ -484,8 +557,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Early Release ",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "Depending on the location of their imprisonment, an inmate can appeal to a state or local parole board to serve out the rest of their sentence through community service and other active projects. The parolee is still subject to close monitoring and must follow a certain set of conditions for one to four years. ",
       "es": ""
     },
     "links": [
@@ -508,8 +585,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Re-entering Society",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "When inmates finish serving their sentence, they are re-released back into the \"real world\". However, the effects of incarceration and a criminal record can have long lasting repercussions. Without adequate support from friends or family, former inmates have greater difficulty finding housing, employment, education and other resources essential to stability and long-term prosperity. ",
       "es": ""
     },
     "links": [
@@ -536,8 +617,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Staying out of the courts ",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "Rehabilitation helps keep people from re-offending after they serve their sentences. This typically includes access to important resources such as skills training, housing, and mental health support, as well as emotional support from friends, family and members of the community. There are several non-profits in Washtenaw County providing re-entry services for returning inmates. For a list of Michigan-based reentry resources, please visit Michigan 211 website at https://www.navigateresources.net/call/. ",
       "es": ""
     },
     "links": [
@@ -564,8 +649,12 @@
       "en": "",
       "es": ""
     },
+    "subheader": {
+      "en": "Why do people re-offend? ",
+      "es": ""
+    },
     "description": {
-      "en": "",
+      "en": "Individuals who complete their sentences are at risk of recidivism, or a relapse into criminal behavior. Social determinants play a large role in recidivism-- the risk is especially high for people who re-enter society without having their crucial housing, employment and social needs met. Having a criminal record can prevent someone from signing an apartment lease, securing a bank loan, or getting a well-paying job, significantly diminishing their long-term financial prospects and quality of life. For these people, it may be easy to slip back into criminal activity, especially without adequate support from friends, family, and the community. ",
       "es": ""
     },
     "links": [
