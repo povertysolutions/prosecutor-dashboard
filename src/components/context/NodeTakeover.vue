@@ -5,7 +5,7 @@
       <div class="text">
         <h2>{{ getText(model.label) }}</h2>
         <h4>{{ getText(model.subheader) }}</h4>
-        <p>{{ getText(model.description)}}</p>
+        <p class="lightLink" v-html="getDescription(model.description)"></p>
         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> -->
         <br>
         <!-- <p v-if="model.influence === 'independent'">This stage is <b>independent</b> from the procescution.</p>
@@ -37,7 +37,8 @@ export default {
   },
   computed:{
     ...mapGetters({
-      langId: "lang/id",
+      langId: "text/langId",
+      glossaryModel: "text/glossaryModel"
     }),
     chartIcon(){
       return Asset.load("icons/line-chart.svg");
@@ -49,6 +50,10 @@ export default {
   methods:{
     getText(model){
       return Text.get(model, this.langId);
+    },
+    getDescription(model){
+      var text = Text.get(model, this.langId);
+      return Text.checkGlossary(text, this.glossaryModel, this.langId);
     }
   }
 }
@@ -74,6 +79,7 @@ section{
   position: fixed;
   width: 100vw;
   height: 100vh;
+
 
 
   .main{
@@ -106,6 +112,11 @@ section{
   .text{
     display: inline-block;
     width: 55%;
+
+    a{
+      color: red;
+
+    }
   }
 
   .side{
@@ -145,5 +156,6 @@ section{
     }
   }
 }
+
 
 </style>

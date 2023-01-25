@@ -21,5 +21,22 @@ export default{
   },
   updateLanguage(id){
     currentId = id;
+  },
+  //argument -- plain text, glossary model
+  //returns -- rich text, returns underlined links to glossary
+  checkGlossary(text, glossary, langId){
+    console.log(glossary)
+    var output = text;
+
+    console.log(output);
+
+    for (var i in glossary){
+      var term = glossary[i].term[langId];
+      console.log(term);
+      output = output.replaceAll(term, "<a href=''>" + term + "</a>");
+    }
+
+    return output;
   }
+
 }

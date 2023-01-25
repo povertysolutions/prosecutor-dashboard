@@ -15,14 +15,15 @@ import { mapGetters } from "vuex"
 
 export default {
   name: "Glossary",
-  data(){
-    return{
-      content: content
-    }
-  },
+  // data(){
+  //   return{
+  //     content: content
+  //   }
+  // },
   computed:{
     ...mapGetters({
-      langId: "lang/id",
+      langId: "text/langId",
+      content: "text/glossary"
     })
   },
   methods:{
@@ -33,8 +34,8 @@ export default {
 
   mounted(){
     //to do -- listen for language switch and update
-    var orderedContent = this.content.sort((a, b) => a.term.en > b.term.en ? 1 : -1);
-    this.content = orderedContent;
+    // var orderedGlossary = this.content.sort((a, b) => a.term.en > b.term.en ? 1 : -1);
+    // this.content = orderedContent;
   }
 }
 
@@ -61,6 +62,7 @@ export default {
 hr{
   margin: 2rem 0;
 }
+
 
 
 </style>

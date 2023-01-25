@@ -10,6 +10,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: auto;
+
+  text-underline-offset: 3px;
+  text-decoration-thickness: 5px;
 }
 
 h1 {
@@ -76,4 +79,30 @@ button {
   &:hover{
     transform: scale(98%)
   }
+}
+
+
+//links
+.lightLink {
+
+  & a:link {
+    color: $color-light-orange;
+    /* font-weight: 600; */
+  }
+
+  & a:visited {
+    color: $color-light-orange;
+    /* font-weight: 600; */
+  }
+
+  & a:hover {
+    color: $color-orange;
+    /* font-weight: 600; */
+  }
+
+  & a:active {
+    color: $color-orange;
+    /* font-weight: 600; */
+  }
+
 }

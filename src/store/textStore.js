@@ -1,4 +1,5 @@
 import languages from "../../assets/languages.json"
+import glossary from "../../assets/glossary.json"
 import Assets from "../utils/assets"
 import { createApp } from 'vue'
 import { createStore } from 'vuex'
@@ -12,16 +13,18 @@ export default {
         loaded: false,
         error: false,
         error_msg: "",
-        model: {},
-        id: ""
+        langModel: {},
+        langId: "",
+        glossaryModel: {},
     },
     getters: {
         loading: state => state.loading,
         loaded: state => state.loaded,
         error: state => state.error,
         error_msg: state => state.error_msg,
-        model: state => state.model,
-        id: state => state.id
+        langModel: state => state.langModel,
+        langId: state => state.langId,
+        glossaryModel: state => state.glossaryModel,
     },
     mutations: {
         load(state){
@@ -33,10 +36,13 @@ export default {
             }
 
             state.model = languages;
-            state.id = languages[0].id;
+            state.langId = languages[0].id;
+
+            var orderedGlossary = glossary.sort((a, b) => a.term[state.langId] > b.term[state.langId] ? 1 : -1);
+            state.glossaryModel = orderedGlossary;
         },
         setLang(state, nextId){
-          state.id = nextId;
+          state.langId = nextId;
         },
         setLoading(state, value) {
             state.loading = value;

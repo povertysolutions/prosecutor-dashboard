@@ -21,7 +21,7 @@ export default {
     Header, Footer
   },
   mounted(){
-      this.$store.dispatch('lang/load')
+      this.$store.dispatch('text/load')
   }
 }
 

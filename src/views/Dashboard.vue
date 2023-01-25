@@ -66,7 +66,7 @@ export default {
   },
   computed:{
     ...mapGetters({
-      langId: "lang/id",
+      langId: "text/langId",
     }),
     currentLegendTitle(){
       if (this.currentFilter && this.currentFilter.label){

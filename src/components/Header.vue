@@ -28,7 +28,7 @@ export default {
   name: "Header",
   computed: {
     ...mapGetters({
-      langId: "lang/id",
+      langId: "text/langId",
     }),
     langModel(){
       return Text.getModel();
@@ -36,7 +36,7 @@ export default {
   },
   methods:{
     translate(id){
-      this.$store.dispatch('lang/setLang', id)
+      this.$store.dispatch('text/setLang', id)
     }
   },
   mounted(){
