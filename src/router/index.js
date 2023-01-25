@@ -3,6 +3,7 @@ import Home from "../views/Landing.vue";
 import Dashboard from "../views/Dashboard.vue";
 import About from "../views/About.vue";
 import Resources from "../views/Resources.vue";
+import Glossary from "../views/Glossary.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: "/flowchart",
       name: "flowchart",
       component: () => import("../views/Context.vue"),
+    },
+    {
+      path: "/glossary",
+      name: "glossary",
+      component: () => import("../views/Glossary.vue"),
     },
   ],
 });

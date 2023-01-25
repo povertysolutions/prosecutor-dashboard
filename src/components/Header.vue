@@ -7,6 +7,7 @@
     <nav>
       <RouterLink class="link header" to="/dashboard/warrants">Data</RouterLink>
       <RouterLink class="link header" to="/flowchart">Flowchart</RouterLink>
+      <RouterLink class="link header" to="/glossary">Glossary</RouterLink>
       <RouterLink class="link header" to="/about">About</RouterLink>
       <RouterLink class="link header" to="/resources">Resources</RouterLink>
 
