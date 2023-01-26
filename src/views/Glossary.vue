@@ -23,7 +23,7 @@ export default {
   computed:{
     ...mapGetters({
       langId: "text/langId",
-      content: "text/glossary"
+      content: "text/glossaryModel"
     })
   },
   methods:{
