@@ -33,7 +33,12 @@ export default{
     for (var i in glossary){
       var term = glossary[i].term[langId];
       console.log(term);
-      output = output.replaceAll(term, "<a href=''>" + term + "</a>");
+      //output = output.replaceAll(term, "<a href=''>" + term + "</a>");
+      output = output.replaceAll(term,
+                                  "<a href='/glossary' target='_self' onclick='event.preventDefault() app._router.push(`/glossary/`)'>"
+                                  + term + "</a>");
+      //output = output.replaceAll(term, "<router-link to='/' @click='console.log(`click!`)'>" + term + "</router-link>");
+      //@carly to do- make glossary route name not hardcoded
     }
 
     return output;
