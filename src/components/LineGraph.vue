@@ -55,6 +55,10 @@ export default {
             time: {
               unit: 'year',
               stepSize: 5,
+              // parser: 'YYYY-MM-DD', //1992-11-29 00:00:00.0000000
+              // displayFormats: {
+              //   year: 'YYYY'
+              // }
             },
         }
       }

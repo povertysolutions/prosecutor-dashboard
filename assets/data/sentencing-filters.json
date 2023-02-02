@@ -1,43 +1,46 @@
 {
-  "race" : {
-    "label" : "Race",
-    "type" : "graph",
-    "x" : "year",
+  "charge-types" : {
+    "label" : "Charges Types",
+    "type" : "bar",
+    "data": "filtered-def.csv",
+    "x" : "DFDISPDATE",
     "xLabel": {
-      "en" : "Year",
+      "en" : "Disposition Year",
       "es" : ""
     },
-    "y" : "race",
+    "y" : "CSCOURT",
     "yLabel": {
-      "en" : "Residents Sentenced",
+      "en" : "Type of Charge",
       "es" : ""
     },
-    "title" : "Residents Prosecuted by Year"
+    "title" : "Charge Types over Time"
   },
-  "charge" : {
-    "label" : "Charge Type",
-    "type" : "graph",
-    "x" : "race",
+  "circuit-court" : {
+    "label" : "Circuit Court",
+    "type" : "bar",
+    "data": "filtered-def.csv",
+    "x" : "DFDISPDATE",
     "xLabel": {
-      "en" : "Race",
+      "en" : "Disposition Year",
       "es" : ""
     },
-    "y" : "chargeOption",
+    "y" : "CSAGENCY",
     "yLabel": {
-      "en" : "Charge",
+      "en" : "Police Agency Requesting Warrant",
       "es" : ""
     },
-    "title" : "Charge Type by Race"
+    "title" : "Warrant Request"
   },
   "sentencing" : {
     "label" : "Sentence Type",
     "type" : "graph",
-    "x" : "year",
+    "data": "filtered-charges-sentences.csv",
+    "x" : "CGDISPDATE",
     "xLabel": {
-      "en" : "Year",
+      "en" : "Disposition Year",
       "es" : ""
     },
-    "y" : "sentenceType",
+    "y" : "SNTYPE",
     "yLabel": {
       "en" : "Charge",
       "es" : ""

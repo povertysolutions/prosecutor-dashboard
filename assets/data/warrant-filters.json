@@ -1,23 +1,25 @@
 {
   "race" : {
     "label" : "Race",
-    "type" : "graph",
-    "x" : "year",
-    "y" : "race",
+    "type" : "line",
+    "data": "filtered-def.csv",
+    "x" : "DFDISPDATE",
     "xLabel": {
-      "en" : "Year",
+      "en" : "Year of Disposition",
       "es" : ""
     },
+    "y" : "DSRACE",
     "yLabel": {
-      "en" : "Residents Prosecuted",
+      "en" : "Race",
       "es" : ""
     },
-    "title" : "Residents Prosecuted by Year"
+    "title" : "Disposition by Race"
   },
   "location":
   {
     "label" : "Location",
     "type" : "map",
+    "data": "filtered-def.csv",
     "y" : "region",
     "yLabel": {
       "en" : "Charge Density",
@@ -28,33 +30,35 @@
   "charge" :
   {
     "label" : "Charge Filed",
-    "type" : "graph",
-    "x" : "race",
-    "y" : "type",
+    "type" : "bar",
+    "data": "filtered-def.csv",
+    "x" : "CGDISPEVENT",
+    "y" : "DSRACE",
     "xLabel": {
       "en" : "Race",
       "es" : ""
     },
     "yLabel": {
-      "en" : "Charge File Type",
+      "en" : "Disposition Event",
       "es" : ""
     },
-    "title" : "Charge File by Race"
+    "title" : "Disposition Event by Race"
   },
   "outcome" :
   {
-    "label" : "Case Outcome",
-    "type" : "graph",
-    "x" : "type",
+    "label" : "Court",
+    "type" : "line",
+    "data": "filtered-def.csv",
+    "x" : "DSRACE",
     "xLabel": {
-      "en" : "Type",
+      "en" : "Race",
       "es" : ""
     },
-    "y" : "outcome",
+    "y" : "CSAGENCY",
     "yLabel": {
-      "en" : "Case Outcome Type",
+      "en" : "Police Agency Requesting Warrant",
       "es" : ""
     },
-    "title" : "Case Outcome by Charge Filed"
+    "title" : "Race vs Agency Requesting Warrant"
   }
 }

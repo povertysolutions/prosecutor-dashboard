@@ -9,9 +9,9 @@
                       v-show="currentType !='map'"
                      :dataset="chartData"
                      :xLabel="currentXLabel"
-                     :yLabel="currentXLabel"
+                     :yLabel="currentYLabel"
                      :timelineMode="currentXLabel.includes('Year')"
-                     :barMode="!currentXLabel.includes('Year')"            >
+                     :barMode="currentType !='line'"            >
           </LineGraph>
 
           <Map v-if="currentType=='map'" class="map"/>
@@ -144,7 +144,7 @@ export default {
     },
     sort(){
       this.loadingData = true;
-      var dataFile = this.currentTopic.data;
+      var dataFile = this.currentFilter.data;
 
       var x = this.currentFilter.x;
       var y = this.currentFilter.y;

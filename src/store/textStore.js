@@ -28,7 +28,8 @@ export default {
     },
     mutations: {
         load(state){
-          console.log("loading lang...");
+          console.log("loading language...");
+
             if (languages === null){
                 state.error = true;
                 state.error_msg = namespace + "ERROR: 'languages' data is missing or malformatted.";

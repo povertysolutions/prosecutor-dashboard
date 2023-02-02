@@ -18,26 +18,37 @@ var models = {
   //will sort data so it will displayed on x, y axis
   //
   getDataBy(dataFile, x, y){
-    var jsonData = require.context('../../assets/data/', false, /\.json$/)
-    var loaded = jsonData('./' + dataFile)
+    // var jsonData = require.context('../../assets/data/', false, /\.json$/)
+    // var loaded = jsonData('./' + dataFile)
 
-    var data = JSON.parse(JSON.stringify(loaded));
+    // var data = JSON.parse(JSON.stringify(loaded));
+
+    //var combined = require('../../assets/data/real/filtered-charges-sentences.csv')
+    //var combined = require('../../assets/data/real/filtered-def.csv')
+    //var data = require('../../assets/data/real/filtered-charges-sentences.csv')
+    console.log("---loading from data file: " + dataFile + "---");
+    var data = require('../../assets/data/real/' + dataFile);
+
 
     var sorted = {}
 
+    var counter = 0;
     for (var i in data){
       var item = data[i];
       var value = item[y];
       if (sorted[value] == null){
+        console.log("missing y value for dataset: " + y)
         sorted[value] = [];
       }
 
-
       var xCategory;
 
-      if (x == "year"){
-        var date = new Date(Date.parse(item["fileDate"]));
-        xCategory = "+" + date.getFullYear().toString();
+      if (x.includes("DATE") && Date.parse(item[x]) !== Number.NaN){
+        // var date = new Date(Date.parse(item["fileDate"]));
+          var date = new Date(Date.parse(item[x]));
+          xCategory = "+" + date.getFullYear().toString();
+
+
       }
       else{
         xCategory = item[x];
@@ -65,7 +76,7 @@ var models = {
 
       for (var xValue in xValues){
 
-        if (x === "year"){
+        if (x.includes("DATE") && Date.parse(item[x]) !== Number.NaN){
           var correctedYear = xValue.slice(1);
           if (correctedYear < firstYear){
             firstYear = correctedYear;
@@ -73,7 +84,18 @@ var models = {
           if (correctedYear > lastYear){
             lastYear = correctedYear;
           }
+
+          var convertedYear = Number(correctedYear);
+
+          if (convertedYear >= 1970 && convertedYear <= 2020){
           formatted.push({"x" : correctedYear, "y" : xValues[xValue]})
+
+            // if (counter < 100){
+            //   console.log("correctedYear: " + correctedYear);
+            //   counter++;
+            // }
+          }
+
         }
         else{
           formatted.push({"x" : xValue, "y" : xValues[xValue]})
@@ -86,8 +108,6 @@ var models = {
       output[type] = formatted;
 
     }
-
-
 
     // console.log(output);
     // if (x === "year"){
