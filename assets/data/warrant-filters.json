@@ -20,12 +20,17 @@
     "label" : "Location",
     "type" : "map",
     "data": "filtered-def.csv",
-    "y" : "region",
-    "yLabel": {
-      "en" : "Charge Density",
+    "x" : "",
+    "xLabel": {
+      "en" : "",
       "es" : ""
     },
-    "title" : "Charge Density Map"
+    "y" : "DSZIP",
+    "yLabel": {
+      "en" : "Zip Codes",
+      "es" : ""
+    },
+    "title" : "Defendent Locations"
   },
   "charge" :
   {

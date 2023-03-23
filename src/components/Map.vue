@@ -18,7 +18,7 @@ import "leaflet/dist/leaflet.css"
 import { LMap, LGeoJson, LTileLayer} from "@vue-leaflet/vue-leaflet";
 import Color from "colorjs.io";
 
-var jsonData = require("../../assets/boundaries.geojson")
+var jsonData = require("../../assets/zip-boundaries.geojson")
 
 function calculateColor(feature){
   var r = Math.random();
