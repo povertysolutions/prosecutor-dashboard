@@ -18,6 +18,7 @@ var models = {
   //will sort data so it will displayed on x, y axis
   //
   getDataBy(dataFile, x, y){
+    return null;
     // var jsonData = require.context('../../assets/data/', false, /\.json$/)
     // var loaded = jsonData('./' + dataFile)
 

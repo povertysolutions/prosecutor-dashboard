@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@braks/vue-flow": "^0.4.27",
+    "@popperjs/core": "^2.11.7",
     "@vuepic/vue-datepicker": "^3.2.2",
     "chart.js": "^3.8.0",
     "chartjs-adapter-moment": "^1.0.0",
@@ -20,6 +21,7 @@
     "geojson": "^0.5.0",
     "json-loader": "^0.5.7",
     "moment": "^2.29.4",
+    "v-calendar": "^3.0.3",
     "vue": "^3.2.13",
     "vue-chartjs": "^4.1.1",
     "vue-router": "^4.0.16",

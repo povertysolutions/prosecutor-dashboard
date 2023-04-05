@@ -13,11 +13,15 @@
 
       <div class="dateGroup">
         <h4>Date Range</h4>
-        <Datepicker range monthPicker autoApply
+        <!-- <Datepicker range monthPicker autoApply
                     class="datepicker"
                     v-model="dateModel"
                     :presetRanges="dateRange"
-                    placeholder="01/2000 - 01/2020"/>
+                    placeholder="01/2000 - 01/2020"/> -->
+        <Calendar v-model="dateModel"
+                  :key="calendarKey"
+                  is-range
+        />
       </div>
 
     </div>
@@ -26,8 +30,13 @@
 <script>
 import { ref } from 'vue';
 import { endOfMonth, endOfYear, startOfMonth, startOfYear, subMonths } from 'date-fns';
+import Calendar from "./Calendar"
 
 export default {
+  name: "Filter",
+  components: {
+    Calendar
+  },
   props: {
     dataset: Object
   },
@@ -35,23 +44,28 @@ export default {
     return{
       currentKey: "",
       dateModel: null,
-      dateRange: []
-
+      calenderKey: 0,
     }
   },
   methods:{
     press(key){
       this.currentKey = key;
       this.$emit('filterChanged', this.dataset[key]);
-    }
+    },
+    resetCalendarModel() {
+      this.dateModel.range.start = null  //or a date
+      this.dateModel.range.end = null // or a date
+      this.calendarKey++;
+    },
   },
   watch:{
     dateModel(){
-      //console.log(this.dateModel);
+      console.log(this.dateModel);
       this.$emit('dateChanged', this.dateModel)
       for (var i in this.dateModel){
         //console.log(this.dateModel[i]);
       }
+      //this.resetCalenderModel();
     },
     dataset(){
       if (this.dataset != null){
@@ -60,11 +74,11 @@ export default {
     }
   },
   mounted(){
-    this.dateModel = ref();
-    this.currentKey = Object.keys(this.dataset)[0];
+    //this.resetCalendarModel();
+    // this.dateModel = ref();
+    // this.currentKey = Object.keys(this.dataset)[0];
     // var startDate = new Date(Date.parse("01/2000"));
     // var endDate = new Date(Date.parse("01/2020"));
-    // this.dateRange = [startDate, endDate];
 
     // this.dateRange = ref([
     //       { label: 'Today', range: [new Date(), new Date()] },
@@ -75,6 +89,14 @@ export default {
     //       },
     //       { label: 'This year', range: [startOfYear(new Date()), endOfYear(new Date())] },
     //     ]);
+
+    var startDate = new Date(2017, 0, 0);
+    var endDate = new Date(2020, 0, 0);
+
+    //setTimeout(() => {
+      this.dateModel = {start: startDate, end: endDate};
+    //}, 500);
+
 
   }
 
