@@ -59,9 +59,9 @@ export default {
     },
   },
   watch:{
-    dateModel(){
-      console.log(this.dateModel);
-      this.$emit('dateChanged', this.dateModel)
+    dateModel(date){
+      //console.log(this.dateModel);
+      this.$emit('dateChanged', date)
       for (var i in this.dateModel){
         //console.log(this.dateModel[i]);
       }
@@ -74,7 +74,6 @@ export default {
     }
   },
   mounted(){
-    //this.resetCalendarModel();
     // this.dateModel = ref();
     // this.currentKey = Object.keys(this.dataset)[0];
     // var startDate = new Date(Date.parse("01/2000"));
@@ -90,14 +89,12 @@ export default {
     //       { label: 'This year', range: [startOfYear(new Date()), endOfYear(new Date())] },
     //     ]);
 
-    var startDate = new Date(2017, 0, 0);
+    var startDate = new Date(2000, 0, 0);
     var endDate = new Date(2020, 0, 0);
 
     //setTimeout(() => {
       this.dateModel = {start: startDate, end: endDate};
     //}, 500);
-
-
   }
 
 }

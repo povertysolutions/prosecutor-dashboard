@@ -67,6 +67,7 @@ export default {
       this.$emit('filterChanged', data)
     },
     dateChanged(data){
+      //console.log("details date changed!")
       this.$emit('dateChanged', data)
     }
   },

@@ -122,24 +122,21 @@ export default {
       this.sort();
     },
     updateDate(dateModel){
-      if (dateModel && dateModel.length === 2){
+      console.log(dateModel);
+      if (dateModel.start && dateModel.end){
+        var currentData = Models.getByDate(dateModel);
+        this.chartData = [];
 
-        //console.log("updateDate: " + dateModel.length);
-        if (dateModel[0] && dateModel[1]){
-          var currentData = Models.getByDate(dateModel);
-          this.chartData = [];
+        setTimeout(() => {
+          var chart = [];
+          var index = 0;
+          for (var type in currentData){
+            chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
+            index++;
+          }
+          this.chartData = chart;
+        }, 500);
 
-          setTimeout(() => {
-            var chart = [];
-            var index = 0;
-            for (var type in currentData){
-              chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
-              index++;
-            }
-            this.chartData = chart;
-          }, 500);
-
-        }
       }
     },
     sort(){

@@ -18,7 +18,6 @@ var models = {
   //will sort data so it will displayed on x, y axis
   //
   getDataBy(dataFile, x, y){
-    return null;
     // var jsonData = require.context('../../assets/data/', false, /\.json$/)
     // var loaded = jsonData('./' + dataFile)
 
@@ -88,7 +87,7 @@ var models = {
 
           var convertedYear = Number(correctedYear);
 
-          if (convertedYear >= 1970 && convertedYear <= 2020){
+          if (convertedYear >= 2000 && convertedYear <= 2020){
           formatted.push({"x" : correctedYear, "y" : xValues[xValue]})
 
             // if (counter < 100){
