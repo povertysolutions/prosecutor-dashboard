@@ -25,7 +25,12 @@
             <img :src="icon('download.svg')" />
           </button>
         </div>
-        <Details class="details" :filters="filters" @filterChanged="updateFilter" @dateChanged="updateDate"></Details>
+        <Details class="details"
+                :filters="filters"
+                @filterChanged="updateFilter"
+                @dateChanged="updateDate"
+                @showFilter="showFilter">
+      </Details>
       </section>
   </div>
 </template>
@@ -139,6 +144,13 @@ export default {
 
       }
     },
+    showFilter(filterView){ //currently fixing bug where graph data is cleared out when filters are first shown
+      console.log("xxxxxxxxxxxxx")
+      if (filterView){
+        this.loadFilters();
+        this.sort();
+      }
+    },
     sort(){
       this.loadingData = true;
       var dataFile = this.currentFilter.data;
@@ -172,6 +184,7 @@ export default {
 
       console.log("topicId: " + this.topicId)
       if (this.topicId === undefined){
+
         var firstTopic = Object.keys(this.topics)[0]
         console.log("topicId is null, defaulting to first topic: " + firstTopic)
         var nextPath = "/dashboard/" + firstTopic

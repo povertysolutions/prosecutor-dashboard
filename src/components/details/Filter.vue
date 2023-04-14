@@ -89,8 +89,8 @@ export default {
     //       { label: 'This year', range: [startOfYear(new Date()), endOfYear(new Date())] },
     //     ]);
 
-    var startDate = new Date(2000, 0, 0);
-    var endDate = new Date(2020, 0, 0);
+    var startDate = new Date(2017, 1, 1);
+    var endDate = new Date(2020, 1, 1);
 
     //setTimeout(() => {
       this.dateModel = {start: startDate, end: endDate};

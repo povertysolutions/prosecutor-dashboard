@@ -78,6 +78,12 @@ export default {
     showDownload(){
       return this.currentIndex == this.sections.length - 1;
     }
+  },
+  watch:{
+    showFilter(){
+      console.log("+++++++++++++++ showing filters: " + this.showFilter)
+      this.$emit('showFilter', this.showFilter)
+    }
   }
 
 }

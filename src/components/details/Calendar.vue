@@ -15,12 +15,12 @@
 
 import { ref } from 'vue';
 
-const minDate = new Date(2000, 0, 0);
-const maxDate = new Date(2020, 0, 0);
+const minDate = new Date(2017, 1, 1);
+const maxDate = new Date(2020, 12, 31);
 
 const startRange = ref({
-  start: new Date(2000, 0, 0),
-  end: new Date(1990, 0, 0)
+  start: new Date(2017, 1, 1),
+  end: new Date(2020, 12, 31)
 });
 
 const attributes = ref([
