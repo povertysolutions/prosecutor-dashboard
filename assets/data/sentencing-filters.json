@@ -3,7 +3,7 @@
     "label" : "Charges Types",
     "type" : "bar",
     "data": "filtered-def.csv",
-    "x" : "DFDISPDATE",
+    "x" : "DFDISPDATE_FILTERED",
     "xLabel": {
       "en" : "Disposition Year",
       "es" : ""
@@ -15,32 +15,16 @@
     },
     "title" : "Charge Types over Time"
   },
-  "circuit-court" : {
-    "label" : "Circuit Court",
-    "type" : "bar",
-    "data": "filtered-def.csv",
-    "x" : "DFDISPDATE",
-    "xLabel": {
-      "en" : "Disposition Year",
-      "es" : ""
-    },
-    "y" : "CSAGENCY",
-    "yLabel": {
-      "en" : "Police Agency Requesting Warrant",
-      "es" : ""
-    },
-    "title" : "Warrant Request"
-  },
   "sentencing" : {
     "label" : "Sentence Type",
-    "type" : "graph",
+    "type" : "line",
     "data": "filtered-charges-sentences.csv",
-    "x" : "CGDISPDATE",
+    "x" : "CGDISPDATE_FILTERED",
     "xLabel": {
       "en" : "Disposition Year",
       "es" : ""
     },
-    "y" : "SNTYPE",
+    "y" : "SNTYPE_FILTERED",
     "yLabel": {
       "en" : "Charge",
       "es" : ""

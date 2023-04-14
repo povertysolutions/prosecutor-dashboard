@@ -1,14 +1,14 @@
 {
   "race" : {
     "label" : "Race",
-    "type" : "line",
+    "type" : "bar",
     "data": "filtered-def.csv",
-    "x" : "DFDISPDATE",
+    "x" : "DFDISPDATE_FILTERED",
     "xLabel": {
       "en" : "Year of Disposition",
       "es" : ""
     },
-    "y" : "DSRACE",
+    "y" : "DSRACE_FILTERED",
     "yLabel": {
       "en" : "Race",
       "es" : ""
@@ -31,39 +31,5 @@
       "es" : ""
     },
     "title" : "Defendent Locations"
-  },
-  "charge" :
-  {
-    "label" : "Charge Filed",
-    "type" : "bar",
-    "data": "filtered-def.csv",
-    "x" : "CGDISPEVENT",
-    "y" : "DSRACE",
-    "xLabel": {
-      "en" : "Race",
-      "es" : ""
-    },
-    "yLabel": {
-      "en" : "Disposition Event",
-      "es" : ""
-    },
-    "title" : "Disposition Event by Race"
-  },
-  "outcome" :
-  {
-    "label" : "Court",
-    "type" : "line",
-    "data": "filtered-def.csv",
-    "x" : "DSRACE",
-    "xLabel": {
-      "en" : "Race",
-      "es" : ""
-    },
-    "y" : "CSAGENCY",
-    "yLabel": {
-      "en" : "Police Agency Requesting Warrant",
-      "es" : ""
-    },
-    "title" : "Race vs Agency Requesting Warrant"
   }
 }

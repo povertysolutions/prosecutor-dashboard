@@ -46,13 +46,17 @@ var models = {
       if (x.includes("DATE") && Date.parse(item[x]) !== Number.NaN){
         // var date = new Date(Date.parse(item["fileDate"]));
           var date = new Date(Date.parse(item[x]));
-          xCategory = "+" + date.getFullYear().toString();
-
-
+          if (item[x]){
+            var dateString = date.toISOString();
+            if (dateString.split('T').length > 0){
+              xCategory = date.toISOString().split('T')[0]; //"+" + date.getFullYear().toString();
+              //console.log(xCategory)
+            }
+          }
       }
-      else{
-        xCategory = item[x];
-      }
+      // else{
+      //   xCategory = item[x];
+      // }
 
       if (sorted[value][xCategory] == null){
         sorted[value][xCategory] = 0;
@@ -77,24 +81,27 @@ var models = {
       for (var xValue in xValues){
 
         if (x.includes("DATE") && Date.parse(item[x]) !== Number.NaN){
-          var correctedYear = xValue.slice(1);
-          if (correctedYear < firstYear){
-            firstYear = correctedYear;
-          }
-          if (correctedYear > lastYear){
-            lastYear = correctedYear;
-          }
 
-          var convertedYear = Number(correctedYear);
+          formatted.push({"x" : xValue, "y" : xValues[xValue]})
 
-          if (convertedYear >= 2000 && convertedYear <= 2020){
-          formatted.push({"x" : correctedYear, "y" : xValues[xValue]})
-
-            // if (counter < 100){
-            //   console.log("correctedYear: " + correctedYear);
-            //   counter++;
-            // }
-          }
+          // var correctedYear = xValue.slice(1);
+          // if (correctedYear < firstYear){
+          //   firstYear = correctedYear;
+          // }
+          // if (correctedYear > lastYear){
+          //   lastYear = correctedYear;
+          // }
+          //
+          // var convertedYear = Number(correctedYear);
+          //
+          // if (convertedYear >= 2000 && convertedYear <= 2020){
+          // formatted.push({"x" : correctedYear, "y" : xValues[xValue]})
+          //
+          //   // if (counter < 100){
+          //   //   console.log("correctedYear: " + correctedYear);
+          //   //   counter++;
+          //   // }
+          // }
 
         }
         else{
@@ -114,7 +121,7 @@ var models = {
     //   fillEmptyYears(output);
     // }
     currentModel = output;
-    //console.log(output)
+    console.log(output)
     return output;
 
 
@@ -138,12 +145,12 @@ var models = {
   getByDate(dateModel){
     console.log("getByDate...")
     //console.log(dateModel[1]);
-    var start = dateModel[0];
-    var startDate = new Date(start.year, start.month);
+    var startDate = dateModel.start;
+    //var startDate = new Date(start.year, start.month);
     console.log(startDate)
 
-    var end = dateModel[1];
-    var endDate = new Date(end.year, end.month);
+    var endDate = dateModel.end;
+    //var endDate = new Date(end.year, end.month);
     console.log(endDate)
 
     var output = {};
@@ -154,7 +161,7 @@ var models = {
 
       for (var i in array){
         //console.log("date: " + array[i].x);
-        var currentDate = new Date(array[i].x, 1);
+        var currentDate = new Date(array[i].x);
         //console.log(currentDate)
 
         if (currentDate >= startDate && currentDate <= endDate){

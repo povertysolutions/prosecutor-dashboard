@@ -55,9 +55,9 @@ export default {
             time: {
               unit: 'year',
               stepSize: 5,
-              // parser: 'YYYY-MM-DD', //1992-11-29 00:00:00.0000000
+              // parser: 'yyyy-mm-dd', //1992-11-29 00:00:00.0000000
               // displayFormats: {
-              //   year: 'YYYY'
+              //   year: 'yyyy'
               // }
             },
         }
@@ -83,7 +83,20 @@ export default {
             }
         },
         scales: {
-            xAxes: this.xScale,
+            xAxes: {
+                //type: 'time',
+                autoSkip: true,
+                textStrokeWidth: 0,
+                labels: [],
+                time: {
+                  //unit: 'year',
+                  stepSize: 5,
+                  parser: 'yyyy-mm-dd', //1992-11-29 00:00:00.0000000
+                  displayFormats: {
+                    year: 'yyyy'
+                  }
+                },
+            },
             x: {
                 title: {
                     display: true,
