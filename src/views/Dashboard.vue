@@ -2,7 +2,7 @@
   <div class="view">
     <Sidebar :topics="topics" :topicId="topicId"></Sidebar>
       <section class="main">
-        <div ref="graphGroup">
+        <div ref="graphGroup" id="graphGroup">
           <h2>{{currentTitle}}</h2>
           <LineGraph class="graph"
                       v-if="!loadingData"
@@ -11,7 +11,7 @@
                      :xLabel="currentXLabel"
                      :yLabel="currentYLabel"
                      :timelineMode="currentXLabel.includes('Year')"
-                     :barMode="currentType !='line'"            >
+                     :barMode="currentType !='line'">
           </LineGraph>
 
           <Map v-if="currentType=='map'" class="map"/>
@@ -21,15 +21,16 @@
                   :dataset="legendData">
           </Legend>
 
-          <button class="downloadButton" @click="capture">
-            <img :src="icon('download.svg')" />
-          </button>
         </div>
-        <Details class="details"
+        <Details
+                ref="details"
+                class="details"
                 :filters="filters"
+                :downloadSection="getDownloadSection"
                 @filterChanged="updateFilter"
                 @dateChanged="updateDate"
-                @showFilter="showFilter">
+                @showFilter="showFilter"
+                @capture="capture">
       </Details>
       </section>
   </div>
@@ -49,7 +50,7 @@ import Asset from "@/utils/assets"
 import Text from "@/utils/text"
 import { mapGetters } from "vuex"
 
-import domtoimage from "dom-to-image-more";
+import domtoimage from 'dom-to-image-more';
 
 export default {
   name: "Dashboard",
@@ -73,6 +74,14 @@ export default {
     ...mapGetters({
       langId: "text/langId",
     }),
+    getDownloadSection(){
+      if (this.$ref && this.$ref.graphGroup){
+        return this.$ref.graphGroup;
+      }
+      else{
+        return null;
+      }
+    },
     currentLegendTitle(){
       if (this.currentFilter && this.currentFilter.label){
         return this.currentFilter.label;
@@ -212,18 +221,20 @@ export default {
       this.loadFilters();
       this.sort();
     },
-    async capture() {
+
+    async capture(imageName) {
       console.log("starting capture...")
 
-      var node = this.$refs.graphGroup;
-
       domtoimage
-        .toPng(node)
+        .toPng(this.$refs.graphGroup)
         .then(function (dataUrl) {
-          //var img = new Image();
-          //img.src = dataUrl;
-          console.log(dataUrl);
-          //document.body.appendChild(img);
+          //console.log(dataUrl);
+          var link = document.createElement('a');
+          link.download = imageName + '.jpeg';
+          link.href = dataUrl;
+          link.click();
+
+
         })
         .catch(function (error) {
           console.error("oops, something went wrong!", error);
@@ -243,6 +254,11 @@ export default {
   mounted(){
     console.log("hi!")
     this.initialize();
+    // setTimeout(() => {
+    //   console.log(this.$refs.graphGroup);
+    //   this.$refs.details.props.downloadSection = this.$ref.graphGroup;
+    // }, 100);
+
   },
 
 }
@@ -261,6 +277,10 @@ h2{
   margin: 1.5rem 0 0 4rem;
   display: inline-block;
 
+}
+
+#graphGroup{
+  background-color: $color-white;
 }
 
 .graph{

@@ -15,7 +15,7 @@
                 @dateChanged="dateChanged">
         </Filter>
 
-        <Download class="download" v-if="showDownload"> </Download>
+        <Download class="download" v-if="showDownload" @capture="capture"> </Download>
 
         <p :class="[showFilter || showDownload ? 'hidden' : '']">{{sections[currentIndex].body}}</p>
         <!-- <div class="test"></div> -->
@@ -31,7 +31,8 @@ export default {
   name: "Details",
   components: { Filter, Download },
   props: {
-    filters: Object
+    filters: Object,
+    downloadSection: Object
   },
   data(){
     return{
@@ -69,6 +70,10 @@ export default {
     dateChanged(data){
       //console.log("details date changed!")
       this.$emit('dateChanged', data)
+    },
+    capture(data){
+      console.log("capture!")
+      this.$emit('capture', data)
     }
   },
   computed:{

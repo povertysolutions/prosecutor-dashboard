@@ -20,27 +20,39 @@
 
 <script>
 import Models from "../../utils/models.js"
+import domtoimage from 'dom-to-image-more';
 
 export default {
+  props: {
+    downloadSection: Object
+  },
   data(){
     return {
       currentFileType: "json",
-      fileTypes: ["json", "csv", "xml"]
+      fileTypes: ["json", "csv", "screenshot"]
     }
   },
   methods:{
     press(next){
       this.currentFileType = next;
     },
+
     downloadData(){
-      var data = Models.getCurrentModel();
-      console.log(data);
-      var dataStr = "data:text/" + this.currentFileType + ";charset=utf-8," + encodeURIComponent(JSON.stringify(data));
-      var dlAnchorElem = document.getElementById('downloadAnchorElem');
-      dlAnchorElem.setAttribute("href",     dataStr     );
-      dlAnchorElem.setAttribute("download", "data." + this.currentFileType);
-      dlAnchorElem.click();
+      if (this.currentFileType === "screenshot"){
+        console.log("emitting...")
+        this.$emit('capture', 'imageName')
+      }
+      else{
+        var data = Models.getCurrentModel();
+        console.log(data);
+        var dataStr = "data:text/" + this.currentFileType + ";charset=utf-8," + encodeURIComponent(JSON.stringify(data));
+        var dlAnchorElem = document.getElementById('downloadAnchorElem');
+        dlAnchorElem.setAttribute("href",     dataStr     );
+        dlAnchorElem.setAttribute("download", "data." + this.currentFileType);
+        dlAnchorElem.click();
+      }
     }
+
   }
 }
 </script>
