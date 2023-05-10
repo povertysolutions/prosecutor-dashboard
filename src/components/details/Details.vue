@@ -68,11 +68,9 @@ export default {
       this.$emit('filterChanged', data)
     },
     dateChanged(data){
-      //console.log("details date changed!")
       this.$emit('dateChanged', data)
     },
     capture(data){
-      console.log("capture!")
       this.$emit('capture', data)
     }
   },
@@ -86,7 +84,6 @@ export default {
   },
   watch:{
     showFilter(){
-      console.log("+++++++++++++++ showing filters: " + this.showFilter)
       this.$emit('showFilter', this.showFilter)
     }
   }

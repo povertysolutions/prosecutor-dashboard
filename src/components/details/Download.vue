@@ -39,12 +39,10 @@ export default {
 
     downloadData(){
       if (this.currentFileType === "screenshot"){
-        console.log("emitting...")
         this.$emit('capture', 'imageName')
       }
       else{
         var data = Models.getCurrentModel();
-        console.log(data);
         var dataStr = "data:text/" + this.currentFileType + ";charset=utf-8," + encodeURIComponent(JSON.stringify(data));
         var dlAnchorElem = document.getElementById('downloadAnchorElem');
         dlAnchorElem.setAttribute("href",     dataStr     );

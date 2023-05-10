@@ -84,18 +84,20 @@ export default {
         },
         scales: {
             xAxes: {
-                //type: 'time',
-                autoSkip: true,
-                textStrokeWidth: 0,
-                labels: [],
-                time: {
-                  //unit: 'year',
-                  stepSize: 5,
-                  parser: 'yyyy-mm-dd', //1992-11-29 00:00:00.0000000
-                  displayFormats: {
-                    year: 'yyyy'
-                  }
-                },
+              //barPercentage: 1,
+              //maxBarThickness: 100,
+              type: 'time',
+              //autoSkip: true,
+              //textStrokeWidth: 0,
+              labels: [],
+              time: {
+                //unit: 'year',
+                //stepSize: 5,
+                // parser: 'yyyy-mm-dd', //1992-11-29 00:00:00.0000000
+                // displayFormats: {
+                //   year: 'yyyy'
+                // }
+              },
             },
             x: {
                 title: {
@@ -122,8 +124,6 @@ export default {
                     font: {
                         size: 18,
                         family:'Roboto Medium'
-
-
                     },
                     color: "#000"
                 }

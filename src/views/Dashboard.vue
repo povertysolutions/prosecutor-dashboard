@@ -137,21 +137,21 @@ export default {
     },
     updateDate(dateModel){
       console.log(dateModel);
-      if (dateModel.start && dateModel.end){
-        var currentData = Models.getByDate(dateModel);
-        this.chartData = [];
-
-        setTimeout(() => {
-          var chart = [];
-          var index = 0;
-          for (var type in currentData){
-            chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
-            index++;
-          }
-          this.chartData = chart;
-        }, 500);
-
-      }
+      // if (dateModel.start && dateModel.end){
+      //   var currentData = Models.getByDate(dateModel);
+      //   this.chartData = [];
+      //
+      //   setTimeout(() => {
+      //     var chart = [];
+      //     var index = 0;
+      //     for (var type in currentData){
+      //       chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
+      //       index++;
+      //     }
+      //     this.chartData = chart;
+      //   }, 500);
+      //
+      // }
     },
     showFilter(filterView){ //currently fixing bug where graph data is cleared out when filters are first shown
       console.log("xxxxxxxxxxxxx")
@@ -217,13 +217,12 @@ export default {
         this.currentTopic = this.topics[this.topicId];
       }
 
-      console.log("currentTopic model: " + this.currentModel)
+      //console.log("currentTopic model: " + this.currentModel)
       this.loadFilters();
       this.sort();
     },
 
     async capture(imageName) {
-      console.log("starting capture...")
 
       domtoimage
         .toPng(this.$refs.graphGroup)
@@ -242,12 +241,7 @@ export default {
     }
   },
   watch: {
-    // $route (to, from){
-    //   console.log("hello!")
-    //   this.initialize();
-    // },
     topicId (to, from){
-      console.log("hello!")
       this.initialize();
     }
   },

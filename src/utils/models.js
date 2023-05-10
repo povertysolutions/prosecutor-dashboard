@@ -110,7 +110,7 @@ var models = {
         //console.log(correctedYear);
       }
 
-      formatted.sort((a, b) => (a.x > b.x) ? 1 : -1);
+      //formatted.sort((a, b) => (a.x > b.x) ? 1 : -1);
 
       output[type] = formatted;
 
