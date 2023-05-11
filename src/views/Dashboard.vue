@@ -30,7 +30,8 @@
                 @filterChanged="updateFilter"
                 @dateChanged="updateDate"
                 @showFilter="showFilter"
-                @capture="capture">
+                @capture="capture"
+                :bus="bus">
       </Details>
       </section>
   </div>
@@ -49,8 +50,9 @@ import filterJson from "../../assets/data/warrant-filters.json"
 import Asset from "@/utils/assets"
 import Text from "@/utils/text"
 import { mapGetters } from "vuex"
+import Vue from 'vue'
 
-import domtoimage from 'dom-to-image-more';
+import domtoimage from 'dom-to-image-more'
 
 export default {
   name: "Dashboard",
@@ -67,7 +69,9 @@ export default {
       currentTopic: null, //object
       topics: topicsJson,
       filters: null,
-      loadingData: false
+      loadingData: false,
+      adjustedDate: false,
+      bus: null,
     }
   },
   computed:{
@@ -114,6 +118,11 @@ export default {
     }
   },
   methods:{
+    resetButtons(){
+        //this.header = "changed header";
+
+        this.bus.$emit('reset', 'data');
+    },
     getText(model){
       return Text.get(model, this.langId);
     },
@@ -132,32 +141,40 @@ export default {
       console.log("currentFilter: " + this.currentFilter);
     },
     updateFilter(filter){
+      this.adjustedDate = false;
       this.currentFilter = filter;
       this.sort();
     },
     updateDate(dateModel){
       console.log(dateModel);
-      // if (dateModel.start && dateModel.end){
-      //   var currentData = Models.getByDate(dateModel);
-      //   this.chartData = [];
-      //
-      //   setTimeout(() => {
-      //     var chart = [];
-      //     var index = 0;
-      //     for (var type in currentData){
-      //       chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
-      //       index++;
-      //     }
-      //     this.chartData = chart;
-      //   }, 500);
-      //
-      // }
+      if (this.adjustedDate){
+        if (dateModel.start && dateModel.end){
+          var currentData = Models.getByDate(dateModel);
+          this.chartData = [];
+
+          setTimeout(() => {
+            var chart = [];
+            var index = 0;
+            for (var type in currentData){
+              chart.push( {"data" : currentData[type], "borderColor": this.colors[index]})
+              index++;
+            }
+            this.chartData = chart;
+          }, 5);
+
+        }
+      }
+
+      setTimeout(() => {
+        this.adjustedDate = true;
+      }, 10);
+
     },
     showFilter(filterView){ //currently fixing bug where graph data is cleared out when filters are first shown
-      console.log("xxxxxxxxxxxxx")
       if (filterView){
-        this.loadFilters();
-        this.sort();
+        this.initialize();
+        this.resetButtons();
+        //this.currentTopic = this.topics[this.topicId];
       }
     },
     sort(){
@@ -248,11 +265,12 @@ export default {
   mounted(){
     console.log("hi!")
     this.initialize();
+    const EventBus = new Vue();
+    this.bus = this.$app;
     // setTimeout(() => {
     //   console.log(this.$refs.graphGroup);
     //   this.$refs.details.props.downloadSection = this.$ref.graphGroup;
     // }, 100);
-
   },
 
 }

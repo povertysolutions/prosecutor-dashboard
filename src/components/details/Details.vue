@@ -32,7 +32,8 @@ export default {
   components: { Filter, Download },
   props: {
     filters: Object,
-    downloadSection: Object
+    downloadSection: Object,
+    data: Object
   },
   data(){
     return{
@@ -86,9 +87,22 @@ export default {
     showFilter(){
       this.$emit('showFilter', this.showFilter)
     }
+  },
+  mounted(){
+    setTimeout(() => {
+      if (this.bus){
+      this.bus.$on('reset', (data) => {
+        this.currentIndex = 0;
+        //this.test = data;
+        }
+      )
+    }
+    }, 100);
+
   }
 
 }
+
 </script>
 
 <style lang="scss" scoped>
