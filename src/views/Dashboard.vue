@@ -50,7 +50,7 @@ import filterJson from "../../assets/data/warrant-filters.json"
 import Asset from "@/utils/assets"
 import Text from "@/utils/text"
 import { mapGetters } from "vuex"
-import Vue from 'vue'
+import { Vue, VueElement } from 'vue'
 
 import domtoimage from 'dom-to-image-more'
 
@@ -265,7 +265,7 @@ export default {
   mounted(){
     console.log("hi!")
     this.initialize();
-    const EventBus = new Vue();
+    const EventBus = new VueElement;
     this.bus = this.$app;
     // setTimeout(() => {
     //   console.log(this.$refs.graphGroup);
