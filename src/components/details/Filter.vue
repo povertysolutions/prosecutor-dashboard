@@ -57,6 +57,14 @@ export default {
       this.dateModel.range.end = null // or a date
       this.calendarKey++;
     },
+
+    initialize(){
+      var startDate = new Date(2017, 1, 1);
+      var endDate = new Date(2020, 1, 1);
+
+      this.dateModel = {start: startDate, end: endDate};
+      this.currentKey =  Object.keys(this.dataset)[0];
+    }
   },
   watch:{
     dateModel(date){
@@ -73,6 +81,8 @@ export default {
       }
     }
   },
+
+
   mounted(){
     // this.dateModel = ref();
     // this.currentKey = Object.keys(this.dataset)[0];
@@ -88,13 +98,13 @@ export default {
     //       },
     //       { label: 'This year', range: [startOfYear(new Date()), endOfYear(new Date())] },
     //     ]);
+    this.initialize();
 
-    var startDate = new Date(2017, 1, 1);
-    var endDate = new Date(2020, 1, 1);
-
-    //setTimeout(() => {
-      this.dateModel = {start: startDate, end: endDate};
-    //}, 500);
+    ////resests filter when flicking between details. feels too often
+    // this.emitter.on("reset", (data) => {
+    //     console.log("resetting filters")
+    //     this.initialize();
+    // });
   }
 
 }

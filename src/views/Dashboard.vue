@@ -30,8 +30,7 @@
                 @filterChanged="updateFilter"
                 @dateChanged="updateDate"
                 @showFilter="showFilter"
-                @capture="capture"
-                :bus="bus">
+                @capture="capture">
       </Details>
       </section>
   </div>
@@ -71,7 +70,6 @@ export default {
       filters: null,
       loadingData: false,
       adjustedDate: false,
-      bus: null,
     }
   },
   computed:{
@@ -121,7 +119,7 @@ export default {
     resetButtons(){
         //this.header = "changed header";
 
-        this.bus.$emit('reset', 'data');
+        this.emitter.emit("resetFilter");
     },
     getText(model){
       return Text.get(model, this.langId);
@@ -263,14 +261,8 @@ export default {
     }
   },
   mounted(){
-    console.log("hi!")
     this.initialize();
-    const EventBus = new VueElement;
-    this.bus = this.$app;
-    // setTimeout(() => {
-    //   console.log(this.$refs.graphGroup);
-    //   this.$refs.details.props.downloadSection = this.$ref.graphGroup;
-    // }, 100);
+    this.emitter.emit("resetFilter");
   },
 
 }

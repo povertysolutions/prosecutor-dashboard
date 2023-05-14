@@ -87,20 +87,7 @@ export default {
     showFilter(){
       this.$emit('showFilter', this.showFilter)
     }
-  },
-  mounted(){
-    setTimeout(() => {
-      if (this.bus){
-      this.bus.$on('reset', (data) => {
-        this.currentIndex = 0;
-        //this.test = data;
-        }
-      )
-    }
-    }, 100);
-
   }
-
 }
 
 </script>

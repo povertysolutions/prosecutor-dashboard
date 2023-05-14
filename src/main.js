@@ -8,8 +8,12 @@ import 'v-calendar/style.css';
 import '@vuepic/vue-datepicker/dist/main.css';
 import "@braks/vue-flow/dist/style.css";
 import store from "./store/store.js"
+import mitt from 'mitt';
 
 const app = createApp(App);
+const emitter = mitt();
+app.config.globalProperties.emitter = emitter;
+
 app.use(router);
 app.use(store)
 app.use(VCalendar, {})
@@ -17,4 +21,5 @@ app.use(VCalendar, {})
 app.component('VCalendar', Calendar)
 app.component('VDatePicker', DatePicker)
 app.mount("#app");
+
 document.title = "Prosecutor Dashboard";
